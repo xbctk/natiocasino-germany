@@ -1,6 +1,8 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { BONUS_AFFILIATE_URL } from "./affiliateLinks";
+import { AppPromoBanner } from "./AppPromoBanner";
+import { PromotionBanner } from "./PromotionBanner";
 import { ReviewsSlider } from "./ReviewsSlider";
 
 const germanPlayerReviews = [
@@ -198,6 +200,8 @@ export function MainContent() {
         </div>
       </Section>
 
+      <PromotionBanner variant="first-deposit" />
+
       <Section id="zahlen-auf-der-kachel" title="Die Zahlen auf der Kachel" className="">
         <p>Hier ist der Teil, für den es sich lohnt, langsamer zu werden, denn es ist genau das, was National tut und die meisten seiner Mitbewerber schlicht nicht tun.</p>
         <p>Auf nahezu jeder Spielkarte siehst du einen RTP-Wert. Manche dieser Zahlen sehen auf den ersten Blick seltsam aus — ein Slot zeigt 101 %, ein anderer blinkt mit 138 %, ein Live-Spiel liest sich als 159 %. Kein Slot bringt über seine Lebensdauer 138 % zurück; wäre es so, wäre das Casino bis zum Mittagessen pleite. Was du siehst, ist Live-RTP — eine Momentaufnahme davon, wie dieses konkrete Spiel über die jüngste Spielphase tatsächlich ausgezahlt hat, nicht der theoretische Wert, der in seinem Code steckt. Stell es dir als das kurzfristige Wetter des Raums vor, nicht als sein Klima. Ein Spiel, das mit 138 % heißläuft, hat schlicht über das jüngste Fenster, das du siehst, mehr ausgezahlt, als es eingenommen hat; eine Stunde später kann es genauso gut 82 % anzeigen.</p>
@@ -310,6 +314,8 @@ export function MainContent() {
         </div>
       </Section>
 
+      <PromotionBanner variant="second-deposit" />
+
       <Section id="live-etage" title="Die Live-Etage" className="">
         <p>Wenn die Slots der Ort sind, an dem du allein spielst, dann ist die Live-Etage der Ort, an dem sich das Casino besetzt anfühlt. Das ist wirklich einer der stärkeren Teile des Betriebs, und er teilt sich in zwei Stimmungen.</p>
         <p>Da ist die Spielshow-Wand — Crazy Time, Funky Time, Monopoly Big Baller, Crazy Coin Flip, Lightning Storm, Sweet Bonanza Candyland — wo ein echter Moderator ein helles, lautes Rad-und-Multiplikator-Spektakel leitet, das dem Unterhaltungsfernsehen näher ist als dem traditionellen Glücksspiel. Das sind die Spiele, die die Leute einschalten und an die sie eine Stunde verlieren, ohne es so recht gewollt zu haben.</p>
@@ -364,6 +370,8 @@ export function MainContent() {
         </div>
       </Section>
 
+      <PromotionBanner variant="highroller" />
+
       <Section id="registrierung-und-anmeldung" title="Loslegen: Registrierung und Anmeldung" className="image-copy-section image-copy-section--wide-title">
         <Image className="image-copy-section__image" src="/content/main/registration.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
@@ -393,6 +401,8 @@ export function MainContent() {
         </div>
       </Section>
 
+      <AppPromoBanner />
+
       <Section id="zahlungen-und-support" title="Einzahlungen, Auszahlungen und Support" className="image-copy-section image-copy-section--wide-title">
         <Image className="image-copy-section__image" src="/content/main/payments.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
@@ -410,6 +420,8 @@ export function MainContent() {
           <p>Setz dir einen Betrag, bevor du anfängst — eine Summe, die du verlieren kannst, ohne dass es etwas berührt, worauf es ankommt — und behandle jeden Bonus als ein bisschen Extra-Spiel, niemals als Weg, einen Verlust zurückzugewinnen. Wenn es je von Unterhaltung in etwas Schwereres kippt, gibt es externe Hilfe über Organisationen wie die BZgA-Spielsucht-Beratung, Gamblers Anonymous und Gambling Therapy. Das Casino ist gebaut, um Spaß zu machen. Dafür zu sorgen, dass es das bleibt, ist das ganze Spiel.</p>
         </div>
       </Section>
+
+      <PromotionBanner variant="friday-reload" />
 
       <Section id="haeufig-gestellte-fragen" title="Häufig gestellte Fragen" className="">
         <div className="card-grid card-grid--two germany-faq-grid">
