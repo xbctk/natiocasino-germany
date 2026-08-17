@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { BONUS_AFFILIATE_URL } from "./affiliateLinks";
 import { AppPromoBanner } from "./AppPromoBanner";
+import { JsonLd } from "./JsonLd";
 import { PromotionBanner } from "./PromotionBanner";
 import { ReviewsSlider } from "./ReviewsSlider";
 
@@ -12,6 +13,15 @@ const germanPlayerReviews = [
   { review: "„Ich verstehe den RTP nicht mal wirklich, aber ich mag, dass er da ist.\" Mein Sohn hat es mir zweimal erklärt, und ich könnte dir immer noch nicht genau sagen, was 138 % bedeutet, irgendwas mit jüngsten Auszahlungen, sagte er. Aber ich mag einen Ort, der einem Dinge zeigt, statt sie zu verstecken. Fühlt sich ehrlich an. Ich spiele meist den Frosch-Slot mit der Elvis-Musik, der mich jedes Mal zum Lachen bringt, und die Sonntags-Spins sind mehr wert als die Freispiele, die ich irgendwo sonst bekomme. — Eleanor" },
   { review: "„Die Turniere haben mich erwischt, und ich bin nicht stolz darauf.\" Fing mit den Treasure Races als Scherz an, weil ich den kleinen Countdown-Timer mochte. Jetzt prüfe ich morgens, wo ich auf der Bestenliste stehe, bevor ich meine E-Mails prüfe. Es sind dieselben Spins, die ich ohnehin machen würde, das rede ich mir jedenfalls ein, aber da ist etwas am Gerankt-Sein, das einen gewöhnlichen Dienstagabend wichtig anfühlen lässt. Die 300 Freispiele schaden auch nicht. — Dani" },
   { review: "„Tiefer Katalog, hat eine Weile gedauert, meine Ecke zu finden.\" In der ersten Woche war ich überfordert — es ist einfach viel davon, und ich sprang herum, ohne wirklich irgendwo zu landen. Dann fand ich das Hold-&-Win-Regal und ging im Grunde nie wieder weg. Auf genau die Studios filtern zu können, denen ich vertraue, ist die Sache, die es für mich klick machen ließ. Der Support beantwortete eine Zahlungsfrage zu einer unchristlichen Stunde und war tatsächlich hilfreich, was ich gelernt habe, nicht als selbstverständlich zu nehmen. Solider Ort, sobald du deine Ecke davon gefunden hast. — Kwame" },
+] as const;
+
+const germanMainFaqItems = [
+  ["Was bedeutet die RTP-Zahl auf jedem Spiel eigentlich?", "Es ist der Live-Return-to-Player-Wert — eine Momentaufnahme davon, wie das Spiel über die jüngste Spielphase ausgezahlt hat, keine Garantie für deinen nächsten Spin. Der langfristig konfigurierte RTP, meist 94–97 %, ist der Wert, der deine Chancen über die Zeit bestimmt; die Zahl auf der Kachel zeigt nur das jüngste Verhalten. Beide sind nützlich; keiner sagt irgendetwas voraus."],
+  ["Ist National Casino sicher zu spielen?", "Es hält eine Curaçao-Lizenz, was echte regulatorische Aufsicht und zertifizierte Zufallsgeneratoren bedeutet. Es ist ein Regime mit leichterer Hand als die strengsten EU-Jurisdiktionen, also legitim und funktionierend statt maximal reguliert. Für die meisten Spieler ist das vollkommen solide — geh einfach mit dem Wissen hinein, in welcher Klasse du spielst."],
+  ["Kann ich hier wirklich Geld gewinnen?", "Ja — das sind Echtgeld-Spiele mit echten Auszahlungen, und die RTP-Werte sind echt. Aber jedes Spiel trägt einen Hausvorteil, was genau der Grund ist, warum der Rat zum verantwortungsvollen Spielen oben existiert. Spiel zur Unterhaltung, behandle Gewinne als Zugabe und jage niemals hinterher."],
+  ["Muss ich eine App herunterladen, um am Handy zu spielen?", "Nein. Du kannst die Web-App zu deinem Startbildschirm hinzufügen für ein app-ähnliches Erlebnis, oder einfach in jedem mobilen Browser spielen. Beide nutzen dasselbe Konto und dieselben Spiele. Das Installieren bringt dir 10 Freispiele ohne Einzahlung."],
+  ["Wie steige ich im VIP-Programm auf?", "Automatisch, durch das Spielen von Slots. Du verdienst einen Comp Point für je 20 € Umsatz an Slots, und die Leiter läuft fünfzehn Stufen tief mit Belohnungen, die von Freispielen bis zu spürbarem Bargeld skalieren. Punkte werden alle zwei Monate zurückgesetzt, es belohnt also stetiges Spiel."],
+  ["Warum nutzen Auszahlungen nur Karten, wenn ich in Krypto eingezahlt habe?", "Das ist eine echte Eigenheit des Setups: Einzahlungen akzeptieren Krypto und E-Wallets, aber Auszahlungen laufen über Visa und Mastercard. Plane deine Auszahlungsmethode mit diesem Wissen, statt anzunehmen, dass das Geld auf demselben Weg hinausgeht, auf dem es hereinkam."],
 ] as const;
 
 const liveGameShows = [
@@ -424,25 +434,24 @@ export function MainContent() {
       <PromotionBanner variant="friday-reload" />
 
       <Section id="haeufig-gestellte-fragen" title="Häufig gestellte Fragen" className="">
-        <div className="card-grid card-grid--two germany-faq-grid">
-          <article className="info-card">
-            <p>Was bedeutet die RTP-Zahl auf jedem Spiel eigentlich? Es ist der Live-Return-to-Player-Wert — eine Momentaufnahme davon, wie das Spiel über die jüngste Spielphase ausgezahlt hat, keine Garantie für deinen nächsten Spin. Der langfristig konfigurierte RTP, meist 94–97 %, ist der Wert, der deine Chancen über die Zeit bestimmt; die Zahl auf der Kachel zeigt nur das jüngste Verhalten. Beide sind nützlich; keiner sagt irgendetwas voraus.</p>
-          </article>
-          <article className="info-card">
-            <p>Ist National Casino sicher zu spielen? Es hält eine Curaçao-Lizenz, was echte regulatorische Aufsicht und zertifizierte Zufallsgeneratoren bedeutet. Es ist ein Regime mit leichterer Hand als die strengsten EU-Jurisdiktionen, also legitim und funktionierend statt maximal reguliert. Für die meisten Spieler ist das vollkommen solide — geh einfach mit dem Wissen hinein, in welcher Klasse du spielst.</p>
-          </article>
-          <article className="info-card">
-            <p>Kann ich hier wirklich Geld gewinnen? Ja — das sind Echtgeld-Spiele mit echten Auszahlungen, und die RTP-Werte sind echt. Aber jedes Spiel trägt einen Hausvorteil, was genau der Grund ist, warum der Rat zum verantwortungsvollen Spielen oben existiert. Spiel zur Unterhaltung, behandle Gewinne als Zugabe und jage niemals hinterher.</p>
-          </article>
-          <article className="info-card">
-            <p>Muss ich eine App herunterladen, um am Handy zu spielen? Nein. Du kannst die Web-App zu deinem Startbildschirm hinzufügen für ein app-ähnliches Erlebnis, oder einfach in jedem mobilen Browser spielen. Beide nutzen dasselbe Konto und dieselben Spiele. Das Installieren bringt dir 10 Freispiele ohne Einzahlung.</p>
-          </article>
-          <article className="info-card">
-            <p>Wie steige ich im VIP-Programm auf? Automatisch, durch das Spielen von Slots. Du verdienst einen Comp Point für je 20 € Umsatz an Slots, und die Leiter läuft fünfzehn Stufen tief mit Belohnungen, die von Freispielen bis zu spürbarem Bargeld skalieren. Punkte werden alle zwei Monate zurückgesetzt, es belohnt also stetiges Spiel.</p>
-          </article>
-          <article className="info-card">
-            <p>Warum nutzen Auszahlungen nur Karten, wenn ich in Krypto eingezahlt habe? Das ist eine echte Eigenheit des Setups: Einzahlungen akzeptieren Krypto und E-Wallets, aber Auszahlungen laufen über Visa und Mastercard. Plane deine Auszahlungsmethode mit diesem Wissen, statt anzunehmen, dass das Geld auf demselben Weg hinausgeht, auf dem es hereinkam.</p>
-          </article>
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: germanMainFaqItems.map(([question, answer]) => ({
+              "@type": "Question",
+              name: question,
+              acceptedAnswer: { "@type": "Answer", text: answer },
+            })),
+          }}
+        />
+        <div className="faq-list">
+          {germanMainFaqItems.map(([question, answer], index) => (
+            <details key={question} name="main-faq" open={index === 0}>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
+          ))}
         </div>
       </Section>
 
