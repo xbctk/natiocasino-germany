@@ -35,7 +35,7 @@ export function Hero({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+              { "@type": "ListItem", position: 1, name: "Startseite", item: `${siteUrl}/` },
               { "@type": "ListItem", position: 2, name: breadcrumbLabel, item: `${siteUrl}${breadcrumbPath}` },
             ],
           }}
@@ -47,12 +47,12 @@ export function Hero({
         {breadcrumbLabel ? (
           <nav className="hero__breadcrumbs" aria-label="Breadcrumb">
             <ol>
-              <li><Link href="/">Home</Link></li>
+              <li><Link href="/">Startseite</Link></li>
               <li><span aria-current="page">{breadcrumbLabel}</span></li>
             </ol>
           </nav>
         ) : (
-          <p className="hero__rating">Overall Rating 4.4/5</p>
+          <p className="hero__rating">Gesamtbewertung 4.4/5</p>
         )}
         <h1 id="hero-title">
           {titleLines.map((line) => <span className="hero__line" key={line}>{line}</span>)}
@@ -62,7 +62,7 @@ export function Hero({
         </p>
         {showAction ? (
           <a className="button button--primary hero__button" href={GENERAL_AFFILIATE_URL} rel="sponsored">
-            Join now
+            Jetzt beitreten
           </a>
         ) : null}
       </div>

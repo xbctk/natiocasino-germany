@@ -15,8 +15,8 @@ function DownloadButton({ platform }: { platform: "android" | "ios" }) {
         aria-hidden="true"
       />
       <span className="app-download-button__text">
-        <span>Download the</span>
-        <span>{isAndroid ? "Android App" : "iOS App"}</span>
+        <span>Lade die</span>
+        <span>{isAndroid ? "Android-App herunter" : "iOS-App herunter"}</span>
       </span>
     </a>
   );

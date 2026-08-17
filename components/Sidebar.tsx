@@ -40,11 +40,11 @@ const brandMenuItems: Array<{
   icon: BrandMenuIconName;
   label: string;
 }> = [
-  { icon: "games", label: "Games" },
-  { icon: "dealers", label: "Live dealers" },
-  { icon: "promotions", label: "Promotions", badge: "14" },
-  { icon: "tournaments", label: "Tournaments", badge: "3" },
-  { icon: "hall", label: "Hall of fame" },
+  { icon: "games", label: "Spiele" },
+  { icon: "dealers", label: "Live-Dealer" },
+  { icon: "promotions", label: "Aktionen", badge: "14" },
+  { icon: "tournaments", label: "Turniere", badge: "3" },
+  { icon: "hall", label: "Ruhmeshalle" },
   { icon: "vip", label: "VIP" },
 ];
 
@@ -72,13 +72,13 @@ function BrandSidebarMenu() {
               <Image alt="" className="brand-menu__wheel" height={65} src="/sidebar/fortune-wheel.webp" width={65} />
             </span>
           </span>
-          <strong>Fortune wheel</strong>
+          <strong>Glückrad</strong>
         </a>
         <a className="brand-menu__promo" href={GENERAL_AFFILIATE_URL} rel="sponsored">
           <span className="brand-menu__promo-art brand-menu__promo-art--missions" aria-hidden="true">
             <Image alt="" height={46} src="/sidebar/missions.svg" width={46} />
           </span>
-          <strong>Missions</strong>
+          <strong>Missionen</strong>
         </a>
       </div>
 
@@ -102,8 +102,8 @@ function BrandSidebarMenu() {
 
       <a className="brand-menu__application" href={GENERAL_AFFILIATE_URL} rel="sponsored">
         <div>
-          <strong>Application</strong>
-          <p>Download our app!</p>
+          <strong>Anwendung</strong>
+          <p>Lade unsere App herunter!</p>
         </div>
         <div className="brand-menu__application-media" aria-hidden="true">
           <Image alt="" height={332} src="/sidebar/application.png" width={284} />

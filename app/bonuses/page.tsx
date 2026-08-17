@@ -36,7 +36,7 @@ export default function BonusesPage() {
       <div className="page-layout">
         <Sidebar label="Bonuses page sections" sections={bonusesSections} />
         <main className="page-main">
-          <Hero breadcrumbLabel="Bonuses" breadcrumbPath="/bonuses" descriptionLines={descriptionLines} imageSrc="/content/bonuses/hero.webp" titleLines={titleLines} />
+          <Hero breadcrumbLabel="Boni" breadcrumbPath="/bonuses" descriptionLines={descriptionLines} imageSrc="/content/bonuses/hero.webp" titleLines={titleLines} />
           <BonusesContent />
           <Footer />
         </main>

@@ -19,13 +19,13 @@ export const bonusesSections: ReadonlyArray<readonly [string, string]> = [
 ];
 
 function Section({
-  actionLabel = "Join now",
+  actionLabel = "Jetzt beitreten",
   children,
   className = "",
   id,
   title,
 }: {
-  actionLabel?: "Join now" | null;
+  actionLabel?: "Jetzt beitreten" | null;
   children: ReactNode;
   className?: string;
   id: string;
@@ -241,7 +241,7 @@ export function BonusesContent() {
                 <p>To participate, you must:</p>
                 <StepList><li>Open the Prize Drops card.</li><li>Check the duration of the promotion.</li><li>Select a game from the list of participating slots.</li><li>Use a bid not lower than the set minimum.</li><li>Continue playing during the campaign period.</li></StepList>
                 <p>A separate participation fee is usually not required. However, the total fund of NZ$160,000 is distributed among all eligible participants and is not a guaranteed single player prize.</p>
-                <a className="button button--primary bonus-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Get bonus</a>
+                <a className="button button--primary bonus-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
               </div>
               <div className="bonus-card__art slot-promotion-card__art" aria-hidden="true">
                 <Image src="/bonuses/special/prize-drops.webp" alt="" width={482} height={590} loading="eager" unoptimized />
@@ -255,7 +255,7 @@ export function BonusesContent() {
                 <p>The rewards are distributed in the provider&apos;s suitable games. Before starting, you need to check:</p>
                 <ul className="feature-list"><li>list of participating slots;</li><li>period of the event;</li><li>the minimum bid;</li><li>Reward drop rules;</li><li>availability of wagering;</li><li>the deadline for receiving the winnings.</li></ul>
                 <p>Despite the use of NZD in the account, the fund of this campaign is displayed in EUR.</p>
-                <a className="button button--primary bonus-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Get bonus</a>
+                <a className="button button--primary bonus-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
               </div>
               <div className="bonus-card__art slot-promotion-card__art" aria-hidden="true">
                 <Image src="/bonuses/special/pragmatic-dw.webp" alt="" width={449} height={544} loading="eager" unoptimized />
@@ -268,7 +268,7 @@ export function BonusesContent() {
                 <p>BGaming Drops includes 12,000 prizes in suitable BGaming slots.</p>
                 <p>The reward can appear directly during a regular spin. To participate, the selected game, the amount of the bet and the time of the round must comply with the rules of the current campaign.</p>
                 <p>Launching any BGaming slot does not guarantee participation: you must use a title that is included in the current promotion list.</p>
-                <a className="button button--primary bonus-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Get bonus</a>
+                <a className="button button--primary bonus-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
               </div>
               <div className="bonus-card__art slot-promotion-card__art slot-promotion-card__art--compact" aria-hidden="true">
                 <Image src="/bonuses/special/bgaming-drops.webp" alt="" width={277} height={312} loading="eager" unoptimized />
@@ -282,7 +282,7 @@ export function BonusesContent() {
                 <p>Possible results may be:</p>
                 <ul className="feature-list"><li>Free Spins;</li><li>bonus funds;</li><li>Reward Points;</li><li>a cash prize.</li></ul>
                 <p>The composition of the awards depends on the available type of wheel. After the spin, the prize may require manual activation in the Bonuses section.</p>
-                <a className="button button--primary bonus-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Get bonus</a>
+                <a className="button button--primary bonus-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
               </div>
               <div className="bonus-card__art slot-promotion-card__art" aria-hidden="true">
                 <Image src="/bonuses/special/fortune-wheel.webp" alt="" width={481} height={590} loading="eager" unoptimized />
@@ -340,7 +340,7 @@ export function BonusesContent() {
               <p>Cashback can be credited in several forms:</p>
               <ul className="feature-list"><li>real-money balance;</li><li>bonus balance;</li><li>Free Spins;</li><li>Comp Points;</li><li>personal VIP reward.</li></ul>
               <p>The total maximum winnings associated with the cashback bonus is NZ$10,000, unless the individual rules set a different limit.</p>
-              <a className="button button--primary bonus-card__action" href={GENERAL_AFFILIATE_URL} rel="sponsored">Join now</a>
+              <a className="button button--primary bonus-card__action" href={GENERAL_AFFILIATE_URL} rel="sponsored">Jetzt beitreten</a>
             </div>
             <div className="bonus-card__art cashback-bonus-card__art" aria-hidden="true">
               <Image src="/bonuses/friday-reload.png" alt="" width={448} height={431} unoptimized />
@@ -355,7 +355,7 @@ export function BonusesContent() {
             <PlaceholderMedia src="/content/bonuses/cashback-claim.webp" alt="Player claiming casino cashback" position="68% center" />
           </div>
           <p>Some personal offers may be activated automatically.</p>
-          <a className="button button--primary content-section__action" href={GENERAL_AFFILIATE_URL} rel="sponsored">Join now</a>
+          <a className="button button--primary content-section__action" href={GENERAL_AFFILIATE_URL} rel="sponsored">Jetzt beitreten</a>
         </div>
       </Section>
 
@@ -425,7 +425,7 @@ export function BonusesContent() {
           <p>National Casino offers New Zealand players bonuses for both first and second deposits. The initial series includes the First Deposit Bonus, Crypto First Deposit Bonus and Highroller Bonus, after which the Second Deposit Bonus, Friday Reload, Unlimited Bonus and other offers become available.</p>
           <p>Slot lovers can also get Free Spins, participate in Prize Drops and use Pragmatic Play and BGaming promotions. Regular users have access to Comp Points, 15 VIP Club levels, Status upgrade rewards, and VIP Sunday Boost.</p>
           <p>National Casino offers a wide range of promotions, but the optimal bonus remains, the terms of which correspond to the gaming budget and do not require an increase in planned expenses.</p>
-          <a className="button button--primary content-section__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Get bonus</a>
+          <a className="button button--primary content-section__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
         </div>
       </Section>
     </div>

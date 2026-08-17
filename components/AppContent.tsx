@@ -97,8 +97,8 @@ function DownloadButton({ platform }: { platform: "android" | "ios" }) {
         aria-hidden="true"
       />
       <span className="app-download-button__text">
-        <span>Download the</span>
-        <span>{isAndroid ? "Android App" : "iOS App"}</span>
+        <span>Lade die</span>
+        <span>{isAndroid ? "Android-App herunter" : "iOS-App herunter"}</span>
       </span>
     </a>
   );
@@ -303,7 +303,7 @@ export function AppContent() {
             ["Does not provide install bonus", "Allows you to get 10 Free Spins for the first install"],
           ]}
         />
-        <a className="button button--primary content-section__action" href={GENERAL_AFFILIATE_URL} rel="sponsored">Join now</a>
+        <a className="button button--primary content-section__action" href={GENERAL_AFFILIATE_URL} rel="sponsored">Jetzt beitreten</a>
       </Section>
 
       <Section id="app-faq" title="FAQ">
@@ -364,7 +364,7 @@ export function AppContent() {
             <li>10 Free Spins for the first suitable installation.</li>
           </ul>
           <p>The main limitation is that the application does not work without the Internet. The National Casino App is suitable for users who regularly access the platform from a smartphone and want to get more convenient access without constantly opening a browser.</p>
-          <a className="button button--primary content-section__action" href={GENERAL_AFFILIATE_URL} rel="sponsored">Join now</a>
+          <a className="button button--primary content-section__action" href={GENERAL_AFFILIATE_URL} rel="sponsored">Jetzt beitreten</a>
         </div>
       </Section>
 

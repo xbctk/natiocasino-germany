@@ -2824,6 +2824,18 @@ tr > :last-child {
     padding-inline: var(--space-nested);
   }
 
+  .app-promo-banner .app-download-button {
+    gap: 8px;
+    padding-inline: 12px;
+  }
+
+  .app-promo-banner .app-download-button__text {
+    min-width: 0;
+    flex: 1 1 auto;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
   .promotion-banner__content {
     width: min(66%, 620px);
     padding-left: 60px;

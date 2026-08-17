@@ -3,18 +3,16 @@ import Link from "next/link";
 import { GENERAL_AFFILIATE_URL } from "./affiliateLinks";
 
 const footerLinks = [
-  ["Responsible Gaming", "/responsible-gaming"],
-  ["Terms and Conditions", GENERAL_AFFILIATE_URL],
-  ["Privacy policy", GENERAL_AFFILIATE_URL],
-  ["Bonuses - General Terms", GENERAL_AFFILIATE_URL],
+  ["VERANTWORTUNGSVOLLES SPIELEN", "/responsible-gaming"],
+  ["ALLGEMEINE GESCHÄFTSBEDINGUNGEN", GENERAL_AFFILIATE_URL],
+  ["DATENSCHUTRICHTLINIE", GENERAL_AFFILIATE_URL],
+  ["BONUSBEDINGUNGEN", GENERAL_AFFILIATE_URL],
   ["FAQ", GENERAL_AFFILIATE_URL],
-  ["About Us", GENERAL_AFFILIATE_URL],
-  ["Contact Us", GENERAL_AFFILIATE_URL],
+  ["ÜBER UNS", GENERAL_AFFILIATE_URL],
+  ["KONTAKT", GENERAL_AFFILIATE_URL],
 ] as const;
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="site-footer">
       <div className="site-footer__ornament" aria-hidden="true">
@@ -44,13 +42,12 @@ export function Footer() {
         <span className="site-footer__age" aria-label="Adults only, 18 plus">18+</span>
         <div className="site-footer__legal-copy">
           <p>
-            This website is managed and operated by TechSolutions (CY) Group Limited (reg.number HE 377018) with
-            registered office located at Parthenonos 5, Flat 103, 2020, Nicosia, Cyprus as a Billing Agent and
-            operated by TechSolutions Group N.V. (registration number 144920 (0)) as a licence holder
-            (8048/JAZ2017-067) with address at Dr. H. Fergusonweg 1, Curacao.
+            Diese Website wird als Zahlungsabwickler verwaltet und betrieben von TechSolutions (CY) Group Limited
+            (Registrierungsnummer HE 377018) mit eingetragenem Sitz in Parthenonos 5, Apartment 103, 2020, Nikosia,
+            Zypern und von der TechSolutions Group N.V. (Registrierungsnummer 144920 (0)) als Lizenzinhaber
+            (8048/JAZ2017-067) mit der Adresse in Dr. H. Fergusonweg 1, Curacao betrieben.
           </p>
-          <p>Gambling can be addictive. Play responsibly.</p>
-          <p>© {currentYear} National Casino New Zealand.</p>
+          <p>Das Glücksspiel kann süchtig machen. Spielen Sie verantwortungsvoll.</p>
         </div>
         <div className="site-footer__validator">
           <Image alt="GCB certification — cert.gcb.cw" height={180} src="/footer/gcb-validator.png" width={326} />

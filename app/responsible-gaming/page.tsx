@@ -36,7 +36,7 @@ export default function ResponsibleGamingPage() {
       <div className="page-layout">
         <Sidebar label="Responsible Gaming page sections" sections={responsibleGamingSections} />
         <main className="page-main">
-          <Hero breadcrumbLabel="Responsible Gaming" breadcrumbPath="/responsible-gaming" className="responsible-gaming-hero" descriptionLines={descriptionLines} imageSrc="/content/responsible-gaming/hero.webp" showAction={false} titleLines={titleLines} />
+          <Hero breadcrumbLabel="VERANTWORTUNGSVOLLES SPIELEN" breadcrumbPath="/responsible-gaming" className="responsible-gaming-hero" descriptionLines={descriptionLines} imageSrc="/content/responsible-gaming/hero.webp" showAction={false} titleLines={titleLines} />
           <ResponsibleGamingContent />
           <Footer />
         </main>

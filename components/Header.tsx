@@ -8,8 +8,8 @@ import { GENERAL_AFFILIATE_URL } from "./affiliateLinks";
 import { Brand } from "./Brand";
 
 const pages = [
-  { href: "/", label: "Main" },
-  { href: "/bonuses", label: "Bonuses" },
+  { href: "/", label: "Startseite" },
+  { href: "/bonuses", label: "Boni" },
   { href: "/app", label: "App" },
 ];
 
@@ -45,16 +45,16 @@ export function Header() {
 
         <div className="header-actions">
           <a className="button button--secondary" href={GENERAL_AFFILIATE_URL} rel="sponsored">
-            Log In
+            Anmelden
           </a>
           <a className="button button--primary" href={GENERAL_AFFILIATE_URL} rel="sponsored">
-            Register now
+            Registrieren
           </a>
-          <div className="location" aria-label="Location: New Zealand">
+          <div className="location" aria-label="Location: Germany">
             <span className="location__flag" aria-hidden="true">
-              <Image alt="" height={36} src="/brand/flag-nz.svg" width={36} />
+              <Image alt="" height={36} src="/brand/flag-de.svg" width={36} />
             </span>
-            <span>NZ</span>
+            <span>DE</span>
           </div>
         </div>
 
@@ -86,9 +86,9 @@ export function Header() {
             </Link>
           ))}
           <div className="mobile-primary-nav__actions">
-            <a className="button button--secondary" href={GENERAL_AFFILIATE_URL} rel="sponsored">Log In</a>
-            <a className="button button--primary" href={GENERAL_AFFILIATE_URL} rel="sponsored">Register now</a>
-            <div className="location" aria-label="Location: New Zealand"><span className="location__flag" aria-hidden="true"><Image alt="" height={36} src="/brand/flag-nz.svg" width={36} /></span><span>NZ</span></div>
+            <a className="button button--secondary" href={GENERAL_AFFILIATE_URL} rel="sponsored">Anmelden</a>
+            <a className="button button--primary" href={GENERAL_AFFILIATE_URL} rel="sponsored">Registrieren</a>
+            <div className="location" aria-label="Location: Germany"><span className="location__flag" aria-hidden="true"><Image alt="" height={36} src="/brand/flag-de.svg" width={36} /></span><span>DE</span></div>
           </div>
         </nav>
       ) : null}

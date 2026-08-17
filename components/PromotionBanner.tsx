@@ -3,27 +3,27 @@ import { BONUS_AFFILIATE_URL } from "./affiliateLinks";
 
 const promotionBanners = {
   "first-deposit": {
-    title: "First Deposit Bonus",
-    offer: "100% up to NZ$500",
-    bonus: "+ 100 Free spins",
+    title: "Einzahlungsbonus",
+    offer: "100 % bis zu 100 EUR",
+    bonus: "+ 100 Freispiele",
     image: "/banners/first-deposit.webp",
   },
   "second-deposit": {
-    title: "Second Deposit Bonus",
-    offer: "50% up to NZ$1000",
-    bonus: "+ 50 Free spins",
+    title: "Zweite Einzahlungsbonus",
+    offer: "50 % bis zu 200 EUR",
+    bonus: "+ 50 Freispiele",
     image: "/banners/second-deposit.webp",
   },
   highroller: {
-    title: "Highroller Bonus",
-    offer: "100% up to NZ$3000",
+    title: "Highroller-Bonus",
+    offer: "100 % bis zu 750 EUR",
     bonus: null,
     image: "/banners/highroller.webp",
   },
   "friday-reload": {
-    title: "Friday Reload Bonus",
-    offer: "50% up to NZ$250",
-    bonus: "+ 100 Free spins",
+    title: "Freitags-Reload-Bonus",
+    offer: "50 % bis zu 250 EUR",
+    bonus: "+ 100 Freispiele",
     image: "/banners/friday-reload.webp",
   },
 } as const;
@@ -50,7 +50,7 @@ export function PromotionBanner({ variant }: { variant: PromotionBannerVariant }
           <span className="promotion-banner__offer-main">{banner.offer}</span>
           {banner.bonus && <span className="promotion-banner__offer-bonus">{banner.bonus}</span>}
         </p>
-        <a className="button button--primary promotion-banner__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Get bonus</a>
+        <a className="button button--primary promotion-banner__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
       </div>
     </aside>
   );
