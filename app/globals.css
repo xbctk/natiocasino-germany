@@ -2119,14 +2119,17 @@ tr > :last-child {
 }
 
 .germany-bonus-grid .promotion-art-card h3 {
-  padding: 0;
+  padding: 0 0 var(--space-nested);
   margin: 0 0 var(--space-nested);
   color: var(--gold);
-  border: 0;
+  border-bottom: 1px solid rgb(254 200 130 / 28%);
   text-shadow: 0 2px 16px rgb(0 0 0 / 70%);
 }
 
 .germany-bonus-grid .promotion-art-card p {
+  width: 100%;
+  max-width: none;
+  margin-bottom: 0;
   color: var(--text);
   line-height: 1.55;
   text-shadow: 0 2px 14px rgb(0 0 0 / 78%);
