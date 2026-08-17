@@ -1366,6 +1366,13 @@ tr > :last-child {
 }
 
 @media (min-width: 1181px) {
+  .main-content .image-copy-section--wide-title > h2 {
+    grid-template-columns: max-content minmax(48px, 1fr);
+    width: 100%;
+    font-size: clamp(22px, 2vw, 35px);
+    white-space: nowrap;
+  }
+
   .bonuses-content .content-section > h2,
   .app-content .content-section > h2 {
     grid-template-columns: max-content minmax(48px, 1fr);

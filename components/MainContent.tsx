@@ -1,6 +1,5 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { PlaceholderMedia } from "./PlaceholderMedia";
 import { ReviewsSlider } from "./ReviewsSlider";
 
 const germanPlayerReviews = [
@@ -19,13 +18,12 @@ function Section({ children, className = "", id, title }: { children: ReactNode;
 export function MainContent() {
   return (
     <div className="main-content">
-      <Section id="national-casino-spielsaal" title="National Casino: Ein Spielsaal, der seine Karten offenlegt" className="">
-        <div className="split-layout intro-layout">
-          <div className="prose-block">
+      <Section id="national-casino-spielsaal" title="National Casino: Ein Spielsaal, der seine Karten offenlegt" className="image-copy-section image-copy-section--wide-title">
+        <Image className="image-copy-section__image" src="/content/main/overview.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <div className="image-copy-section__overlay" aria-hidden="true" />
+        <div className="image-copy-section__copy">
             <p>Die meisten Casinos bitten dich, der Atmosphäre zu vertrauen. Tritt ein, bewundere das Licht, glaube einfach daran, dass die Spiele hinter den hübschen Kacheln auch wirklich auszahlen, was sie versprechen. National Casino macht etwas Leiseres und, sobald man es bemerkt, ein wenig Entwaffnendes: Es reicht dir die Beweise, bevor du dich überhaupt hinsetzt. Jedes Spiel im Saal trägt seinen Return-to-Player-Wert offen im Gesicht, direkt auf der Kachel, und aktualisiert ihn, während der Raum spielt. Es ist eine kleine Design-Entscheidung, die fast alles über diesen Ort verrät.</p>
             <p>Das ganze Casino ist wie eine Detektivgeschichte eingekleidet — Lupen, verborgene Boni, die darauf warten, aufgedeckt zu werden, ein schnauzbärtiger Ermittler, der auf der Hälfte der Werbebanner auftaucht — und dieses Thema erweist sich als mehr als bloße Kulisse. Das ist ein Spielsaal, gebaut für die Spielerin und den Spieler, die das Kleingedruckte lesen, die gerne die Zahlen kennen, die lieber genau hinschauen, als sich blenden zu lassen. Wenn das auf dich zutrifft, wirst du dich hier schnell zu Hause fühlen. Und wenn nicht, gibt es hier immer noch mehr als genug zu genießen, ohne je auf einen einzigen Prozentwert schielen zu müssen. Machen wir einen Rundgang.</p>
-          </div>
-          <PlaceholderMedia src="/content/main/overview.webp" alt="National Casino Spielsaal" position="center" />
         </div>
       </Section>
 
@@ -226,13 +224,12 @@ export function MainContent() {
         <p>Wo ein Wert mit einer Tilde markiert ist, behandle ihn als Arbeitsschätzung, die gegen das Info-Panel des Spiels selbst zu prüfen ist — RTP und Limits können sich zwischen Betreiber-Konfigurationen verschieben, und der ehrliche Zug ist, die Auszahlungstabelle im Spiel zu prüfen, statt irgendeine einzelne veröffentlichte Zahl als Evangelium zu nehmen. Das Muster, das zählt: Das ist eine Bibliothek mit echter Bandbreite. Burning Chilli X ist ein Grinder mit niedriger Volatilität und hohem RTP für eine lange ruhige Session; Gates of Olympus Super Scatter ist ein Monster sehr hoher Volatilität, das hundert Spins kalt bleiben und dir dann 50.000x in die Hand drücken kann. Zu wissen, in welcher Stimmung du gerade bist, ist die halbe Miete, um hier gut zu spielen.</p>
       </Section>
 
-      <Section id="anbieter" title="Die Anbieter hinter dem Spielsaal" className="">
-        <div className="split-layout">
-          <div className="prose-block">
+      <Section id="anbieter" title="Die Anbieter hinter dem Spielsaal" className="image-copy-section image-copy-section--wide-title">
+        <Image className="image-copy-section__image" src="/content/main/license.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <div className="image-copy-section__overlay" aria-hidden="true" />
+        <div className="image-copy-section__copy">
             <p>Ein Spiel ist nur so gut wie das Studio, das es gebaut hat, und Nationals Aufgebot liest sich wie ein Who&#x27;s Who dessen, was die Leute gerade wirklich spielen. Pragmatic Play bringt die Volatilitätsmaschinen mit hohem Deckel und das Gates-of-Olympus-Universum. Hacksaw Gaming liefert die scharfen, modernen Titel hoher Varianz, denen die Streaming-Szene hinterherjagt. BGaming deckt das krypto-freundliche, nachweislich faire Ende mit einem riesigen Backkatalog ab. Dann füllen Felix Gaming, Spinomenal, Novomatic, Fugaso und NetGame die Breite auf — klassische Walzen, Book-Slots, Hold-&amp;-Win-Gitter, das ganze Programm.</p>
             <p>Auf der Live-Seite ist die ehrliche Anmerkung, dass sich der Spielsaal stark auf Evolution stützt. Das ist eine Stärke, formuliert als milde Verengung: Evolution ist schlicht das beste Studio im Live-Dealer-Geschäft, sich darauf zu stützen bedeutet also, dass die Qualität hoch und beständig ist. Aber es bedeutet eben auch, dass du, wenn du über die Live-Etage gehst, größtenteils durch die Welt eines einzigen Unternehmens gehst, wobei Pragmatic Play Live, Ezugi, Playtech und Winfinity eher die Ränder abrunden, als sich den Raum gleichberechtigt zu teilen. Wenn Evolutions Tische ohnehin deine Favoriten sind — und für viele Spieler sind sie das — dann ist das ein Feature, keine Einschränkung.</p>
-          </div>
-          <PlaceholderMedia src="/content/main/license.webp" alt="Spielanbieter im National Casino" position="center" />
         </div>
       </Section>
 
@@ -291,42 +288,38 @@ export function MainContent() {
         </div>
       </Section>
 
-      <Section id="turniere" title="Turniere" className="">
-        <div className="split-layout">
-          <div className="prose-block">
+      <Section id="turniere" title="Turniere" className="image-copy-section image-copy-section--wide-title">
+        <Image className="image-copy-section__image" src="/content/shared/tournament.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <div className="image-copy-section__overlay" aria-hidden="true" />
+        <div className="image-copy-section__copy">
             <p>Neben dem VIP-Grind betreibt National eine rotierende Auswahl an Turnieren — zeitlich begrenzte Rennen, bei denen dein Spiel eine Bestenliste gegen die aller anderen hochklettert. Die wiederkehrende „Treasure Race&quot;-Reihe ist das Rückgrat: ein Sonic Treasure Race mit einem Pool von 100 € plus 300 Freispielen, ein Flash Treasure Race mit 75 € plus 300 Spins, ein Rapid Treasure Race mit 50 € plus 300 Spins, jedes auf seinem eigenen Countdown. Das sind druckarme Wege, einer Session, die du ohnehin gespielt hättest, einen Wettbewerbsreiz hinzuzufügen — du riskierst nichts Zusätzliches, du wirst nur für die Spins gerankt, die du sowieso machst. Für einen bestimmten Spielertyp ist genau diese Bestenliste der Haken, der einen gewöhnlichen Abend interessanter macht.</p>
-          </div>
-          <PlaceholderMedia src="/content/shared/tournament.webp" alt="National Casino Turniere" position="center" />
         </div>
       </Section>
 
-      <Section id="registrierung-und-anmeldung" title="Loslegen: Registrierung und Anmeldung" className="">
-        <div className="split-layout">
-          <div className="prose-block">
+      <Section id="registrierung-und-anmeldung" title="Loslegen: Registrierung und Anmeldung" className="image-copy-section image-copy-section--wide-title">
+        <Image className="image-copy-section__image" src="/content/main/registration.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <div className="image-copy-section__overlay" aria-hidden="true" />
+        <div className="image-copy-section__copy">
             <p>Die Anmeldung ist bewusst schnell gehalten. Von der Startseite aus klickst du auf Registrieren, gibst die Basics an — E-Mail, Passwort, deine Angaben, bevorzugte Währung — und bestätigst, dass du volljährig bist. Irgendwann vor deiner ersten Auszahlung gibt es einen leichten Verifizierungsschritt, der Standard ist und ebenso zu deinem Schutz existiert wie zu dem des Casinos. Bist du einmal drin, ist das erneute Einloggen nur deine E-Mail und dein Passwort, von jedem Gerät aus.</p>
             <p>Dieser letzte Teil zählt mehr, als er klingt: Dein Konto ist an dein Profil gebunden, nicht an dein Gerät. Registriere dich auf einem Laptop, logge dich später auf dem Handy ein, und dein Guthaben, deine Boni, deine VIP-Stufe und deine Historie sind alle genau da, wo du sie gelassen hast. Es gibt kein separates Mobil-Konto zu jonglieren — eine Anmeldung folgt dir überallhin.</p>
-          </div>
-          <PlaceholderMedia src="/content/main/registration.webp" alt="Registrierung im National Casino" position="center" />
         </div>
       </Section>
 
-      <Section id="spielen-am-handy" title="Spielen am Handy" className="">
-        <div className="split-layout">
-          <div className="prose-block">
+      <Section id="spielen-am-handy" title="Spielen am Handy" className="image-copy-section image-copy-section--wide-title">
+        <Image className="image-copy-section__image" src="/content/app/general-install.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <div className="image-copy-section__overlay" aria-hidden="true" />
+        <div className="image-copy-section__copy">
             <p>National drängt an den meisten Orten keinen klassischen App-Store-Download auf, und ehrlich gesagt erweist sich das als die bessere Lösung. Statt einer nativen App bietet es eine installierbare Web-App — eine Version, die du direkt aus dem Browser zu deinem Startbildschirm hinzufügst, die dann in ihrem eigenen Fenster mit eigenem Icon öffnet und sich fast genau wie eine heruntergeladene App verhält, aber automatisch mit der Seite aktuell bleibt. In einigen Regionen ist ein nativer Download verfügbar, aber die installierbare Web-Version ist überall der verlässliche Weg, und sie kommt mit einer kleinen Karotte: einer 10-Freispiele-Belohnung fürs Installieren, ohne Einzahlung.</p>
             <p>Wenn du lieber gar nichts installieren möchtest, läuft das volle Casino wunderbar in jedem mobilen Browser — Chrome, Safari, alles. Dieselben Spiele, dasselbe Konto, dasselbe Alles, nur durch einen Tab statt ein Icon. Das gesamte Mobil-Setup behandeln wir ausführlich auf der eigenen App-Seite; die Kurzfassung ist, dass das Spielen am Handy hier ein erstklassiges Erlebnis ist, wie auch immer du es erreichst.</p>
-          </div>
-          <PlaceholderMedia src="/content/app/general-install.webp" alt="National Casino auf dem Handy" position="center" />
         </div>
       </Section>
 
-      <Section id="zahlungen-und-support" title="Einzahlungen, Auszahlungen und Support" className="">
-        <div className="split-layout">
-          <div className="prose-block">
+      <Section id="zahlungen-und-support" title="Einzahlungen, Auszahlungen und Support" className="image-copy-section image-copy-section--wide-title">
+        <Image className="image-copy-section__image" src="/content/main/payments.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <div className="image-copy-section__overlay" aria-hidden="true" />
+        <div className="image-copy-section__copy">
             <p>Auf dem Weg hinein ist National großzügig mit Optionen: Karten, eine Reihe von E-Wallets und ein solides Spektrum an Kryptowährungen, wobei Krypto- und E-Wallet-Einzahlungen in der Regel sofort ankommen. Auf dem Weg hinaus gilt der ehrliche Hinweis, den wir früher markiert haben — Auszahlungen werden über Visa und Mastercard abgewickelt, selbst wenn du in Krypto eingezahlt hast, ist der Auszahlungsweg also kartenbasiert. Das solltest du eher einplanen, als dich davon überraschen zu lassen. Ein- und Auszahlungslimits variieren je nach Methode, und die genauen Zahlen tauchen in der Kasse auf, sobald du eingeloggt bist.</p>
             <p>Der Support ist der beruhigende Teil: ein 24/7-Live-Chat als Hauptkanal, gestützt durch E-Mail, betreut von einem mehrsprachigen Team und vom Handy aus leicht erreichbar. Wenn um 3 Uhr morgens etwas schiefgeht, ist jemand da.</p>
-          </div>
-          <PlaceholderMedia src="/content/main/payments.webp" alt="Einzahlungen, Auszahlungen und Support" position="center" />
         </div>
       </Section>
 
