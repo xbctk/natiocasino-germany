@@ -11,6 +11,47 @@ const germanPlayerReviews = [
   { review: "„Tiefer Katalog, hat eine Weile gedauert, meine Ecke zu finden.\" In der ersten Woche war ich überfordert — es ist einfach viel davon, und ich sprang herum, ohne wirklich irgendwo zu landen. Dann fand ich das Hold-&-Win-Regal und ging im Grunde nie wieder weg. Auf genau die Studios filtern zu können, denen ich vertraue, ist die Sache, die es für mich klick machen ließ. Der Support beantwortete eine Zahlungsfrage zu einer unchristlichen Stunde und war tatsächlich hilfreich, was ich gelernt habe, nicht als selbstverständlich zu nehmen. Solider Ort, sobald du deine Ecke davon gefunden hast. — Kwame" },
 ] as const;
 
+const liveGameShows = [
+  { name: "Crazy Time", src: "/content/main/live-games/crazy-time.webp" },
+  { name: "Funky Time", src: "/content/main/live-games/funky-time.webp" },
+  { name: "Monopoly Big Baller", src: "/content/main/live-games/monopoly-big-baller.webp" },
+  { name: "Crazy Coin Flip", src: "/content/main/live-games/crazy-coin-flip.webp" },
+  { name: "Lightning Storm", src: "/content/main/live-games/lightning-storm.webp" },
+  { name: "Sweet Bonanza Candyland", src: "/content/main/live-games/sweet-bonanza-candyland.webp" },
+] as const;
+
+const liveTableGames = [
+  { name: "Aurora Blackjack Libra", src: "/content/main/live-games/aurora-blackjack.webp" },
+  { name: "Speed Blackjack Varna", src: "/content/main/live-games/speed-blackjack.webp" },
+  { name: "Infinite Free Bet Blackjack", src: "/content/main/live-games/infinite-free-bet-blackjack.webp" },
+  { name: "Casino Hold'em", src: "/content/main/live-games/casino-holdem.webp" },
+  { name: "Texas Hold'em Bonus", src: "/content/main/live-games/texas-holdem-bonus.webp" },
+  { name: "Gates of Olympus Roulette", src: "/content/main/live-games/gates-of-olympus-roulette.webp" },
+  { name: "Baccarat 1", src: "/content/main/live-games/baccarat-1.webp" },
+  { name: "Craps", src: "/content/main/live-games/craps.webp" },
+] as const;
+
+function LiveGameStrip({ games, label }: { games: ReadonlyArray<{ name: string; src: string }>; label: string }) {
+  return (
+    <div className="live-game-strip" role="region" tabIndex={0} aria-label={label}>
+      <ul className={`live-game-strip__grid live-game-strip__grid--${games.length}`}>
+        {games.map((game) => (
+          <li key={game.src}>
+            <Image
+              className="live-game-strip__image"
+              src={game.src}
+              alt={game.name}
+              width={427}
+              height={575}
+              sizes="(max-width: 719px) 136px, (max-width: 1180px) 148px, 160px"
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function Section({ children, className = "", id, title }: { children: ReactNode; className?: string; id: string; title: string }) {
   return <section className={`content-section ${className}`.trim()} id={id}><h2>{title}</h2>{children}</section>;
 }
@@ -243,15 +284,13 @@ export function MainContent() {
         </div>
       </Section>
 
-      <Section id="live-etage" title="Die Live-Etage" className="image-copy-section">
-        <Image className="image-copy-section__image" src="/content/main/overview.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
-        <div className="image-copy-section__overlay" aria-hidden="true" />
-        <div className="image-copy-section__copy">
-          <p>Wenn die Slots der Ort sind, an dem du allein spielst, dann ist die Live-Etage der Ort, an dem sich das Casino besetzt anfühlt. Das ist wirklich einer der stärkeren Teile des Betriebs, und er teilt sich in zwei Stimmungen.</p>
-          <p>Da ist die Spielshow-Wand — Crazy Time, Funky Time, Monopoly Big Baller, Crazy Coin Flip, Lightning Storm, Sweet Bonanza Candyland — wo ein echter Moderator ein helles, lautes Rad-und-Multiplikator-Spektakel leitet, das dem Unterhaltungsfernsehen näher ist als dem traditionellen Glücksspiel. Das sind die Spiele, die die Leute einschalten und an die sie eine Stunde verlieren, ohne es so recht gewollt zu haben.</p>
-          <p>Dann sind da die klassischen Tische, und hier ist die Tiefe ernst gemeint. Allein das Blackjack reicht tief — Aurora Blackjack, Speed Blackjack, VIP-Tische, Free-Bet-Varianten, dazu Casino Hold&#x27;em, Texas Hold&#x27;em Bonus, Roulette, Baccarat und Craps mit Live-Dealern. Für die Spielerin und den Spieler, die das tatsächliche Casino-Erlebnis wollen — ein echter Mensch, der echte Karten über einen echten Tisch gibt, in HD gestreamt — liefert diese Etage genau das, ohne auszudünnen.</p>
-          <p>Eine kurze Einführung, falls die Tischspiele noch nicht dein Terrain sind. Blackjack ist das Spiel, bei dem du versuchst, den Dealer bis 21 zu schlagen, ohne dich zu überkaufen — das Nächste, was ein Casino zu einem Geschicklichkeitsspiel hat, denn deine Entscheidungen bewegen die Quoten wirklich. Roulette ist der pure Zufall in Zeremonie gekleidet: Wähle eine Zahl, eine Farbe oder ein Segment des Rads und sieh zu, wie die Kugel entscheidet. Baccarat ist das elegante, fast passive Spiel — du setzt auf Spieler oder Bank, und die Regeln spielen sich von selbst aus, was genau der Grund ist, warum High Roller es seit jeher lieben. Craps ist das laute Würfelspiel mit dem einschüchternden Tischlayout, das sich als einfacher entpuppt, als es aussieht, sobald dich jemand durch die Pass Line führt. Jedes dieser Spiele ist hier mit einem Live-Dealer vertreten, du kannst also durch Zuschauen lernen, bevor du dich festlegst.</p>
-        </div>
+      <Section id="live-etage" title="Die Live-Etage" className="">
+        <p>Wenn die Slots der Ort sind, an dem du allein spielst, dann ist die Live-Etage der Ort, an dem sich das Casino besetzt anfühlt. Das ist wirklich einer der stärkeren Teile des Betriebs, und er teilt sich in zwei Stimmungen.</p>
+        <p>Da ist die Spielshow-Wand — Crazy Time, Funky Time, Monopoly Big Baller, Crazy Coin Flip, Lightning Storm, Sweet Bonanza Candyland — wo ein echter Moderator ein helles, lautes Rad-und-Multiplikator-Spektakel leitet, das dem Unterhaltungsfernsehen näher ist als dem traditionellen Glücksspiel. Das sind die Spiele, die die Leute einschalten und an die sie eine Stunde verlieren, ohne es so recht gewollt zu haben.</p>
+        <LiveGameStrip games={liveGameShows} label="Originale Spielkarten der genannten Live-Spielshows" />
+        <p>Dann sind da die klassischen Tische, und hier ist die Tiefe ernst gemeint. Allein das Blackjack reicht tief — Aurora Blackjack, Speed Blackjack, VIP-Tische, Free-Bet-Varianten, dazu Casino Hold&#x27;em, Texas Hold&#x27;em Bonus, Roulette, Baccarat und Craps mit Live-Dealern. Für die Spielerin und den Spieler, die das tatsächliche Casino-Erlebnis wollen — ein echter Mensch, der echte Karten über einen echten Tisch gibt, in HD gestreamt — liefert diese Etage genau das, ohne auszudünnen.</p>
+        <LiveGameStrip games={liveTableGames} label="Originale Spielkarten der genannten klassischen Live-Tische" />
+        <p>Eine kurze Einführung, falls die Tischspiele noch nicht dein Terrain sind. Blackjack ist das Spiel, bei dem du versuchst, den Dealer bis 21 zu schlagen, ohne dich zu überkaufen — das Nächste, was ein Casino zu einem Geschicklichkeitsspiel hat, denn deine Entscheidungen bewegen die Quoten wirklich. Roulette ist der pure Zufall in Zeremonie gekleidet: Wähle eine Zahl, eine Farbe oder ein Segment des Rads und sieh zu, wie die Kugel entscheidet. Baccarat ist das elegante, fast passive Spiel — du setzt auf Spieler oder Bank, und die Regeln spielen sich von selbst aus, was genau der Grund ist, warum High Roller es seit jeher lieben. Craps ist das laute Würfelspiel mit dem einschüchternden Tischlayout, das sich als einfacher entpuppt, als es aussieht, sobald dich jemand durch die Pass Line führt. Jedes dieser Spiele ist hier mit einem Live-Dealer vertreten, du kannst also durch Zuschauen lernen, bevor du dich festlegst.</p>
       </Section>
 
       <Section id="boni-und-aktionen" title="Boni und Aktionen" className="">
