@@ -5,8 +5,8 @@ import { Hero } from "@/components/Hero";
 import { MainContent } from "@/components/MainContent";
 import { Sidebar } from "@/components/Sidebar";
 
-const title = "National Casino New Zealand | Bonuses, Games & NZD Payments";
-const description = "Try National Casino for New Zealand players: Welcome Bonus up to NZ$500, 100 Free Spins, NZD payments, slots, live casino, VIP Club and mobile app.";
+const title = "National Casino: Slots, Live-Spiele & echte RTP in Deutschland";
+const description = "National Casino legt die Karten offen — Live-RTP auf jeder Kachel, eine thematische Lobby, Evolution-Livetische und ein 15-stufiger VIP-Aufstieg.";
 
 export const metadata: Metadata = {
   title,
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     title,
     description,
     url: "/",
-    siteName: "National Casino New Zealand",
-    locale: "en_NZ",
+    siteName: "National Casino Deutschland",
+    locale: "de_DE",
     type: "website",
     images: [{ url: "/content/main/hero.webp", width: 1672, height: 941, alt: title }],
   },

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-NZ">
+    <html lang="de-DE">
       <body className={poppins.variable}>
         {children}
         <BackToTop />

@@ -5,10 +5,9 @@ import { JsonLd } from "./JsonLd";
 
 const siteUrl = "https://natiocasino.vercel.app";
 
-const mainTitleLines = ["National Casino New Zealand |", "Bonuses, Games & NZD Payments"];
+const mainTitleLines = ["National Casino: Slots, Live-Spiele & echte RTP in Deutschland"];
 const mainDescriptionLines = [
-  "Try National Casino for New Zealand players: Welcome Bonus up to NZ$500,",
-  "100 Free Spins, NZD payments, slots, live casino, VIP Club and mobile app.",
+  "National Casino legt die Karten offen — Live-RTP auf jeder Kachel, eine thematische Lobby, Evolution-Livetische und ein 15-stufiger VIP-Aufstieg.",
 ];
 
 export function Hero({
