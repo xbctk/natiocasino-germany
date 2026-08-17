@@ -7,6 +7,7 @@ type Review = {
   name?: string;
   review: string;
   score?: string;
+  title?: string;
 };
 
 export function ReviewsSlider({ reviews }: { reviews: readonly Review[] }) {
@@ -73,15 +74,19 @@ export function ReviewsSlider({ reviews }: { reviews: readonly Review[] }) {
         role="region"
         tabIndex={0}
       >
-        {reviews.map(({ country, name, review, score }) => {
-          const hasMetadata = Boolean(country || name || score);
+        {reviews.map(({ country, name, review, score, title }) => {
+          const hasMetadata = Boolean(country || name || score || title);
+          const isStructuredEditorialReview = Boolean(title);
 
           return (
-            <article className={`review-card${hasMetadata ? "" : " germany-review-card"}`} key={name ?? review}>
+            <article className={`review-card${isStructuredEditorialReview ? " germany-review-card germany-review-card--structured" : hasMetadata ? "" : " germany-review-card"}`} key={name ?? review}>
               {hasMetadata ? (
                 <div className="review-card__top">
-                  <div className="review-card__identity"><h3>{name}</h3><p>{country}</p></div>
-                  <strong className="review-card__score">{score}</strong>
+                  <div className="review-card__identity">
+                    <h3>{title ?? name}</h3>
+                    {(title ? name : country) && <p>{title ? name : country}</p>}
+                  </div>
+                  {score && <strong className="review-card__score">{score}</strong>}
                 </div>
               ) : null}
               <blockquote>{review}</blockquote>

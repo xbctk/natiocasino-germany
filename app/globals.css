@@ -2171,14 +2171,39 @@ tr > :last-child {
   }
 }
 
-.germany-review-card {
+.germany-review-card:not(.germany-review-card--structured) {
   display: block;
   min-height: 340px;
 }
 
-.germany-review-card blockquote {
+.germany-review-card:not(.germany-review-card--structured) blockquote {
   margin: 0;
   text-align: left;
+}
+
+.germany-review-card--structured {
+  min-height: 520px;
+}
+
+.germany-review-card--structured .review-card__top {
+  align-content: center;
+  min-height: 150px;
+}
+
+.germany-review-card--structured .review-card__top h3 {
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+.germany-review-card--structured .review-card__top p {
+  color: var(--gold);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.germany-review-card--structured blockquote {
+  text-align: center;
 }
 
 .app-general-install .media-placeholder,
