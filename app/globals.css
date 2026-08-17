@@ -2135,6 +2135,11 @@ tr > :last-child {
   text-shadow: 0 2px 14px rgb(0 0 0 / 78%);
 }
 
+.promotion-art-card__action {
+  width: fit-content;
+  margin-top: var(--space-content);
+}
+
 .promotion-art-card.info-card::after {
   z-index: 4;
 }

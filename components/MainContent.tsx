@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { BONUS_AFFILIATE_URL } from "./affiliateLinks";
 import { ReviewsSlider } from "./ReviewsSlider";
 
 const germanPlayerReviews = [
@@ -70,6 +71,7 @@ function BonusVisualCard({ background, character, children, title, wide = false 
         <div className="promotion-art-card__copy">
           <h3>{title}</h3>
           <p>{children}</p>
+          <a className="button button--primary promotion-art-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
         </div>
       </div>
     </article>
