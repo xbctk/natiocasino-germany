@@ -2109,7 +2109,13 @@ tr > :last-child {
 }
 
 .promotion-art-card--wide .promotion-art-card__content {
-  width: 68%;
+  width: 83.78%;
+}
+
+.promotion-art-card__copy {
+  padding: var(--space-nested);
+  background: rgb(20 18 19 / 30%);
+  border-radius: 10px;
 }
 
 .germany-bonus-grid .promotion-art-card h3 {

@@ -67,8 +67,10 @@ function BonusVisualCard({ background, character, children, title, wide = false 
         <Image src={character} alt="" fill sizes="(max-width: 719px) 72vw, 24vw" />
       </div>
       <div className="promotion-art-card__content">
-        <h3>{title}</h3>
-        <p>{children}</p>
+        <div className="promotion-art-card__copy">
+          <h3>{title}</h3>
+          <p>{children}</p>
+        </div>
       </div>
     </article>
   );
