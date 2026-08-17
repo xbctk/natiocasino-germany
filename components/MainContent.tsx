@@ -16,6 +16,69 @@ function Section({ children, className = "", id, title }: { children: ReactNode;
   return <section className={`content-section ${className}`.trim()} id={id}><h2>{title}</h2>{children}</section>;
 }
 
+type GameArt = { alt: string; src: string };
+
+function GameArtGrid({ images, variant }: { images: readonly GameArt[]; variant: "five" | "seven" }) {
+  return (
+    <div className={`game-art-grid game-art-grid--${variant}`}>
+      {images.map((image) => (
+        <Image key={image.src} src={image.src} alt={image.alt} width={427} height={575} />
+      ))}
+    </div>
+  );
+}
+
+const gameLobbyArt = [
+  { src: "/content/main/lobby/coin-bandit.webp", alt: "Coin Bandit: Hold and Win" },
+  { src: "/content/main/lobby/flash-coins.webp", alt: "Flash Coins: Hold and Win" },
+  { src: "/content/main/lobby/burning-chilli.webp", alt: "Burning Chilli 243" },
+  { src: "/content/main/lobby/wild-west.webp", alt: "Wild West Trueways" },
+  { src: "/content/main/lobby/gates-olympus.webp", alt: "Gates of Olympus Super Scatter" },
+  { src: "/content/main/lobby/starlight-princess.webp", alt: "Starlight Princess Super Scatter" },
+  { src: "/content/main/lobby/hot-chilli.webp", alt: "Hot Chilli Bells 100" },
+  { src: "/content/main/lobby/show-crazytime.webp", alt: "Crazy Time" },
+  { src: "/content/main/lobby/show-funkytime.webp", alt: "Funky Time" },
+  { src: "/content/main/lobby/show-monopoly.webp", alt: "Monopoly Big Baller" },
+  { src: "/content/main/lobby/show-candyland.webp", alt: "Sweet Bonanza Candyland" },
+  { src: "/content/main/lobby/show-lightning.webp", alt: "Lightning Storm" },
+  { src: "/content/main/lobby/show-coinflip.webp", alt: "Crazy Coin Flip" },
+  { src: "/content/main/lobby/show-gates-roulette.webp", alt: "Gates of Olympus Roulette" },
+] as const;
+
+const liveShowArt = [
+  { src: "/content/main/lobby/show-crazytime.webp", alt: "Crazy Time" },
+  { src: "/content/main/lobby/show-funkytime.webp", alt: "Funky Time" },
+  { src: "/content/main/lobby/show-monopoly.webp", alt: "Monopoly Big Baller" },
+  { src: "/content/main/lobby/show-candyland.webp", alt: "Sweet Bonanza Candyland" },
+  { src: "/content/main/lobby/show-lightning.webp", alt: "Lightning Storm" },
+  { src: "/content/main/lobby/show-coinflip.webp", alt: "Crazy Coin Flip" },
+  { src: "/content/main/lobby/show-gates-roulette.webp", alt: "Gates of Olympus Roulette" },
+  { src: "/content/main/lobby/show-mega-wheel.webp", alt: "Mega Wheel" },
+  { src: "/content/main/lobby/show-crazy-balls.webp", alt: "Crazy Balls" },
+  { src: "/content/main/lobby/show-gold-vault.webp", alt: "Gold Vault Roulette" },
+] as const;
+
+const blackjackArt = [
+  { src: "/content/main/lobby/blackjack-lobby-evolution.webp", alt: "Blackjack Lobby" },
+  { src: "/content/main/lobby/blackjack-lobby-pragmatic.webp", alt: "Blackjack Lobby Pragmatic Play" },
+  { src: "/content/main/lobby/blackjack-aurora-libra.webp", alt: "Aurora Blackjack Libra" },
+  { src: "/content/main/lobby/blackjack-aurora-taurus.webp", alt: "Aurora Blackjack Taurus" },
+  { src: "/content/main/lobby/blackjack-aquamarine.webp", alt: "Aquamarine Blackjack" },
+  { src: "/content/main/lobby/blackjack-ruby.webp", alt: "VIP Blackjack 3 Ruby" },
+  { src: "/content/main/lobby/blackjack-130.webp", alt: "Blackjack 130" },
+  { src: "/content/main/lobby/blackjack-speed-c.webp", alt: "Speed Blackjack C" },
+  { src: "/content/main/lobby/blackjack-deluxe-a.webp", alt: "Blackjack Deluxe A" },
+  { src: "/content/main/lobby/blackjack-a.webp", alt: "Blackjack A" },
+] as const;
+
+const baccaratArt = [
+  { src: "/content/main/lobby/baccarat-xxxtreme.webp", alt: "XXXtreme Lightning Baccarat" },
+  { src: "/content/main/lobby/baccarat-lightning.webp", alt: "Lightning Baccarat" },
+  { src: "/content/main/lobby/baccarat-speed.webp", alt: "Speed Baccarat 1" },
+  { src: "/content/main/lobby/baccarat-live-a.webp", alt: "Live Baccarat A" },
+  { src: "/content/main/lobby/baccarat-dragon-tiger.webp", alt: "Dragon Tiger" },
+] as const;
+
 export function MainContent() {
   return (
     <div className="main-content">
@@ -60,6 +123,12 @@ export function MainContent() {
         <p>Vor dem Rundgang die Eckdaten. Das ist der Rahmen, an dem alles andere hängt.</p>
         <div className="table-scroll" role="region" tabIndex={0}>
           <table>
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
             <tbody>
               <tr>
                 <th scope="row">Währungen</th>
@@ -112,7 +181,7 @@ export function MainContent() {
             </tbody>
           </table>
         </div>
-        <div className="subsection-panel germany-note-panel">
+        <div className="germany-note-panel">
           <p>Eine Anmerkung zu dieser Lizenzzeile, denn sie verdient Ehrlichkeit statt eines Schulterzuckens. Eine Curaçao-Lizenz ist die häufigste Berechtigung im Online-Glücksspiel. Sie bedeutet, dass echte Aufsicht besteht — der Betreiber muss sich gegenüber einer Regulierungsbehörde verantworten, die Spiele laufen auf zertifizierten Zufallsgeneratoren — aber es ist ein Regime mit leichterer Hand als etwa das im Vereinigten Königreich oder auf Malta. Wer den strengstmöglichen Verbraucherschutz will, ist hier nicht richtig. Wer ein legitimes, funktionierendes Casino mit vernünftigen Schutzmechanismen will, ist es sehr wohl. Wenn du weißt, was du suchst, weißt du auch, ob das hier passt.</p>
           <p>Für deutsche Spielerinnen und Spieler lohnt ein zusätzlicher Satz: Der streng regulierte, lizenzierte deutsche Markt nach dem Glücksspielstaatsvertrag funktioniert nach anderen Regeln als ein Curaçao-Angebot. Das ist keine Wertung, sondern ein Hinweis — kenne den Rahmen, in dem du spielst, dann triffst du eine informierte Entscheidung.</p>
         </div>
@@ -140,23 +209,12 @@ export function MainContent() {
 
       <Section id="spielkachel-lesen" title="Wie man eine Spielkachel im National Casino liest" className="">
         <p>Sobald du weißt, worauf du blickst, wird eine Spielkachel zu einem kleinen Cockpit. So entschlüsselst du eine auf einen Blick, denn in diesem kleinen Rechteck steckt mehr, als die meisten Spieler je bemerken.</p>
-        <div className="card-grid card-grid--two germany-detail-grid">
-          <article className="info-card">
-            <p>Die RTP-Flagge sitzt in der Ecke — das ist der Live-Wert, den wir gerade behandelt haben. Lies ihn als jüngstes Verhalten, nicht als Versprechen.</p>
-          </article>
-          <article className="info-card">
-            <p>Die Spielerzahl sagt dir, wie viele Leute genau jetzt an diesem Spiel sitzen. Es ist ein leises soziales Signal: Ein Spiel mit einer Menschentraube ist entweder wirklich beliebt oder gerade mitten in einem Lauf, den die Leute bemerkt haben. Ein leeres Spiel ist nicht zwangsläufig schlechter — es ist vielleicht nur weniger auffällig — aber die Zahl ist ein Echtzeit-Fingerzeig darauf, wohin die Aufmerksamkeit des Raums gerade zeigt.</p>
-          </article>
-          <article className="info-card">
-            <p>Der Anbietername steht unter dem Titel. Wenn du genug gespielt hast, ist das eine Kurzformel dafür, welche Art von Erlebnis dich erwartet — ein Hacksaw-Spiel fühlt sich völlig anders an als ein Novomatic-Spiel, und das Studium zu kennen sagt dir grob, welche Mathematik und welches Tempo dich erwarten, bevor du je einen Spin drehst.</p>
-          </article>
-          <article className="info-card">
-            <p>Die Kategorie-Tags und Badges — eine Drops-&amp;-Wins-Krone, ein Hold-&amp;-Win-Marker, ein Megaways-Etikett — sagen dir, an welche Mechanik und welche Netzwerk-Aktionen das Spiel angeschlossen ist. Ein Drops-&amp;-Wins-Badge bedeutet, dass das Spiel zusätzlich zu seiner eigenen Auszahlungstabelle in einen netzwerkweiten Preispool einspeist.</p>
-          </article>
-          <article className="info-card">
-            <p>Setz diese vier Ablesungen zusammen, und du kannst ein Spiel in etwa zwei Sekunden einschätzen, ohne es zu öffnen. Das ist die ganze Detektiv-Prämisse in die Praxis übersetzt: Die Spuren liegen alle auf der Kachel, wenn du weißt, wo du hinschauen musst.</p>
-          </article>
-        </div>
+        <GameArtGrid images={gameLobbyArt} variant="seven" />
+        <p>Die RTP-Flagge sitzt in der Ecke — das ist der Live-Wert, den wir gerade behandelt haben. Lies ihn als jüngstes Verhalten, nicht als Versprechen.</p>
+        <p>Die Spielerzahl sagt dir, wie viele Leute genau jetzt an diesem Spiel sitzen. Es ist ein leises soziales Signal: Ein Spiel mit einer Menschentraube ist entweder wirklich beliebt oder gerade mitten in einem Lauf, den die Leute bemerkt haben. Ein leeres Spiel ist nicht zwangsläufig schlechter — es ist vielleicht nur weniger auffällig — aber die Zahl ist ein Echtzeit-Fingerzeig darauf, wohin die Aufmerksamkeit des Raums gerade zeigt.</p>
+        <p>Der Anbietername steht unter dem Titel. Wenn du genug gespielt hast, ist das eine Kurzformel dafür, welche Art von Erlebnis dich erwartet — ein Hacksaw-Spiel fühlt sich völlig anders an als ein Novomatic-Spiel, und das Studium zu kennen sagt dir grob, welche Mathematik und welches Tempo dich erwarten, bevor du je einen Spin drehst.</p>
+        <p>Die Kategorie-Tags und Badges — eine Drops-&amp;-Wins-Krone, ein Hold-&amp;-Win-Marker, ein Megaways-Etikett — sagen dir, an welche Mechanik und welche Netzwerk-Aktionen das Spiel angeschlossen ist. Ein Drops-&amp;-Wins-Badge bedeutet, dass das Spiel zusätzlich zu seiner eigenen Auszahlungstabelle in einen netzwerkweiten Preispool einspeist.</p>
+        <p>Setz diese vier Ablesungen zusammen, und du kannst ein Spiel in etwa zwei Sekunden einschätzen, ohne es zu öffnen. Das ist die ganze Detektiv-Prämisse in die Praxis übersetzt: Die Spuren liegen alle auf der Kachel, wenn du weißt, wo du hinschauen musst.</p>
       </Section>
 
       <Section id="slots-mit-zahlen" title="Die Slots, mit ihren Zahlen" className="">
@@ -226,25 +284,23 @@ export function MainContent() {
         <p>Wo ein Wert mit einer Tilde markiert ist, behandle ihn als Arbeitsschätzung, die gegen das Info-Panel des Spiels selbst zu prüfen ist — RTP und Limits können sich zwischen Betreiber-Konfigurationen verschieben, und der ehrliche Zug ist, die Auszahlungstabelle im Spiel zu prüfen, statt irgendeine einzelne veröffentlichte Zahl als Evangelium zu nehmen. Das Muster, das zählt: Das ist eine Bibliothek mit echter Bandbreite. Burning Chilli X ist ein Grinder mit niedriger Volatilität und hohem RTP für eine lange ruhige Session; Gates of Olympus Super Scatter ist ein Monster sehr hoher Volatilität, das hundert Spins kalt bleiben und dir dann 50.000x in die Hand drücken kann. Zu wissen, in welcher Stimmung du gerade bist, ist die halbe Miete, um hier gut zu spielen.</p>
       </Section>
 
-      <Section id="anbieter" title="Die Anbieter hinter dem Spielsaal" className="">
-        <div className="split-layout">
-          <div className="prose-block">
-            <p>Ein Spiel ist nur so gut wie das Studio, das es gebaut hat, und Nationals Aufgebot liest sich wie ein Who&#x27;s Who dessen, was die Leute gerade wirklich spielen. Pragmatic Play bringt die Volatilitätsmaschinen mit hohem Deckel und das Gates-of-Olympus-Universum. Hacksaw Gaming liefert die scharfen, modernen Titel hoher Varianz, denen die Streaming-Szene hinterherjagt. BGaming deckt das krypto-freundliche, nachweislich faire Ende mit einem riesigen Backkatalog ab. Dann füllen Felix Gaming, Spinomenal, Novomatic, Fugaso und NetGame die Breite auf — klassische Walzen, Book-Slots, Hold-&amp;-Win-Gitter, das ganze Programm.</p>
-            <p>Auf der Live-Seite ist die ehrliche Anmerkung, dass sich der Spielsaal stark auf Evolution stützt. Das ist eine Stärke, formuliert als milde Verengung: Evolution ist schlicht das beste Studio im Live-Dealer-Geschäft, sich darauf zu stützen bedeutet also, dass die Qualität hoch und beständig ist. Aber es bedeutet eben auch, dass du, wenn du über die Live-Etage gehst, größtenteils durch die Welt eines einzigen Unternehmens gehst, wobei Pragmatic Play Live, Ezugi, Playtech und Winfinity eher die Ränder abrunden, als sich den Raum gleichberechtigt zu teilen. Wenn Evolutions Tische ohnehin deine Favoriten sind — und für viele Spieler sind sie das — dann ist das ein Feature, keine Einschränkung.</p>
-          </div>
-          <PlaceholderMedia src="/content/main/license.webp" alt="Spielanbieter im National Casino" position="center" />
+      <Section id="anbieter" title="Die Anbieter hinter dem Spielsaal" className="image-copy-section germany-provider-section">
+        <Image className="image-copy-section__image" src="/content/main/license.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <div className="image-copy-section__overlay" aria-hidden="true" />
+        <div className="image-copy-section__copy">
+          <p>Ein Spiel ist nur so gut wie das Studio, das es gebaut hat, und Nationals Aufgebot liest sich wie ein Who&#x27;s Who dessen, was die Leute gerade wirklich spielen. Pragmatic Play bringt die Volatilitätsmaschinen mit hohem Deckel und das Gates-of-Olympus-Universum. Hacksaw Gaming liefert die scharfen, modernen Titel hoher Varianz, denen die Streaming-Szene hinterherjagt. BGaming deckt das krypto-freundliche, nachweislich faire Ende mit einem riesigen Backkatalog ab. Dann füllen Felix Gaming, Spinomenal, Novomatic, Fugaso und NetGame die Breite auf — klassische Walzen, Book-Slots, Hold-&amp;-Win-Gitter, das ganze Programm.</p>
+          <p>Auf der Live-Seite ist die ehrliche Anmerkung, dass sich der Spielsaal stark auf Evolution stützt. Das ist eine Stärke, formuliert als milde Verengung: Evolution ist schlicht das beste Studio im Live-Dealer-Geschäft, sich darauf zu stützen bedeutet also, dass die Qualität hoch und beständig ist. Aber es bedeutet eben auch, dass du, wenn du über die Live-Etage gehst, größtenteils durch die Welt eines einzigen Unternehmens gehst, wobei Pragmatic Play Live, Ezugi, Playtech und Winfinity eher die Ränder abrunden, als sich den Raum gleichberechtigt zu teilen. Wenn Evolutions Tische ohnehin deine Favoriten sind — und für viele Spieler sind sie das — dann ist das ein Feature, keine Einschränkung.</p>
         </div>
       </Section>
 
-      <Section id="live-etage" title="Die Live-Etage" className="image-copy-section">
-        <Image className="image-copy-section__image" src="/content/main/overview.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
-        <div className="image-copy-section__overlay" aria-hidden="true" />
-        <div className="image-copy-section__copy">
-          <p>Wenn die Slots der Ort sind, an dem du allein spielst, dann ist die Live-Etage der Ort, an dem sich das Casino besetzt anfühlt. Das ist wirklich einer der stärkeren Teile des Betriebs, und er teilt sich in zwei Stimmungen.</p>
-          <p>Da ist die Spielshow-Wand — Crazy Time, Funky Time, Monopoly Big Baller, Crazy Coin Flip, Lightning Storm, Sweet Bonanza Candyland — wo ein echter Moderator ein helles, lautes Rad-und-Multiplikator-Spektakel leitet, das dem Unterhaltungsfernsehen näher ist als dem traditionellen Glücksspiel. Das sind die Spiele, die die Leute einschalten und an die sie eine Stunde verlieren, ohne es so recht gewollt zu haben.</p>
-          <p>Dann sind da die klassischen Tische, und hier ist die Tiefe ernst gemeint. Allein das Blackjack reicht tief — Aurora Blackjack, Speed Blackjack, VIP-Tische, Free-Bet-Varianten, dazu Casino Hold&#x27;em, Texas Hold&#x27;em Bonus, Roulette, Baccarat und Craps mit Live-Dealern. Für die Spielerin und den Spieler, die das tatsächliche Casino-Erlebnis wollen — ein echter Mensch, der echte Karten über einen echten Tisch gibt, in HD gestreamt — liefert diese Etage genau das, ohne auszudünnen.</p>
-          <p>Eine kurze Einführung, falls die Tischspiele noch nicht dein Terrain sind. Blackjack ist das Spiel, bei dem du versuchst, den Dealer bis 21 zu schlagen, ohne dich zu überkaufen — das Nächste, was ein Casino zu einem Geschicklichkeitsspiel hat, denn deine Entscheidungen bewegen die Quoten wirklich. Roulette ist der pure Zufall in Zeremonie gekleidet: Wähle eine Zahl, eine Farbe oder ein Segment des Rads und sieh zu, wie die Kugel entscheidet. Baccarat ist das elegante, fast passive Spiel — du setzt auf Spieler oder Bank, und die Regeln spielen sich von selbst aus, was genau der Grund ist, warum High Roller es seit jeher lieben. Craps ist das laute Würfelspiel mit dem einschüchternden Tischlayout, das sich als einfacher entpuppt, als es aussieht, sobald dich jemand durch die Pass Line führt. Jedes dieser Spiele ist hier mit einem Live-Dealer vertreten, du kannst also durch Zuschauen lernen, bevor du dich festlegst.</p>
-        </div>
+      <Section id="live-etage" title="Die Live-Etage" className="">
+        <p>Wenn die Slots der Ort sind, an dem du allein spielst, dann ist die Live-Etage der Ort, an dem sich das Casino besetzt anfühlt. Das ist wirklich einer der stärkeren Teile des Betriebs, und er teilt sich in zwei Stimmungen.</p>
+        <GameArtGrid images={liveShowArt} variant="five" />
+        <p>Da ist die Spielshow-Wand — Crazy Time, Funky Time, Monopoly Big Baller, Crazy Coin Flip, Lightning Storm, Sweet Bonanza Candyland — wo ein echter Moderator ein helles, lautes Rad-und-Multiplikator-Spektakel leitet, das dem Unterhaltungsfernsehen näher ist als dem traditionellen Glücksspiel. Das sind die Spiele, die die Leute einschalten und an die sie eine Stunde verlieren, ohne es so recht gewollt zu haben.</p>
+        <GameArtGrid images={blackjackArt} variant="five" />
+        <p>Dann sind da die klassischen Tische, und hier ist die Tiefe ernst gemeint. Allein das Blackjack reicht tief — Aurora Blackjack, Speed Blackjack, VIP-Tische, Free-Bet-Varianten, dazu Casino Hold&#x27;em, Texas Hold&#x27;em Bonus, Roulette, Baccarat und Craps mit Live-Dealern. Für die Spielerin und den Spieler, die das tatsächliche Casino-Erlebnis wollen — ein echter Mensch, der echte Karten über einen echten Tisch gibt, in HD gestreamt — liefert diese Etage genau das, ohne auszudünnen.</p>
+        <GameArtGrid images={baccaratArt} variant="five" />
+        <p>Eine kurze Einführung, falls die Tischspiele noch nicht dein Terrain sind. Blackjack ist das Spiel, bei dem du versuchst, den Dealer bis 21 zu schlagen, ohne dich zu überkaufen — das Nächste, was ein Casino zu einem Geschicklichkeitsspiel hat, denn deine Entscheidungen bewegen die Quoten wirklich. Roulette ist der pure Zufall in Zeremonie gekleidet: Wähle eine Zahl, eine Farbe oder ein Segment des Rads und sieh zu, wie die Kugel entscheidet. Baccarat ist das elegante, fast passive Spiel — du setzt auf Spieler oder Bank, und die Regeln spielen sich von selbst aus, was genau der Grund ist, warum High Roller es seit jeher lieben. Craps ist das laute Würfelspiel mit dem einschüchternden Tischlayout, das sich als einfacher entpuppt, als es aussieht, sobald dich jemand durch die Pass Line führt. Jedes dieser Spiele ist hier mit einem Live-Dealer vertreten, du kannst also durch Zuschauen lernen, bevor du dich festlegst.</p>
       </Section>
 
       <Section id="boni-und-aktionen" title="Boni und Aktionen" className="">
