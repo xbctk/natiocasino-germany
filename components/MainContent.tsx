@@ -52,6 +52,28 @@ function LiveGameStrip({ games, label }: { games: ReadonlyArray<{ name: string; 
   );
 }
 
+function BonusVisualCard({ background, character, children, title, wide = false }: {
+  background: string;
+  character: string;
+  children: ReactNode;
+  title: string;
+  wide?: boolean;
+}) {
+  return (
+    <article className={`info-card promotion-art-card${wide ? " promotion-art-card--wide" : ""}`}>
+      <Image className="promotion-art-card__background" src={background} alt="" fill sizes="(max-width: 960px) 100vw, 42vw" aria-hidden="true" />
+      <div className="promotion-art-card__shade" aria-hidden="true" />
+      <div className="promotion-art-card__character" aria-hidden="true">
+        <Image src={character} alt="" fill sizes="(max-width: 719px) 72vw, 24vw" />
+      </div>
+      <div className="promotion-art-card__content">
+        <h3>{title}</h3>
+        <p>{children}</p>
+      </div>
+    </article>
+  );
+}
+
 function Section({ children, className = "", id, title }: { children: ReactNode; className?: string; id: string; title: string }) {
   return <section className={`content-section ${className}`.trim()} id={id}><h2>{title}</h2>{children}</section>;
 }
@@ -296,34 +318,27 @@ export function MainContent() {
       <Section id="boni-und-aktionen" title="Boni und Aktionen" className="">
         <p>Der Aktionskalender ist der Ort, an dem sich National seinen „Komm morgen wieder&quot;-Sog verdient. Er ist breit und darauf gebaut, den meisten Wochentagen einen Grund zu geben. Hier die Ankerpunkte.</p>
         <div className="card-grid card-grid--two germany-bonus-grid">
-          <article className="info-card">
-            <h3>Ersteinzahlungsbonus</h3>
-            <p>100 % bis zu 100 €, dazu ein Bonusspiel und 100 Freispiele. Die Freispiele kommen in zwei Hälften — 50 sofort gutgeschrieben, 50 nach 24 Stunden — was ein kleiner, vernünftiger Kniff ist, der den Spaß in deine zweite Session zieht, statt alles auf einmal abzukippen.</p>
-          </article>
-          <article className="info-card">
-            <h3>Krypto-Ersteinzahlungsbonus</h3>
-            <p>Die größere Tür. Zahle in Krypto ein, und das Match springt auf 200 % bis zu 500 €. Wenn du dich mit dem Spiel in Krypto ohnehin wohlfühlst, ist das schlicht das großzügigere Willkommen, und es ist das Angebot, das das Casino seinen Krypto-Spielern ganz offensichtlich schmackhaft machen will.</p>
-          </article>
-          <article className="info-card">
-            <h3>Zweite Einzahlungsbonus</h3>
-            <p>50 % bis zu 200 € plus 50 Freispiele, sofort gutgeschrieben. Ein sanfterer Nachschlag für deinen zweiten Besuch, der den Schwung hält, ohne eine große Verpflichtung zu verlangen.</p>
-          </article>
-          <article className="info-card">
-            <h3>Highroller-Bonus</h3>
-            <p>100 % bis zu 750 €, Mindesteinzahlung 300 €. Der zielt direkt auf Spieler mit größerer Bankroll, die ein Match wollen, das sie widerspiegelt — nicht für jeden, und mit seiner Zugangsvoraussetzung ehrlich darin.</p>
-          </article>
-          <article className="info-card">
-            <h3>Freitags-Reload-Bonus</h3>
-            <p>50 % bis zu 250 € plus 100 Freispiele auf Book of Cats, Freispiele geteilt 50 jetzt / 50 nach 24 Stunden. Der Wochenend-Nachschub, und ein guter Grund, eine Freitagseinzahlung dafür aufzuheben.</p>
-          </article>
-          <article className="info-card">
-            <h3>VIP-Sonntagsturbo</h3>
-            <p>Bis zu 50 Mega-Spins zu je 1 €, reserviert für VIP-Spieler. Ein Wert von 1 € pro Spin liegt spürbar über der üblichen Freispiel-Stufe, was das zu einer der wirklich wertvollen regelmäßigen Belohnungen im Kalender macht — sofern du weit genug aufgestiegen bist, um es freizuschalten.</p>
-          </article>
-          <article className="info-card">
-            <h3>Jenseits der Stammgäste</h3>
-            <p>Der Kalender geht weiter. Es gibt einen Geheimbonus, der sich bei einer Einzahlung offenbart (verfügbar an einem festen Wochentag), einen Unbegrenzten Bonus mit einem Bonus auf jede Einzahlung ab 30 €, ein Glücksrad, das bei jeder Einzahlung verfügbar ist, Prize Drops, die einen Pool von 100.000 € aufteilen, und Netzwerk-Events wie Pragmatic Drops &amp; Wins und anbietergeführte Preiskampagnen, die eine Jagd wert sind. Es gibt außerdem eine feste App-Installations-Belohnung von 10 Freispielen und ein Abo-für-Spins-Angebot. Unterm Strich ergibt das einen Spielsaal, in dem allein das Einloggen am richtigen Tag meist etwas zutage fördert.</p>
-          </article>
+          <BonusVisualCard title="Ersteinzahlungsbonus" background="/content/main/bonuses/welcome-bg.png" character="/content/main/bonuses/welcome-character.png">
+            100 % bis zu 100 €, dazu ein Bonusspiel und 100 Freispiele. Die Freispiele kommen in zwei Hälften — 50 sofort gutgeschrieben, 50 nach 24 Stunden — was ein kleiner, vernünftiger Kniff ist, der den Spaß in deine zweite Session zieht, statt alles auf einmal abzukippen.
+          </BonusVisualCard>
+          <BonusVisualCard title="Krypto-Ersteinzahlungsbonus" background="/content/main/bonuses/crypto-bg.webp" character="/content/main/bonuses/crypto-character.webp">
+            Die größere Tür. Zahle in Krypto ein, und das Match springt auf 200 % bis zu 500 €. Wenn du dich mit dem Spiel in Krypto ohnehin wohlfühlst, ist das schlicht das großzügigere Willkommen, und es ist das Angebot, das das Casino seinen Krypto-Spielern ganz offensichtlich schmackhaft machen will.
+          </BonusVisualCard>
+          <BonusVisualCard title="Zweite Einzahlungsbonus" background="/content/main/bonuses/second-deposit-bg.png" character="/content/main/bonuses/second-deposit-character.png">
+            50 % bis zu 200 € plus 50 Freispiele, sofort gutgeschrieben. Ein sanfterer Nachschlag für deinen zweiten Besuch, der den Schwung hält, ohne eine große Verpflichtung zu verlangen.
+          </BonusVisualCard>
+          <BonusVisualCard title="Highroller-Bonus" background="/content/main/bonuses/highroller-bg.webp" character="/content/main/bonuses/highroller-character.webp">
+            100 % bis zu 750 €, Mindesteinzahlung 300 €. Der zielt direkt auf Spieler mit größerer Bankroll, die ein Match wollen, das sie widerspiegelt — nicht für jeden, und mit seiner Zugangsvoraussetzung ehrlich darin.
+          </BonusVisualCard>
+          <BonusVisualCard title="Freitags-Reload-Bonus" background="/content/main/bonuses/friday-reload-bg.png" character="/content/main/bonuses/friday-reload-character.png">
+            50 % bis zu 250 € plus 100 Freispiele auf Book of Cats, Freispiele geteilt 50 jetzt / 50 nach 24 Stunden. Der Wochenend-Nachschub, und ein guter Grund, eine Freitagseinzahlung dafür aufzuheben.
+          </BonusVisualCard>
+          <BonusVisualCard title="VIP-Sonntagsturbo" background="/content/main/bonuses/vip-sunday-bg.webp" character="/content/main/bonuses/vip-sunday-character.webp">
+            Bis zu 50 Mega-Spins zu je 1 €, reserviert für VIP-Spieler. Ein Wert von 1 € pro Spin liegt spürbar über der üblichen Freispiel-Stufe, was das zu einer der wirklich wertvollen regelmäßigen Belohnungen im Kalender macht — sofern du weit genug aufgestiegen bist, um es freizuschalten.
+          </BonusVisualCard>
+          <BonusVisualCard title="Jenseits der Stammgäste" background="/content/main/bonuses/secret-bg.webp" character="/content/main/bonuses/secret-character.webp" wide>
+            Der Kalender geht weiter. Es gibt einen Geheimbonus, der sich bei einer Einzahlung offenbart (verfügbar an einem festen Wochentag), einen Unbegrenzten Bonus mit einem Bonus auf jede Einzahlung ab 30 €, ein Glücksrad, das bei jeder Einzahlung verfügbar ist, Prize Drops, die einen Pool von 100.000 € aufteilen, und Netzwerk-Events wie Pragmatic Drops &amp; Wins und anbietergeführte Preiskampagnen, die eine Jagd wert sind. Es gibt außerdem eine feste App-Installations-Belohnung von 10 Freispielen und ein Abo-für-Spins-Angebot. Unterm Strich ergibt das einen Spielsaal, in dem allein das Einloggen am richtigen Tag meist etwas zutage fördert.
+          </BonusVisualCard>
         </div>
         <p>Ein fairer Hinweis zu den Bedingungen: Wie bei jedem Casino tragen diese Boni Umsatzanforderungen, und die VIP-Belohnungen speziell laufen mit 10x Umsatz (wobei aus Comp Points umgewandeltes Guthaben mit 5x läuft). Lies die Bonusbedingungen, bevor du dich anmeldest — nicht weil hier irgendetwas ungewöhnlich wäre, sondern weil „lies die Bedingungen&quot; immer der richtige Instinkt ist, und dies ein Casino ist, das sie zu seinem Verdienst tendenziell klar benennt.</p>
       </Section>
