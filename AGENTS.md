@@ -54,9 +54,9 @@ National Casino New Zealand — обзорный партнёрский сайт
 
 Редакционный текст разрешено брать только из:
 
-- `Тексты/National Casino New Zealand Main Page.docx`;
-- `Тексты/National Casino New Zealand Bonuses.docx`;
-- `Тексты/National Casino New Zealand App.docx`.
+- `Тексты/National Casino Germany Main Page.docx`;
+- `Тексты/National Casino Germany Bonuses.docx`;
+- `Тексты/National Casino Germany App.docx`.
 
 Запрещено:
 
