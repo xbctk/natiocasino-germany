@@ -3,10 +3,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 type Review = {
-  country: string;
-  name: string;
+  country?: string;
+  name?: string;
   review: string;
-  score: string;
+  score?: string;
 };
 
 export function ReviewsSlider({ reviews }: { reviews: readonly Review[] }) {
@@ -58,7 +58,7 @@ export function ReviewsSlider({ reviews }: { reviews: readonly Review[] }) {
   return (
     <div className="reviews-slider">
       <button
-        aria-label="Previous reviews"
+        aria-label="Vorherige Bewertungen"
         className="reviews-slider__control reviews-slider__control--previous"
         disabled={!canScrollBack}
         onClick={() => moveSlider(-1)}
@@ -67,24 +67,30 @@ export function ReviewsSlider({ reviews }: { reviews: readonly Review[] }) {
         <span aria-hidden="true">←</span>
       </button>
       <div
-        aria-label="Player reviews"
+        aria-label="Spielerbewertungen"
         className="reviews-grid"
         ref={trackRef}
         role="region"
         tabIndex={0}
       >
-        {reviews.map(({ country, name, review, score }) => (
-          <article className="review-card" key={name}>
-            <div className="review-card__top">
-              <div className="review-card__identity"><h3>{name}</h3><p>{country}</p></div>
-              <strong className="review-card__score">{score}</strong>
-            </div>
-            <blockquote>“{review}”</blockquote>
-          </article>
-        ))}
+        {reviews.map(({ country, name, review, score }) => {
+          const hasMetadata = Boolean(country || name || score);
+
+          return (
+            <article className={`review-card${hasMetadata ? "" : " germany-review-card"}`} key={name ?? review}>
+              {hasMetadata ? (
+                <div className="review-card__top">
+                  <div className="review-card__identity"><h3>{name}</h3><p>{country}</p></div>
+                  <strong className="review-card__score">{score}</strong>
+                </div>
+              ) : null}
+              <blockquote>{review}</blockquote>
+            </article>
+          );
+        })}
       </div>
       <button
-        aria-label="Next reviews"
+        aria-label="Nächste Bewertungen"
         className="reviews-slider__control reviews-slider__control--next"
         disabled={!canScrollForward}
         onClick={() => moveSlider(1)}
