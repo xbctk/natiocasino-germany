@@ -150,23 +150,21 @@ export function MainContent() {
 
       <Section id="spielkachel-lesen" title="Wie man eine Spielkachel im National Casino liest" className="">
         <p>Sobald du weißt, worauf du blickst, wird eine Spielkachel zu einem kleinen Cockpit. So entschlüsselst du eine auf einen Blick, denn in diesem kleinen Rechteck steckt mehr, als die meisten Spieler je bemerken.</p>
-        <div className="card-grid card-grid--two germany-detail-grid">
-          <article className="info-card">
-            <p>Die RTP-Flagge sitzt in der Ecke — das ist der Live-Wert, den wir gerade behandelt haben. Lies ihn als jüngstes Verhalten, nicht als Versprechen.</p>
-          </article>
-          <article className="info-card">
-            <p>Die Spielerzahl sagt dir, wie viele Leute genau jetzt an diesem Spiel sitzen. Es ist ein leises soziales Signal: Ein Spiel mit einer Menschentraube ist entweder wirklich beliebt oder gerade mitten in einem Lauf, den die Leute bemerkt haben. Ein leeres Spiel ist nicht zwangsläufig schlechter — es ist vielleicht nur weniger auffällig — aber die Zahl ist ein Echtzeit-Fingerzeig darauf, wohin die Aufmerksamkeit des Raums gerade zeigt.</p>
-          </article>
-          <article className="info-card">
-            <p>Der Anbietername steht unter dem Titel. Wenn du genug gespielt hast, ist das eine Kurzformel dafür, welche Art von Erlebnis dich erwartet — ein Hacksaw-Spiel fühlt sich völlig anders an als ein Novomatic-Spiel, und das Studium zu kennen sagt dir grob, welche Mathematik und welches Tempo dich erwarten, bevor du je einen Spin drehst.</p>
-          </article>
-          <article className="info-card">
-            <p>Die Kategorie-Tags und Badges — eine Drops-&amp;-Wins-Krone, ein Hold-&amp;-Win-Marker, ein Megaways-Etikett — sagen dir, an welche Mechanik und welche Netzwerk-Aktionen das Spiel angeschlossen ist. Ein Drops-&amp;-Wins-Badge bedeutet, dass das Spiel zusätzlich zu seiner eigenen Auszahlungstabelle in einen netzwerkweiten Preispool einspeist.</p>
-          </article>
-          <article className="info-card">
-            <p>Setz diese vier Ablesungen zusammen, und du kannst ein Spiel in etwa zwei Sekunden einschätzen, ohne es zu öffnen. Das ist die ganze Detektiv-Prämisse in die Praxis übersetzt: Die Spuren liegen alle auf der Kachel, wenn du weißt, wo du hinschauen musst.</p>
-          </article>
+        <p>Die RTP-Flagge sitzt in der Ecke — das ist der Live-Wert, den wir gerade behandelt haben. Lies ihn als jüngstes Verhalten, nicht als Versprechen.</p>
+        <p>Die Spielerzahl sagt dir, wie viele Leute genau jetzt an diesem Spiel sitzen. Es ist ein leises soziales Signal: Ein Spiel mit einer Menschentraube ist entweder wirklich beliebt oder gerade mitten in einem Lauf, den die Leute bemerkt haben. Ein leeres Spiel ist nicht zwangsläufig schlechter — es ist vielleicht nur weniger auffällig — aber die Zahl ist ein Echtzeit-Fingerzeig darauf, wohin die Aufmerksamkeit des Raums gerade zeigt.</p>
+        <div className="rtp-strip-scroll" role="region" tabIndex={0} aria-label="Live-RTP-Spielübersicht">
+          <Image
+            className="rtp-strip-image"
+            src="/content/main/live-rtp-strip.png"
+            alt="Spielkarten mit Live-RTP-Werten und aktuellen Spielerzahlen"
+            width={2494}
+            height={518}
+            sizes="(max-width: 1180px) 100vw, 82vw"
+          />
         </div>
+        <p>Der Anbietername steht unter dem Titel. Wenn du genug gespielt hast, ist das eine Kurzformel dafür, welche Art von Erlebnis dich erwartet — ein Hacksaw-Spiel fühlt sich völlig anders an als ein Novomatic-Spiel, und das Studium zu kennen sagt dir grob, welche Mathematik und welches Tempo dich erwarten, bevor du je einen Spin drehst.</p>
+        <p>Die Kategorie-Tags und Badges — eine Drops-&amp;-Wins-Krone, ein Hold-&amp;-Win-Marker, ein Megaways-Etikett — sagen dir, an welche Mechanik und welche Netzwerk-Aktionen das Spiel angeschlossen ist. Ein Drops-&amp;-Wins-Badge bedeutet, dass das Spiel zusätzlich zu seiner eigenen Auszahlungstabelle in einen netzwerkweiten Preispool einspeist.</p>
+        <p>Setz diese vier Ablesungen zusammen, und du kannst ein Spiel in etwa zwei Sekunden einschätzen, ohne es zu öffnen. Das ist die ganze Detektiv-Prämisse in die Praxis übersetzt: Die Spuren liegen alle auf der Kachel, wenn du weißt, wo du hinschauen musst.</p>
       </Section>
 
       <Section id="slots-mit-zahlen" title="Die Slots, mit ihren Zahlen" className="">
