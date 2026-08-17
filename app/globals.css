@@ -1288,6 +1288,24 @@ tr > :last-child {
   object-fit: cover;
 }
 
+#zahlen-auf-der-kachel p {
+  max-width: none;
+}
+
+.rtp-strip-scroll {
+  width: 100%;
+  margin: 0 0 var(--space-content);
+  overflow-x: auto;
+  scrollbar-color: var(--gold) var(--dark);
+  scrollbar-width: thin;
+}
+
+.rtp-strip-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .step-list {
   display: grid;
   gap: var(--space-detail);
@@ -2910,6 +2928,10 @@ tr > :last-child {
 }
 
 @media (max-width: 719px) {
+  .rtp-strip-image {
+    min-width: 900px;
+  }
+
   .back-to-top {
     right: 16px;
     bottom: 16px;

@@ -131,15 +131,21 @@ export function MainContent() {
         </div>
       </Section>
 
-      <Section id="zahlen-auf-der-kachel" title="Die Zahlen auf der Kachel" className="image-copy-section">
-        <Image className="image-copy-section__image" src="/content/main/verification.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
-        <div className="image-copy-section__overlay" aria-hidden="true" />
-        <div className="image-copy-section__copy">
-          <p>Hier ist der Teil, für den es sich lohnt, langsamer zu werden, denn es ist genau das, was National tut und die meisten seiner Mitbewerber schlicht nicht tun.</p>
-          <p>Auf nahezu jeder Spielkarte siehst du einen RTP-Wert. Manche dieser Zahlen sehen auf den ersten Blick seltsam aus — ein Slot zeigt 101 %, ein anderer blinkt mit 138 %, ein Live-Spiel liest sich als 159 %. Kein Slot bringt über seine Lebensdauer 138 % zurück; wäre es so, wäre das Casino bis zum Mittagessen pleite. Was du siehst, ist Live-RTP — eine Momentaufnahme davon, wie dieses konkrete Spiel über die jüngste Spielphase tatsächlich ausgezahlt hat, nicht der theoretische Wert, der in seinem Code steckt. Stell es dir als das kurzfristige Wetter des Raums vor, nicht als sein Klima. Ein Spiel, das mit 138 % heißläuft, hat schlicht über das jüngste Fenster, das du siehst, mehr ausgezahlt, als es eingenommen hat; eine Stunde später kann es genauso gut 82 % anzeigen.</p>
-          <p>Das ist echt nützlich und echt ehrlich, solange du es richtig liest. Der konfigurierte RTP — der Langzeitwert, um den herum das Spiel gebaut ist — ist die Zahl, die deine Gewinnchancen über Tausende von Spins tatsächlich bestimmt, und er liegt meist irgendwo zwischen 94 % und 97 %, je nachdem, wie der Betreiber das Spiel eingestellt hat. Der Live-RTP auf der Kachel sagt dir, was zuletzt passiert ist. Keiner von beiden sagt deinen nächsten Spin voraus, denn das kann nichts. Aber beide offen gezeigt zu bekommen, ist eine Höflichkeit, die die meisten Betreiber nicht erweisen. Sie behandelt dich wie jemanden, der den Unterschied verstehen kann — was, da du bis hierher gelesen hast, offenkundig auf dich zutrifft.</p>
-          <p>Das Detektiv-Thema und diese Gewohnheit sind im Grunde dieselbe Geste. Ein Casino, das sich rund um Spuren und verborgene Dinge einkleidet und dir dann tatsächlich die Beweise auf jeder Kachel zeigt, ist zumindest in sich stimmig, was seine eigene Prämisse angeht. Es bittet dich, genau hinzuschauen, und belohnt dich dann fürs Hinschauen.</p>
+      <Section id="zahlen-auf-der-kachel" title="Die Zahlen auf der Kachel" className="">
+        <p>Hier ist der Teil, für den es sich lohnt, langsamer zu werden, denn es ist genau das, was National tut und die meisten seiner Mitbewerber schlicht nicht tun.</p>
+        <p>Auf nahezu jeder Spielkarte siehst du einen RTP-Wert. Manche dieser Zahlen sehen auf den ersten Blick seltsam aus — ein Slot zeigt 101 %, ein anderer blinkt mit 138 %, ein Live-Spiel liest sich als 159 %. Kein Slot bringt über seine Lebensdauer 138 % zurück; wäre es so, wäre das Casino bis zum Mittagessen pleite. Was du siehst, ist Live-RTP — eine Momentaufnahme davon, wie dieses konkrete Spiel über die jüngste Spielphase tatsächlich ausgezahlt hat, nicht der theoretische Wert, der in seinem Code steckt. Stell es dir als das kurzfristige Wetter des Raums vor, nicht als sein Klima. Ein Spiel, das mit 138 % heißläuft, hat schlicht über das jüngste Fenster, das du siehst, mehr ausgezahlt, als es eingenommen hat; eine Stunde später kann es genauso gut 82 % anzeigen.</p>
+        <div className="rtp-strip-scroll" role="region" tabIndex={0} aria-label="Live-RTP-Spielübersicht">
+          <Image
+            className="rtp-strip-image"
+            src="/content/main/live-rtp-strip.png"
+            alt="Spielkarten mit Live-RTP-Werten und aktuellen Spielerzahlen"
+            width={2494}
+            height={518}
+            sizes="(max-width: 1180px) 100vw, 82vw"
+          />
         </div>
+        <p>Das ist echt nützlich und echt ehrlich, solange du es richtig liest. Der konfigurierte RTP — der Langzeitwert, um den herum das Spiel gebaut ist — ist die Zahl, die deine Gewinnchancen über Tausende von Spins tatsächlich bestimmt, und er liegt meist irgendwo zwischen 94 % und 97 %, je nachdem, wie der Betreiber das Spiel eingestellt hat. Der Live-RTP auf der Kachel sagt dir, was zuletzt passiert ist. Keiner von beiden sagt deinen nächsten Spin voraus, denn das kann nichts. Aber beide offen gezeigt zu bekommen, ist eine Höflichkeit, die die meisten Betreiber nicht erweisen. Sie behandelt dich wie jemanden, der den Unterschied verstehen kann — was, da du bis hierher gelesen hast, offenkundig auf dich zutrifft.</p>
+        <p>Das Detektiv-Thema und diese Gewohnheit sind im Grunde dieselbe Geste. Ein Casino, das sich rund um Spuren und verborgene Dinge einkleidet und dir dann tatsächlich die Beweise auf jeder Kachel zeigt, ist zumindest in sich stimmig, was seine eigene Prämisse angeht. Es bittet dich, genau hinzuschauen, und belohnt dich dann fürs Hinschauen.</p>
       </Section>
 
       <Section id="spielkachel-lesen" title="Wie man eine Spielkachel im National Casino liest" className="">
