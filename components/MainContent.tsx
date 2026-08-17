@@ -58,6 +58,12 @@ export function MainContent() {
         <p>Vor dem Rundgang die Eckdaten. Das ist der Rahmen, an dem alles andere hängt.</p>
         <div className="table-scroll" role="region" tabIndex={0}>
           <table>
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
             <tbody>
               <tr>
                 <th scope="row">Währungen</th>
@@ -110,13 +116,13 @@ export function MainContent() {
             </tbody>
           </table>
         </div>
-        <div className="subsection-panel germany-note-panel">
+        <div className="germany-note-panel">
           <p>Eine Anmerkung zu dieser Lizenzzeile, denn sie verdient Ehrlichkeit statt eines Schulterzuckens. Eine Curaçao-Lizenz ist die häufigste Berechtigung im Online-Glücksspiel. Sie bedeutet, dass echte Aufsicht besteht — der Betreiber muss sich gegenüber einer Regulierungsbehörde verantworten, die Spiele laufen auf zertifizierten Zufallsgeneratoren — aber es ist ein Regime mit leichterer Hand als etwa das im Vereinigten Königreich oder auf Malta. Wer den strengstmöglichen Verbraucherschutz will, ist hier nicht richtig. Wer ein legitimes, funktionierendes Casino mit vernünftigen Schutzmechanismen will, ist es sehr wohl. Wenn du weißt, was du suchst, weißt du auch, ob das hier passt.</p>
           <p>Für deutsche Spielerinnen und Spieler lohnt ein zusätzlicher Satz: Der streng regulierte, lizenzierte deutsche Markt nach dem Glücksspielstaatsvertrag funktioniert nach anderen Regeln als ein Curaçao-Angebot. Das ist keine Wertung, sondern ein Hinweis — kenne den Rahmen, in dem du spielst, dann triffst du eine informierte Entscheidung.</p>
         </div>
       </Section>
 
-      <Section id="lobby-landkarte" title="Die Lobby wie eine Landkarte lesen" className="image-copy-section">
+      <Section id="lobby-landkarte" title="Die Lobby wie eine Landkarte lesen" className="image-copy-section image-copy-section--wide-title">
         <Image className="image-copy-section__image" src="/content/main/overview.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
@@ -323,7 +329,7 @@ export function MainContent() {
         </div>
       </Section>
 
-      <Section id="verantwortungsvolles-spielen" title="Ein Wort zum verantwortungsvollen Spielen" className="image-copy-section">
+      <Section id="verantwortungsvolles-spielen" title="Ein Wort zum verantwortungsvollen Spielen" className="image-copy-section image-copy-section--wide-title">
         <Image className="image-copy-section__image" src="/content/shared/responsible-gaming.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">

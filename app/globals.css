@@ -853,7 +853,7 @@ table {
   min-width: 720px;
   border-collapse: separate;
   border-spacing: 0 var(--space-detail);
-  padding: var(--space-control) var(--space-nested) var(--space-detail);
+  padding: var(--space-control) var(--space-nested);
   text-align: left;
 }
 
@@ -877,11 +877,6 @@ thead th {
 tbody th {
   color: var(--text);
   font-weight: 600;
-}
-
-tbody {
-  position: relative;
-  top: calc(-1 * var(--space-detail));
 }
 
 tbody tr > * {
