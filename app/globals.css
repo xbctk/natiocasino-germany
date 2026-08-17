@@ -1953,6 +1953,7 @@ tr > :last-child {
 }
 
 .germany-note-panel,
+.germany-detail-grid,
 .germany-bonus-grid,
 .germany-faq-grid,
 .germany-reviews-grid {
@@ -1960,6 +1961,7 @@ tr > :last-child {
 }
 
 .germany-note-panel > :last-child,
+.germany-detail-grid .info-card > :last-child,
 .germany-bonus-grid .info-card > :last-child,
 .germany-faq-grid .info-card > :last-child,
 .germany-review-card p {
@@ -1972,86 +1974,6 @@ tr > :last-child {
   margin-bottom: var(--space-nested);
   color: var(--gold);
   border-bottom: 1px solid rgb(254 200 130 / 18%);
-}
-
-.germany-bonus-grid .info-card::before {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  margin-bottom: var(--space-content);
-  background: var(--disabled);
-  border-radius: 10px;
-  content: "";
-}
-
-#spielkachel-lesen > p,
-#live-etage > p,
-#boni-und-aktionen > p,
-.germany-note-panel > p {
-  max-width: none;
-}
-
-.game-art-grid {
-  display: grid;
-  width: 100%;
-  gap: 8px;
-  padding: 8px;
-  margin: var(--space-content) 0;
-  overflow: hidden;
-  background: var(--dark);
-  border-radius: 14px;
-}
-
-.game-art-grid--seven {
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-}
-
-.game-art-grid--five {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-}
-
-.game-art-grid img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.germany-provider-section {
-  min-height: 620px;
-}
-
-.germany-provider-section .image-copy-section__image {
-  object-position: center;
-}
-
-.germany-provider-section .image-copy-section__overlay {
-  background: linear-gradient(90deg, rgb(0 0 0 / 90%) 0%, rgb(0 0 0 / 86%) 38%, rgb(0 0 0 / 12%) 72%);
-}
-
-@media (min-width: 1181px) {
-  #lobby-landkarte > h2 {
-    width: 100%;
-    grid-template-columns: max-content minmax(48px, 1fr);
-    white-space: nowrap;
-  }
-}
-
-@media (max-width: 1180px) {
-  .game-art-grid--seven {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .game-art-grid--five {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 700px) {
-  .game-art-grid--seven,
-  .game-art-grid--five {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 .germany-review-card {
