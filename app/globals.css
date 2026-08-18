@@ -2191,13 +2191,13 @@ tr > :last-child {
 }
 
 .germany-review-card--structured .review-card__top h3 {
-  color: var(--text);
+  color: var(--gold);
   font-size: 20px;
   line-height: 1.45;
 }
 
 .germany-review-card--structured .review-card__top p {
-  color: var(--gold);
+  color: var(--text);
   font-size: 18px;
   font-weight: 600;
 }
