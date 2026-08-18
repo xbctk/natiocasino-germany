@@ -2812,8 +2812,7 @@ tr > :last-child {
   margin-top: var(--space-content);
 }
 
-.app-definition-layout,
-.app-requirements-layout {
+.app-definition-layout {
   margin-bottom: 0;
 }
 
@@ -2830,7 +2829,6 @@ tr > :last-child {
 }
 
 .app-definition-art,
-.app-requirements-art,
 .app-install-media {
   position: relative;
   min-width: 0;
@@ -2842,12 +2840,7 @@ tr > :last-child {
   box-shadow: inset 0 1px 0 rgb(255 255 255 / 5%);
 }
 
-.app-definition-art {
-  min-height: 680px;
-}
-
 .app-definition-art img,
-.app-requirements-art img,
 .app-install-media img {
   object-fit: cover;
 }
@@ -2916,6 +2909,17 @@ tr > :last-child {
   margin-bottom: 0;
 }
 
+.app-benefits-reward-title {
+  padding-bottom: 10px;
+  margin: var(--space-content) 0 var(--space-nested);
+  color: var(--gold);
+  border-bottom: 1px solid rgb(254 200 130 / 24%);
+}
+
+.app-benefits-reward-intro {
+  max-width: none;
+}
+
 .app-benefits-reward-layout {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2925,20 +2929,30 @@ tr > :last-child {
 }
 
 .app-benefits-reward-copy .step-list {
-  height: 100%;
   margin: 0;
 }
 
 .app-benefits-reward-layout .media-placeholder {
-  min-height: 480px;
+  min-height: 0;
 }
 
-.app-requirements-art {
+.app-requirements-section {
   min-height: 720px;
 }
 
-.app-requirements-art img {
+.app-requirements-section .image-copy-section__copy {
+  width: min(56%, 780px);
+}
+
+.app-requirements-section .image-copy-section__image {
+  right: 0;
+  left: auto !important;
+  width: 70% !important;
   object-position: center;
+}
+
+.app-requirements-section .image-copy-section__overlay {
+  background: linear-gradient(90deg, rgb(0 0 0 / 92%) 0%, rgb(0 0 0 / 88%) 42%, rgb(0 0 0 / 0%) 76%);
 }
 
 #die-mobile-seite tbody th {
@@ -3656,14 +3670,22 @@ tr > :last-child {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .app-benefits-reward-layout .media-placeholder {
-    min-height: 360px;
-  }
-
   .app-definition-art,
-  .app-requirements-art,
   .app-install-media {
     min-height: 420px;
+  }
+
+  .app-benefits-reward-layout .media-placeholder {
+    min-height: 320px;
+  }
+
+  .app-requirements-section .image-copy-section__copy {
+    width: min(100%, 780px);
+  }
+
+  .app-requirements-section .image-copy-section__image {
+    left: 0 !important;
+    width: 100% !important;
   }
 
   .hero__image,
@@ -4002,9 +4024,12 @@ tr > :last-child {
   }
 
   .app-definition-art,
-  .app-requirements-art,
   .app-install-media {
     min-height: 300px;
+  }
+
+  .app-benefits-reward-layout .media-placeholder {
+    min-height: 260px;
   }
 
   .app-benefit-card h3 {

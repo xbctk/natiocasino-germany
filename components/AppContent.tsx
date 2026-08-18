@@ -211,12 +211,10 @@ export function AppContent() {
             <h3 className="boni-icon-heading boni-icon-heading--cards">Sie ist für den Bildschirm gebaut, den du in der Hand hältst</h3>
             <p>Die mobile Oberfläche baut die Seite für einen kleinen Bildschirm neu auf, statt die Desktop-Version zu schrumpfen. Das Menü öffnet sich in einem kompakten Format, Spielkacheln stapeln sich vertikal, und Kategorien wechseln mit einem Tipp statt mit einem Hover. Die Bedienelemente passen sich der Berührung an. Der eine ehrliche Vorbehalt: Einzelne Spiele laden über ihre eigenen Anbieter-Oberflächen, das genaue Gefühl eines bestimmten Slots oder Live-Tisches hängt also vom Studio ab, das ihn gebaut hat — aber der Casino-Rahmen drumherum ist ordentlich optimiert.</p>
           </article>
-
-          <article className="info-card app-benefit-card">
-            <h3 className="boni-icon-heading boni-icon-heading--cards">Sie kommt mit ihrer eigenen Belohnung</h3>
-            <p>Der bestätigte App-exklusive Vorteil sind 10 Freispiele ohne Einzahlung. Um sie zu beanspruchen:</p>
-          </article>
         </div>
+
+        <h3 className="boni-icon-heading boni-icon-heading--cards app-benefits-reward-title">Sie kommt mit ihrer eigenen Belohnung</h3>
+        <p className="app-benefits-reward-intro">Der bestätigte App-exklusive Vorteil sind 10 Freispiele ohne Einzahlung. Um sie zu beanspruchen:</p>
 
         <div className="app-benefits-reward-layout">
           <div className="app-benefits-reward-copy">
@@ -236,24 +234,21 @@ export function AppContent() {
 
       <AppPromoBanner />
 
-      <Section id="was-dein-geraet-braucht" title="Was dein Gerät braucht">
-        <div className="split-layout app-requirements-layout">
-          <div className="app-requirements-copy">
-            <p>Weil dies eine PWA ist, sind die Anforderungen erfrischend leicht. Vergiss das Durchsuchen einer Liste bestimmter Modellnummern — die ehrliche Antwort lautet: Wenn dein Handy einen aktuellen Browser hat, bist du dabei. Konkret willst du:</p>
-            <ul className="feature-list">
-              <li>Ein Smartphone oder Tablet mit Android oder iOS.</li>
-              <li>Eine aktuelle Version von Chrome (für Android) oder Safari (für iPhone und iPad).</li>
-              <li>Eine stabile Internetverbindung.</li>
-              <li>Zugriff auf die offizielle National Casino Seite.</li>
-              <li>Ein wenig freien Speicher für das Icon und temporäre Browser-Daten.</li>
-              <li>Ein aktives Konto, um um Echtgeld zu spielen und den App-Bonus zu beanspruchen.</li>
-            </ul>
-            <p>Du musst keine APK herunterladen, keine Installationen aus unbekannten Quellen erlauben und nicht durch Google Play oder den App Store gehen. Das ist das ganze Design.</p>
-            <p>Zur Verbindung: Ein normales Mobilsignal reicht für Slots reichlich. Live-Casino und Live-Wetten verlangen etwas Beständigeres, da sie Echtzeit-Video streamen — wenn du eine Live-Dealer-Session planst, dient dir WLAN oder ein starkes Signal besser. Und wenn die App sich je träge anfühlt, greifen die üblichen Kniffe: Browser aktualisieren, überzählige Tabs schließen, ein wenig Speicher freimachen und neu starten. Bleibt ein Problem bestehen, ist dasselbe Casino immer nur einen Tipp entfernt in einem normalen Browser-Tab, was uns zur Alternative bringt.</p>
-          </div>
-          <div className="app-requirements-art" aria-hidden="true">
-            <Image alt="" fill sizes="(max-width: 960px) 100vw, 40vw" src="/content/shared/ios-install-centered.webp" />
-          </div>
+      <Section className="image-copy-section app-requirements-section" id="was-dein-geraet-braucht" title="Was dein Gerät braucht">
+        <Image className="image-copy-section__image" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" src="/content/shared/ios-install-centered.webp" aria-hidden="true" />
+        <div className="image-copy-section__overlay" aria-hidden="true" />
+        <div className="image-copy-section__copy app-requirements-copy">
+          <p>Weil dies eine PWA ist, sind die Anforderungen erfrischend leicht. Vergiss das Durchsuchen einer Liste bestimmter Modellnummern — die ehrliche Antwort lautet: Wenn dein Handy einen aktuellen Browser hat, bist du dabei. Konkret willst du:</p>
+          <ul className="feature-list">
+            <li>Ein Smartphone oder Tablet mit Android oder iOS.</li>
+            <li>Eine aktuelle Version von Chrome (für Android) oder Safari (für iPhone und iPad).</li>
+            <li>Eine stabile Internetverbindung.</li>
+            <li>Zugriff auf die offizielle National Casino Seite.</li>
+            <li>Ein wenig freien Speicher für das Icon und temporäre Browser-Daten.</li>
+            <li>Ein aktives Konto, um um Echtgeld zu spielen und den App-Bonus zu beanspruchen.</li>
+          </ul>
+          <p>Du musst keine APK herunterladen, keine Installationen aus unbekannten Quellen erlauben und nicht durch Google Play oder den App Store gehen. Das ist das ganze Design.</p>
+          <p>Zur Verbindung: Ein normales Mobilsignal reicht für Slots reichlich. Live-Casino und Live-Wetten verlangen etwas Beständigeres, da sie Echtzeit-Video streamen — wenn du eine Live-Dealer-Session planst, dient dir WLAN oder ein starkes Signal besser. Und wenn die App sich je träge anfühlt, greifen die üblichen Kniffe: Browser aktualisieren, überzählige Tabs schließen, ein wenig Speicher freimachen und neu starten. Bleibt ein Problem bestehen, ist dasselbe Casino immer nur einen Tipp entfernt in einem normalen Browser-Tab, was uns zur Alternative bringt.</p>
         </div>
       </Section>
 
