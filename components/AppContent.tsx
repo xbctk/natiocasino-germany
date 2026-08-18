@@ -72,6 +72,10 @@ function StepList({ children }: { children: ReactNode }) {
   return <ol className="step-list">{children}</ol>;
 }
 
+function JoinNowButton() {
+  return <a className="button button--primary content-section__action" href={GENERAL_AFFILIATE_URL} rel="sponsored">Jetzt beitreten</a>;
+}
+
 function PlatformTitle({ icon, title }: { icon: "android" | "apple"; title: string }) {
   return (
     <h3 className="app-platform-title">
@@ -128,6 +132,7 @@ export function AppContent() {
             <Image alt="" fill sizes="(max-width: 960px) 100vw, 40vw" src="/content/app/general-install.webp" />
           </div>
         </div>
+        <JoinNowButton />
       </Section>
 
       <PromotionBanner variant="first-deposit" />
@@ -180,6 +185,7 @@ export function AppContent() {
             </div>
           </div>
         </div>
+        <JoinNowButton />
       </Section>
 
       <Section className="image-copy-section app-apk-section" id="ein-klares-wort-zu-apk-dateien" title="Ein klares Wort zu APK-Dateien">
@@ -188,6 +194,7 @@ export function AppContent() {
         <div className="image-copy-section__copy">
           <p>Du wirst den Begriff „APK&quot; auf vielen Android-Casino-Seiten herumgeworfen sehen, machen wir also Klartext dazu. Eine APK ist eine Android-Installationsdatei, und manche Seiten drängen dich, eine aus einem Drittanbieter-Verzeichnis herunterzuladen. Davon würden wir dich wegsteuern. Eine Datei aus einer inoffiziellen Quelle zu installieren bedeutet, Androids Schutz gegen unbekannte Installationsquellen abzuschalten und einer Kopie der App zu vertrauen, die du nicht überprüfen kannst — was genau die Art von Risiko ist, die man mit einem Konto, das dein Geld hält, besser nicht eingeht.</p>
           <p>Die National Casino App braucht nichts davon. Du installierst sie von der offiziellen Seite über Chrome, ohne Berechtigungen für unbekannte Quellen und ohne heruntergeladenes Paket, um das man sich sorgen müsste. Wenn eine Seite dir je sagt, eine National APK von irgendwo zu laden, das nicht die offizielle Seite ist, behandle das als Grund, den Tab zu schließen. Der sichere Weg ist praktischerweise auch der einfache.</p>
+          <JoinNowButton />
         </div>
       </Section>
 
@@ -230,6 +237,7 @@ export function AppContent() {
         </div>
 
         <p className="app-benefits-closing">Das Angebot kann einmal beansprucht werden, es ist also ein einmaliger Bonus fürs Einrichten der App — klein, aber gratis, und es gibt keinen Grund, ihn unbeansprucht zu lassen.</p>
+        <JoinNowButton />
       </Section>
 
       <AppPromoBanner />
@@ -249,6 +257,7 @@ export function AppContent() {
           </ul>
           <p>Du musst keine APK herunterladen, keine Installationen aus unbekannten Quellen erlauben und nicht durch Google Play oder den App Store gehen. Das ist das ganze Design.</p>
           <p>Zur Verbindung: Ein normales Mobilsignal reicht für Slots reichlich. Live-Casino und Live-Wetten verlangen etwas Beständigeres, da sie Echtzeit-Video streamen — wenn du eine Live-Dealer-Session planst, dient dir WLAN oder ein starkes Signal besser. Und wenn die App sich je träge anfühlt, greifen die üblichen Kniffe: Browser aktualisieren, überzählige Tabs schließen, ein wenig Speicher freimachen und neu starten. Bleibt ein Problem bestehen, ist dasselbe Casino immer nur einen Tipp entfernt in einem normalen Browser-Tab, was uns zur Alternative bringt.</p>
+          <JoinNowButton />
         </div>
       </Section>
 
@@ -282,6 +291,7 @@ export function AppContent() {
           </article>
         </div>
         <p>Beide Wege verbinden sich mit demselben Profil, du bist also nie auf eine Wahl festgelegt — du kannst heute im Browser spielen und die App nächste Woche installieren, ohne irgendetwas zu verlieren. Die Installation tauscht nur dreißig Sekunden Einrichtung gegen einen schnelleren Weg hinein und einen kleinen Freispiel-Bonus. Für alle, die mehr als gelegentlich spielen, lohnt sich dieser Tausch.</p>
+        <JoinNowButton />
       </Section>
 
       <Section id="haeufig-gestellte-fragen" title="Häufig gestellte Fragen">
