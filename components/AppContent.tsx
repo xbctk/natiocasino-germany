@@ -233,7 +233,7 @@ export function AppContent() {
             </StepList>
           </div>
           <div className="app-benefits-reward-art" aria-hidden="true">
-            <Image alt="" fill sizes="(max-width: 960px) 100vw, 40vw" src="/content/app/app-reward-v2.webp" />
+            <Image alt="" fill sizes="(max-width: 960px) 100vw, 40vw" src="/content/app/app-reward-v3.webp" />
           </div>
         </div>
 

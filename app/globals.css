@@ -2939,14 +2939,20 @@ tr > :last-child {
 
 .app-benefits-reward-art {
   position: relative;
-  align-self: center;
+  align-self: stretch;
   width: 100%;
-  aspect-ratio: 1;
+  min-height: 0;
   overflow: hidden;
   background: var(--dark);
   border: 1px solid var(--content-border);
   border-radius: 14px;
   box-shadow: inset 0 1px 0 rgb(255 255 255 / 5%);
+}
+
+@media (max-width: 960px) {
+  .app-benefits-reward-art {
+    aspect-ratio: 1672 / 798;
+  }
 }
 
 .app-benefits-reward-art img {
