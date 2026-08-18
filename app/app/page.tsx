@@ -36,7 +36,7 @@ export default function AppPage() {
       <div className="page-layout">
         <Sidebar label="Bereiche der App-Seite" sections={appSections} />
         <main className="page-main">
-          <Hero breadcrumbLabel="App" breadcrumbPath="/app" descriptionLines={descriptionLines} imageSrc="/content/app/hero.webp" titleLines={titleLines} />
+          <Hero breadcrumbLabel="App" breadcrumbPath="/app" className="app-hero" descriptionLines={descriptionLines} imageSrc="/content/app/hero.webp" titleLines={titleLines} />
           <AppContent />
           <Footer />
         </main>

@@ -423,6 +423,10 @@ a {
   width: min(1000px, 90%);
 }
 
+.app-hero .hero__content {
+  width: min(880px, 90%);
+}
+
 .boni-welcome-grid,
 .boni-reload-grid,
 .boni-spins-grid {
@@ -2821,7 +2825,7 @@ tr > :last-child {
 .app-definition-copy > :last-child,
 .app-requirements-copy > :last-child,
 .app-platform-panel > :last-child,
-.app-benefits-section .image-copy-section__copy > :last-child {
+.app-benefits-section > :last-child {
   margin-bottom: 0;
 }
 
@@ -2885,32 +2889,48 @@ tr > :last-child {
   width: min(54%, 760px);
 }
 
-.app-benefits-section {
-  min-height: 1120px;
+.app-benefits-lead,
+.app-benefits-closing {
+  max-width: none;
 }
 
-.app-benefits-section > h2,
-.app-benefits-section .image-copy-section__copy {
-  width: min(58%, 820px);
+.app-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-content);
+  margin: var(--space-content) 0;
 }
 
-.app-benefits-section .image-copy-section__overlay {
-  background: linear-gradient(90deg, rgb(0 0 0 / 92%) 0%, rgb(0 0 0 / 90%) 38%, rgb(0 0 0 / 0%) 76%);
+.app-benefit-card {
+  min-height: 100%;
 }
 
-.app-benefits-section .image-copy-section__image {
-  object-position: center top;
-}
-
-.app-benefits-section .image-copy-section__copy h3 {
+.app-benefit-card h3 {
   padding-bottom: 10px;
-  margin: var(--space-content) 0 var(--space-nested);
+  margin: 0 0 var(--space-nested);
   color: var(--gold);
   border-bottom: 1px solid rgb(254 200 130 / 24%);
 }
 
-.app-benefits-section .step-list {
+.app-benefit-card > :last-child {
+  margin-bottom: 0;
+}
+
+.app-benefits-reward-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-content);
+  align-items: stretch;
   margin-bottom: var(--space-content);
+}
+
+.app-benefits-reward-copy .step-list {
+  height: 100%;
+  margin: 0;
+}
+
+.app-benefits-reward-layout .media-placeholder {
+  min-height: 480px;
 }
 
 .app-requirements-art {
@@ -3627,14 +3647,17 @@ tr > :last-child {
     width: min(100%, 780px);
   }
 
-  .app-apk-section .image-copy-section__copy,
-  .app-benefits-section > h2,
-  .app-benefits-section .image-copy-section__copy {
+  .app-apk-section .image-copy-section__copy {
     width: min(100%, 820px);
   }
 
-  .app-benefits-section .image-copy-section__overlay {
-    background: linear-gradient(90deg, rgb(0 0 0 / 94%) 0%, rgb(0 0 0 / 90%) 50%, rgb(0 0 0 / 72%) 100%);
+  .app-benefits-grid,
+  .app-benefits-reward-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .app-benefits-reward-layout .media-placeholder {
+    min-height: 360px;
   }
 
   .app-definition-art,
@@ -3984,7 +4007,7 @@ tr > :last-child {
     min-height: 300px;
   }
 
-  .app-benefits-section .image-copy-section__copy h3 {
+  .app-benefit-card h3 {
     align-items: flex-start;
   }
 

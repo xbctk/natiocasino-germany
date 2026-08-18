@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { GENERAL_AFFILIATE_URL } from "./affiliateLinks";
 import { AppPromoBanner } from "./AppPromoBanner";
 import { JsonLd } from "./JsonLd";
+import { PlaceholderMedia } from "./PlaceholderMedia";
 import { PromotionBanner } from "./PromotionBanner";
 
 const appFaqItems = [
@@ -192,32 +193,45 @@ export function AppContent() {
 
       <PromotionBanner variant="second-deposit" />
 
-      <Section className="image-copy-section image-copy-section--wide-title app-benefits-section" id="was-du-davon-hast" title="Was du davon hast">
-        <Image className="image-copy-section__image" src="/content/app/final.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
-        <div className="image-copy-section__overlay" aria-hidden="true" />
-        <div className="image-copy-section__copy">
-          <p>Die App behält alles, was die mobile Seite kann, und fügt die Bequemlichkeit eines eigenen Icons hinzu. Die echten Vorteile sortieren sich in vier Bereiche.</p>
+      <Section className="app-benefits-section" id="was-du-davon-hast" title="Was du davon hast">
+        <p className="app-benefits-lead">Die App behält alles, was die mobile Seite kann, und fügt die Bequemlichkeit eines eigenen Icons hinzu. Die echten Vorteile sortieren sich in vier Bereiche.</p>
 
-          <h3 className="boni-icon-heading boni-icon-heading--cards">Sie ist wirklich tragbar</h3>
-          <p>Das ist der offensichtliche, aber es ist der Sinn des Ganzen. Nachdem du sie installiert hast, lebt National auf deinem Startbildschirm — kein Browser öffnen, keine Adresse tippen, kein Lesezeichen suchen jedes Mal. Ein Tipp, und du bist drin. Und weil dein Konto an dein Profil gebunden ist statt an dein Gerät, kannst du eine Session auf einem Laptop beginnen, später dein Handy in die Hand nehmen und dasselbe Guthaben, Bonusguthaben, deine VIP-Stufe, Comp Points, aktiven Boni und Transaktionshistorie genau da vorfinden, wo du sie gelassen hast.</p>
+        <div className="app-benefits-grid">
+          <article className="info-card app-benefit-card">
+            <h3 className="boni-icon-heading boni-icon-heading--cards">Sie ist wirklich tragbar</h3>
+            <p>Das ist der offensichtliche, aber es ist der Sinn des Ganzen. Nachdem du sie installiert hast, lebt National auf deinem Startbildschirm — kein Browser öffnen, keine Adresse tippen, kein Lesezeichen suchen jedes Mal. Ein Tipp, und du bist drin. Und weil dein Konto an dein Profil gebunden ist statt an dein Gerät, kannst du eine Session auf einem Laptop beginnen, später dein Handy in die Hand nehmen und dasselbe Guthaben, Bonusguthaben, deine VIP-Stufe, Comp Points, aktiven Boni und Transaktionshistorie genau da vorfinden, wo du sie gelassen hast.</p>
+          </article>
 
-          <h3 className="boni-icon-heading boni-icon-heading--cards">Sie ist von Grund auf sicherer</h3>
-          <p>Von der offiziellen Seite zu installieren umgeht das größte Mobil-Casino-Risiko vollständig: Es gibt kein gefälschtes Paket zum versehentlichen Herunterladen, keine Berechtigung für unbekannte Quellen zu erteilen, keinen Drittanbieter-Store im Spiel. Die App nutzt dasselbe Autorisierungs- und Sicherheitssystem wie die Hauptseite — du erschaffst keine neue Angriffsfläche, du stellst nur eine vertrauenswürdige Sache hinter ein Startbildschirm-Icon.</p>
+          <article className="info-card app-benefit-card">
+            <h3 className="boni-icon-heading boni-icon-heading--cards">Sie ist von Grund auf sicherer</h3>
+            <p>Von der offiziellen Seite zu installieren umgeht das größte Mobil-Casino-Risiko vollständig: Es gibt kein gefälschtes Paket zum versehentlichen Herunterladen, keine Berechtigung für unbekannte Quellen zu erteilen, keinen Drittanbieter-Store im Spiel. Die App nutzt dasselbe Autorisierungs- und Sicherheitssystem wie die Hauptseite — du erschaffst keine neue Angriffsfläche, du stellst nur eine vertrauenswürdige Sache hinter ein Startbildschirm-Icon.</p>
+          </article>
 
-          <h3 className="boni-icon-heading boni-icon-heading--cards">Sie ist für den Bildschirm gebaut, den du in der Hand hältst</h3>
-          <p>Die mobile Oberfläche baut die Seite für einen kleinen Bildschirm neu auf, statt die Desktop-Version zu schrumpfen. Das Menü öffnet sich in einem kompakten Format, Spielkacheln stapeln sich vertikal, und Kategorien wechseln mit einem Tipp statt mit einem Hover. Die Bedienelemente passen sich der Berührung an. Der eine ehrliche Vorbehalt: Einzelne Spiele laden über ihre eigenen Anbieter-Oberflächen, das genaue Gefühl eines bestimmten Slots oder Live-Tisches hängt also vom Studio ab, das ihn gebaut hat — aber der Casino-Rahmen drumherum ist ordentlich optimiert.</p>
+          <article className="info-card app-benefit-card">
+            <h3 className="boni-icon-heading boni-icon-heading--cards">Sie ist für den Bildschirm gebaut, den du in der Hand hältst</h3>
+            <p>Die mobile Oberfläche baut die Seite für einen kleinen Bildschirm neu auf, statt die Desktop-Version zu schrumpfen. Das Menü öffnet sich in einem kompakten Format, Spielkacheln stapeln sich vertikal, und Kategorien wechseln mit einem Tipp statt mit einem Hover. Die Bedienelemente passen sich der Berührung an. Der eine ehrliche Vorbehalt: Einzelne Spiele laden über ihre eigenen Anbieter-Oberflächen, das genaue Gefühl eines bestimmten Slots oder Live-Tisches hängt also vom Studio ab, das ihn gebaut hat — aber der Casino-Rahmen drumherum ist ordentlich optimiert.</p>
+          </article>
 
-          <h3 className="boni-icon-heading boni-icon-heading--cards">Sie kommt mit ihrer eigenen Belohnung</h3>
-          <p>Der bestätigte App-exklusive Vorteil sind 10 Freispiele ohne Einzahlung. Um sie zu beanspruchen:</p>
-          <StepList>
-            <li>Installiere National über den Anwendung-Bereich.</li>
-            <li>Öffne die App.</li>
-            <li>Logg dich in dein bestehendes Konto ein, oder registriere dich.</li>
-            <li>Warte bis zu einer Stunde.</li>
-            <li>Prüfe den Boni-Bereich auf deine Spins.</li>
-          </StepList>
-          <p>Das Angebot kann einmal beansprucht werden, es ist also ein einmaliger Bonus fürs Einrichten der App — klein, aber gratis, und es gibt keinen Grund, ihn unbeansprucht zu lassen.</p>
+          <article className="info-card app-benefit-card">
+            <h3 className="boni-icon-heading boni-icon-heading--cards">Sie kommt mit ihrer eigenen Belohnung</h3>
+            <p>Der bestätigte App-exklusive Vorteil sind 10 Freispiele ohne Einzahlung. Um sie zu beanspruchen:</p>
+          </article>
         </div>
+
+        <div className="app-benefits-reward-layout">
+          <div className="app-benefits-reward-copy">
+            <StepList>
+              <li>Installiere National über den Anwendung-Bereich.</li>
+              <li>Öffne die App.</li>
+              <li>Logg dich in dein bestehendes Konto ein, oder registriere dich.</li>
+              <li>Warte bis zu einer Stunde.</li>
+              <li>Prüfe den Boni-Bereich auf deine Spins.</li>
+            </StepList>
+          </div>
+          <PlaceholderMedia label="Platzhalter für eine zukünftige App-Bonus-Illustration" />
+        </div>
+
+        <p className="app-benefits-closing">Das Angebot kann einmal beansprucht werden, es ist also ein einmaliger Bonus fürs Einrichten der App — klein, aber gratis, und es gibt keinen Grund, ihn unbeansprucht zu lassen.</p>
       </Section>
 
       <AppPromoBanner />
