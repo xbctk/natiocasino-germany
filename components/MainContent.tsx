@@ -44,6 +44,39 @@ const liveTableGames = [
   { name: "Craps", src: "/content/main/live-games/craps.webp" },
 ] as const;
 
+const featuredProviders = [
+  {
+    name: "Pragmatic Play",
+    icon: "/content/main/providers/pragmatic-play.svg",
+    games: ["Gates of Olympus Super Scatter", "Starlight Princess Super Scatter"],
+  },
+  {
+    name: "Dynabit Gaming",
+    icon: "/content/main/providers/dynabit-gaming.svg",
+    games: ["Coin Bandit: Hold and Win", "Flash Coins: Hold and Win"],
+  },
+  {
+    name: "BGaming",
+    icon: "/content/main/providers/bgaming.svg",
+    games: ["Burning Chilli 243", "Wild West TRUEWAYS"],
+  },
+  {
+    name: "Hacksaw",
+    icon: "/content/main/providers/hacksaw.svg",
+    games: ["Nitro Nights"],
+  },
+  {
+    name: "Felix Gaming",
+    icon: "/content/main/providers/felix-gaming.svg",
+    games: ["20 Boost Hot", "It’s a Joker"],
+  },
+  {
+    name: "Spinomenal",
+    icon: "/content/main/providers/spinomenal.svg",
+    games: ["3 Scarabs Of Rebirth"],
+  },
+] as const;
+
 function LiveGameStrip({ games, label }: { games: ReadonlyArray<{ name: string; src: string }>; label: string }) {
   return (
     <div className="live-game-strip" role="region" tabIndex={0} aria-label={label}>
@@ -367,6 +400,21 @@ export function MainContent() {
             <p>Auf der Live-Seite ist die ehrliche Anmerkung, dass sich der Spielsaal stark auf Evolution stützt. Das ist eine Stärke, formuliert als milde Verengung: Evolution ist schlicht das beste Studio im Live-Dealer-Geschäft, sich darauf zu stützen bedeutet also, dass die Qualität hoch und beständig ist. Aber es bedeutet eben auch, dass du, wenn du über die Live-Etage gehst, größtenteils durch die Welt eines einzigen Unternehmens gehst, wobei Pragmatic Play Live, Ezugi, Playtech und Winfinity eher die Ränder abrunden, als sich den Raum gleichberechtigt zu teilen. Wenn Evolutions Tische ohnehin deine Favoriten sind — und für viele Spieler sind sie das — dann ist das ein Feature, keine Einschränkung.</p>
             <JoinNowButton />
         </div>
+        <aside className="provider-showcase" aria-label="Beliebte Anbieter und ihre Spiele">
+          <ul className="provider-showcase__list">
+            {featuredProviders.map((provider) => (
+              <li className="provider-showcase__item" key={provider.name}>
+                <span className="provider-showcase__logo" aria-hidden="true">
+                  <Image src={provider.icon} alt="" width={44} height={44} />
+                </span>
+                <span className="provider-showcase__details">
+                  <strong>{provider.name}</strong>
+                  <span>{provider.games.join(" · ")}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </aside>
       </Section>
 
       <PromotionBanner variant="second-deposit" />
