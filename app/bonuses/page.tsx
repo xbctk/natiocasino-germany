@@ -5,8 +5,8 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Sidebar } from "@/components/Sidebar";
 
-const title = "National Casino NZ Bonuses | Up to NZ$500 + 100 Spins";
-const description = "Collect National Casino bonuses for New Zealand: Welcome Bonus up to NZ$500, 100 Free Spins, crypto offer, reload bonuses, VIP rewards and wagering rules.";
+const title = "National Casino Boni in Deutschland: Willkommen, Spins & VIP";
+const description = "Jeder Bonus im National Casino auf einen Blick — 200 % Krypto-Willkommen, Freitags-Reloads, 1-€-Mega-Spins, ein 15-stufiger VIP-Aufstieg und Treasure-Race-Turniere.";
 
 export const metadata: Metadata = {
   title,
@@ -16,17 +16,17 @@ export const metadata: Metadata = {
     title,
     description,
     url: "/bonuses",
-    siteName: "National Casino New Zealand",
-    locale: "en_NZ",
+    siteName: "National Casino Deutschland",
+    locale: "de_DE",
     type: "website",
     images: [{ url: "/content/bonuses/hero.webp", width: 1672, height: 941, alt: title }],
   },
 };
 
-const titleLines = ["National Casino Bonuses New Zealand |", "Up to NZ$500 + 100 Free Spins"];
+const titleLines = ["National Casino Boni in Deutschland:", "Willkommen, Spins & VIP"];
 const descriptionLines = [
-  "Collect National Casino bonuses for New Zealand: Welcome Bonus up to NZ$500,",
-  "100 Free Spins, crypto offer, reload bonuses, VIP rewards and wagering rules.",
+  "Jeder Bonus im National Casino auf einen Blick — 200 % Krypto-Willkommen, Freitags-Reloads,",
+  "1-€-Mega-Spins, ein 15-stufiger VIP-Aufstieg und Treasure-Race-Turniere.",
 ];
 
 export default function BonusesPage() {
@@ -34,7 +34,7 @@ export default function BonusesPage() {
     <div className="site-shell">
       <Header />
       <div className="page-layout">
-        <Sidebar label="Bonuses page sections" sections={bonusesSections} />
+        <Sidebar label="Abschnitte der Boni-Seite" sections={bonusesSections} />
         <main className="page-main">
           <Hero breadcrumbLabel="Boni" breadcrumbPath="/bonuses" descriptionLines={descriptionLines} imageSrc="/content/bonuses/hero.webp" titleLines={titleLines} />
           <BonusesContent />

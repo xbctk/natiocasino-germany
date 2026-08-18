@@ -414,6 +414,237 @@ a {
   }
 }
 
+.boni-page-content .content-section > h2 {
+  grid-template-columns: minmax(0, auto) minmax(48px, 1fr);
+  white-space: normal;
+}
+
+.boni-reason-grid,
+.boni-welcome-grid,
+.boni-reload-grid,
+.boni-spins-grid {
+  margin-top: var(--space-content);
+}
+
+.boni-reason-grid .info-card {
+  display: flex;
+  align-items: center;
+  min-height: 230px;
+}
+
+.boni-reason-grid .info-card p,
+.boni-network-card > p,
+.boni-terms-panel > p {
+  margin-bottom: 0;
+}
+
+.boni-reason-card--accent {
+  background:
+    radial-gradient(circle at 88% 12%, rgb(255 159 108 / 24%), transparent 34%),
+    linear-gradient(145deg, #40342f 0%, #221f20 72%);
+  border-color: rgb(254 200 130 / 38%);
+}
+
+.boni-promotion-card.info-card {
+  min-height: 390px;
+}
+
+.boni-promotion-card .promotion-art-card__content {
+  width: 78%;
+  min-height: 390px;
+}
+
+.boni-promotion-card.promotion-art-card--wide .promotion-art-card__content {
+  width: 70%;
+}
+
+.boni-promotion-card .promotion-art-card__copy {
+  background: rgb(20 18 19 / 56%);
+  backdrop-filter: blur(4px);
+}
+
+.boni-promotion-card .promotion-art-card__character {
+  width: 46%;
+}
+
+.boni-media-panel {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  background: var(--dark);
+  border: 1px solid rgb(254 200 130 / 30%);
+  border-radius: 14px;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 5%);
+}
+
+.boni-media-panel img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.boni-terms-panel {
+  padding: var(--space-card);
+  background:
+    radial-gradient(circle at 100% 0%, rgb(254 200 130 / 12%), transparent 34%),
+    var(--dark);
+  border: 1px solid rgb(254 200 130 / 26%);
+  border-radius: 14px;
+}
+
+.boni-terms-panel > h3 {
+  padding-bottom: var(--space-nested);
+  margin-top: 0;
+  border-bottom: 1px solid rgb(254 200 130 / 22%);
+}
+
+.boni-vip-section,
+.boni-tournament-section,
+.boni-seasonal-section,
+.boni-responsible-section,
+.boni-summary-section {
+  min-height: 680px;
+}
+
+.boni-vip-section .image-copy-section__copy,
+.boni-tournament-section .image-copy-section__copy {
+  width: min(58%, 820px);
+}
+
+.boni-vip-section .image-copy-section__copy h3,
+.boni-tournament-section .image-copy-section__copy h3 {
+  padding-bottom: 10px;
+  margin: var(--space-content) 0 var(--space-nested);
+  color: var(--gold);
+  border-bottom: 1px solid rgb(254 200 130 / 24%);
+}
+
+.boni-network-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+  gap: var(--space-content);
+  align-items: center;
+  margin-top: var(--space-content);
+  background:
+    radial-gradient(circle at 78% 50%, rgb(254 200 130 / 12%), transparent 42%),
+    var(--dark);
+}
+
+.boni-event-art {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-control);
+  min-width: 0;
+}
+
+.boni-event-art__item {
+  display: grid;
+  place-items: end center;
+  min-width: 0;
+  min-height: 250px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 82%, rgb(254 200 130 / 20%), transparent 46%),
+    #191718;
+  border: 1px solid rgb(254 200 130 / 18%);
+  border-radius: 12px;
+}
+
+.boni-event-art__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 12px 18px rgb(0 0 0 / 48%));
+}
+
+.boni-summary-section .content-section__action {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1180px) {
+  .boni-vip-section .image-copy-section__copy,
+  .boni-tournament-section .image-copy-section__copy {
+    width: min(100%, 760px);
+  }
+
+  .boni-network-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 960px) {
+  .boni-reason-grid,
+  .boni-welcome-grid,
+  .boni-reload-grid,
+  .boni-spins-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .boni-promotion-card.promotion-art-card--wide {
+    grid-column: auto;
+  }
+
+  .boni-promotion-card .promotion-art-card__content,
+  .boni-promotion-card.promotion-art-card--wide .promotion-art-card__content {
+    width: 76%;
+  }
+
+  .boni-event-art {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 719px) {
+  .boni-page-content .content-section > h2 {
+    display: block;
+  }
+
+  .boni-reason-grid .info-card {
+    min-height: 0;
+  }
+
+  .boni-promotion-card.info-card,
+  .boni-promotion-card .promotion-art-card__content {
+    min-height: 440px;
+  }
+
+  .boni-promotion-card .promotion-art-card__content,
+  .boni-promotion-card.promotion-art-card--wide .promotion-art-card__content {
+    width: 100%;
+    justify-content: flex-start;
+    padding: var(--space-nested);
+  }
+
+  .boni-promotion-card .promotion-art-card__character {
+    top: auto;
+    right: -16%;
+    width: 82%;
+    height: 58%;
+    opacity: 0.52;
+  }
+
+  .boni-promotion-card .promotion-art-card__copy {
+    padding: var(--space-card);
+    background: rgb(20 18 19 / 72%);
+  }
+
+  .boni-media-panel {
+    min-height: 280px;
+  }
+
+  .boni-event-art__item {
+    min-height: 190px;
+  }
+
+  .boni-vip-section,
+  .boni-tournament-section,
+  .boni-seasonal-section,
+  .boni-responsible-section,
+  .boni-summary-section {
+    min-height: 760px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .brand-menu__wheel-rotor {
     animation: none;

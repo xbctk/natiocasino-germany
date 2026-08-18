@@ -1,430 +1,225 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { BONUS_AFFILIATE_URL, GENERAL_AFFILIATE_URL } from "./affiliateLinks";
-import { PlaceholderMedia } from "./PlaceholderMedia";
-import { PromotionBanner } from "./PromotionBanner";
+import { BONUS_AFFILIATE_URL } from "./affiliateLinks";
 
 export const bonusesSections: ReadonlyArray<readonly [string, string]> = [
-  ["national-casino-promotions-and-bonuses", "National Casino Promotions & Bonuses"],
-  ["introduction-to-casino-promotions", "Introduction to Casino Promotions"],
-  ["welcome-bonus", "Get Started with Our Welcome Bonus"],
-  ["weekly-reload-bonuses", "Boost Your Balance with Weekly Reload Bonuses"],
-  ["free-spins-offers", "Grab Our Free Spins Offers"],
-  ["loyalty-rewards", "Loyalty Rewards & VIP Perks"],
-  ["weekly-cashback", "Get Weekly Cashback"],
-  ["tournament", "Join Our Exciting Tournament"],
-  ["limited-time-offers", "Grab Limited-Time Offers"],
-  ["play-responsibly", "Play Responsibly"],
-  ["gaming-bonuses-summary", "Join National Casino for Gaming Bonuses"],
+  ["national-casino-boni-aktionen", "National Casino Boni & Aktionen in Deutschland"],
+  ["warum-aktionen-lohnen", "Warum sich die Aktionen hier für deutsche Spieler lohnen"],
+  ["willkommenspaket", "Das Willkommenspaket, auf zwei Arten"],
+  ["reload-boni", "Reload-Boni"],
+  ["freispiele-kalender", "Freispiele über den ganzen Kalender"],
+  ["treuebelohnungen-vip", "Treuebelohnungen & VIP-Vorteile"],
+  ["mehr-wege-zum-wert", "Mehr Wege, auf denen der Wert zurückkommt"],
+  ["turniere-bestenlisten", "Turniere und Bestenlisten"],
+  ["aktionscodes", "Aktionscodes: Dein Ticket für etwas Extra"],
+  ["saisonale-angebote", "Zeitlich begrenzte und saisonale Angebote"],
+  ["verantwortungsvoll-spielen-boni", "Verantwortungsvoll spielen"],
+  ["angebot-waehlen", "Dein Angebot wählen"],
 ];
 
-function Section({
-  actionLabel = "Jetzt beitreten",
-  children,
-  className = "",
-  id,
-  title,
-}: {
-  actionLabel?: "Jetzt beitreten" | null;
-  children: ReactNode;
-  className?: string;
-  id: string;
-  title: string;
-}) {
-  return (
-    <section className={`content-section ${className}`.trim()} id={id}>
-      <h2>{title}</h2>
-      {children}
-      {actionLabel ? <a className="button button--primary content-section__action" href={GENERAL_AFFILIATE_URL} rel="sponsored">{actionLabel}</a> : null}
-    </section>
-  );
-}
+const bonusEventArt = [
+  ["/bonuses/special/prize-drops.webp", "Prize Drops"],
+  ["/bonuses/special/pragmatic-dw.webp", "Pragmatic Play Drops & Wins"],
+  ["/bonuses/special/bgaming-drops.webp", "BGaming Drops"],
+  ["/bonuses/special/fortune-wheel.webp", "Glücksrad"],
+] as const;
 
-function Table({ caption, className = "", headers, rows }: { caption: string; className?: string; headers: string[]; rows: string[][] }) {
-  return (
-    <div className={`table-scroll ${className}`.trim()} role="region" aria-label={caption} tabIndex={0}>
-      <table>
-        <caption className="sr-only">{caption}</caption>
-        <thead><tr>{headers.map((header) => <th key={header} scope="col">{header}</th>)}</tr></thead>
-        <tbody>
-          {rows.map((row, rowIndex) => (
-            <tr key={`${row[0]}-${rowIndex}`}>
-              {row.map((cell, cellIndex) => cellIndex === 0 ? <th key={cellIndex} scope="row">{cell}</th> : <td key={cellIndex}>{cell}</td>)}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+function Section({ children, className = "", id, title }: { children: ReactNode; className?: string; id: string; title: string }) {
+  return <section className={`content-section ${className}`.trim()} id={id}><h2>{title}</h2>{children}</section>;
 }
 
 function StepList({ children }: { children: ReactNode }) {
   return <ol className="step-list">{children}</ol>;
 }
 
-function BonusOptionLead({ children }: { children: ReactNode }) {
+function PromotionStoryCard({ background, character, children, title, wide = false }: {
+  background: string;
+  character: string;
+  children: ReactNode;
+  title: string;
+  wide?: boolean;
+}) {
   return (
-    <span className="bonus-option-title">
-      <Image alt="" aria-hidden="true" height={162} src="/content-icons/coin-1.png" width={162} />
-      <strong>{children}</strong>
-    </span>
+    <article className={`info-card promotion-art-card boni-promotion-card${wide ? " promotion-art-card--wide" : ""}`}>
+      <Image className="promotion-art-card__background" src={background} alt="" fill sizes="(max-width: 960px) 100vw, 42vw" aria-hidden="true" />
+      <div className="promotion-art-card__shade" aria-hidden="true" />
+      <div className="promotion-art-card__character" aria-hidden="true">
+        <Image src={character} alt="" fill sizes="(max-width: 719px) 72vw, 24vw" />
+      </div>
+      <div className="promotion-art-card__content">
+        <div className="promotion-art-card__copy">
+          <h3>{title}</h3>
+          {children}
+        </div>
+      </div>
+    </article>
   );
 }
 
 export function BonusesContent() {
   return (
-    <div className="main-content bonuses-content">
-      <Section
-        actionLabel={null}
-        className="image-copy-section"
-        id="national-casino-promotions-and-bonuses"
-        title="National Casino Promotions & Bonuses"
-      >
+    <div className="main-content bonuses-content boni-page-content">
+      <Section id="national-casino-boni-aktionen" title="National Casino Boni & Aktionen in Deutschland" className="image-copy-section image-copy-section--wide-title">
         <Image className="image-copy-section__image" src="/content/bonuses/intro.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
-          <p>National Casino offers bonuses for new and regular users from New Zealand. The basic package for the first deposit includes 100% up to NZ$500 + 100 Free Spins + 1 Bonus Game, however, the player can also choose a separate Crypto First Deposit Bonus or Highroller Bonus.</p>
-          <p>After the first deposit, reload offers, provider promotions, Fortune Wheel, Secret Bonus, VIP Sunday Boost and other temporary promotions become available. Most offers must be activated manually: before depositing, the player selects the appropriate Bonus Card in the Cashier.</p>
-          <p>The standard wagering for deposit bonuses is x40, unless the individual conditions provide for a different multiplier. Only one bonus can be used at a time, and the maximum bet is usually limited to NZ$8. Slots give 100% contribution to wagering, while Table Games and Live Dealer Games are not counted.</p>
+          <p>Manche Casinos betreiben ein einziges Willkommensangebot und nennen das eine Aktionsseite. National Casino betreibt einen Kalender — eine rollende Auswahl an Matches, Spins, Reloads, Rädern und Turnieren, die den meisten Wochentagen einen Grund zum Einloggen gibt. Das hier ist die Landkarte zu allem: was angeboten wird, was jedes Einzelne tatsächlich wert ist und wo das Kleingedruckte steckt, damit du die Angebote auswählen kannst, die zu deiner Spielweise passen, statt den erstbesten glänzenden Button zu drücken.</p>
         </div>
       </Section>
 
-      <Section id="introduction-to-casino-promotions" title="Introduction to Casino Promotions">
-        <p>The National Casino bonus program includes several offer formats. Deposit Match increases the game balance by a set percentage of a suitable deposit. Free Spins allow you to launch certain slots without deducting the standard spin cost from the main balance. Provider Promotions are linked to individual studio games and can distribute cash prizes, Free Spins, or random Prize Drops among participants.</p>
-        <p>Reload offers, VIP rewards and the exchange of accumulated Comp Points are provided for regular users. Some promotions are available only on a certain day of the week, while others are allowed to be received once during the entire account usage period.</p>
-        <div className="split-layout">
-          <div>
-            <p>The National Casino offers the following types of bonuses:</p>
-            <ul className="feature-list promotion-types-list">
-              <li>First Deposit Bonus;</li><li>Crypto First Deposit Bonus;</li><li>Second Deposit Bonus;</li>
-              <li>Highroller Bonus;</li><li>Friday Reload Bonus;</li><li>Unlimited Bonus;</li>
-              <li>Fortune Wheel Bonus;</li><li>App Bonus;</li><li>Subscription Reward;</li>
-              <li>Secret Bonus;</li><li>Prize Drops;</li><li>Pragmatic D&amp;W;</li>
-              <li>BGaming Drops;</li><li>VIP Sunday Boost;</li><li>temporary Promo Codes.</li>
-            </ul>
-          </div>
-          <PlaceholderMedia src="/content/bonuses/promotions-overview.webp" alt="National Casino promotion types" position="66% center" />
-        </div>
-        <p>According to the standard rules, only one bonus can be active on the account. Combining several promotions is allowed only in cases where it is directly stipulated by the terms of a specific offer.</p>
-      </Section>
-
-      <PromotionBanner variant="first-deposit" />
-
-      <Section id="welcome-bonus" title="Get Started with Our Welcome Bonus">
-        <div className="content-subsection">
-          <div className="split-layout welcome-package-layout">
-            <article className="info-card bonus-option-card welcome-package-card">
-              <div className="bonus-option-title">
-                <Image alt="" aria-hidden="true" height={162} src="/content-icons/coin-1.png" width={162} />
-                <h3>What is the Welcome Bonus?</h3>
-              </div>
-              <p>The standard First Deposit Bonus includes:</p>
-              <ul className="feature-list welcome-package-list">
-                <li>100% of the deposit amount up to NZ$500;</li><li>100 Free Spins;</li><li>1 Bonus Game;</li>
-                <li>minimum deposit of NZ$35 for the full package;</li><li>The x40 wager;</li><li>the maximum bid is NZ$8.</li>
-              </ul>
-            </article>
-            <PlaceholderMedia src="/content/bonuses/welcome.webp" alt="Welcome Bonus rewards and free spins" position="68% center" />
-          </div>
-          <p>A suitable payment must be the first deposit in the entire history of the account and be carried out in one transaction. Before making a deposit, you must select the First Deposit Bonus card in the Cashier.</p>
-          <p>Free Spins are awarded in two stages. The first 50 spins become available after a successful deposit, and the remaining 50 are issued after 24 hours. The winnings received with the help of Free Spins must be wagered x40.</p>
-          <p>The offer also includes an Instant Bonus Round in the Big Bass Bonanza 1000 slot. If Pragmatic Play games are not available in the user&apos;s region, the operator can replace the reward with a Bonus Buy feature in a suitable BGaming slot.</p>
-          <div className="card-grid card-grid--two bonus-detail-grid">
-            <article className="info-card bonus-option-card">
-              <div className="bonus-option-title">
-                <Image alt="" aria-hidden="true" height={162} src="/content-icons/coin-1.png" width={162} />
-                <p>After completing the first offer, the player can activate the Second Deposit Bonus.:</p>
-              </div>
-              <ul className="feature-list"><li>50% of the second deposit up to NZ$1,000;</li><li>50 Free Spins;</li><li>minimum deposit is NZ$35;</li><li>The x40 wager;</li><li>the maximum bid is NZ$8.</li></ul>
-              <p>This package applies only to the next eligible deposit. All 50 Free Spins are credited after processing the second deposit.</p>
-            </article>
-            <article className="info-card bonus-option-card">
-              <div className="bonus-option-title">
-                <Image alt="" aria-hidden="true" height={162} src="/content-icons/coin-1.png" width={162} />
-                <p>The Crypto First Deposit Bonus is available for the first cryptocurrency payment.:</p>
-              </div>
-              <ul className="feature-list"><li>200% of the deposit up to NZ$800;</li><li>minimum deposit is NZ$35;</li><li>The x40 wager;</li><li>The maximum bid is NZ$6.50.</li></ul>
-              <p>The Crypto First Deposit Bonus replaces the standard welcome offer rather than complementing it. Before paying, you must select the appropriate card and the available cryptocurrency method in Cashier.</p>
-            </article>
-          </div>
-        </div>
-        <div className="content-subsection">
-          <h3>How to Claim?</h3>
-          <p>To activate the welcome bonus:</p>
-          <div className="split-layout step-media-layout">
-            <StepList>
-              <li>Open the New Zealand version of National Casino.</li><li>Click Sign Up and create an account.</li>
-              <li>Specify New Zealand as the country of residence.</li><li>Select NZD as the game balance currency.</li>
-              <li>Fill out the registration form and log in to your profile.</li><li>Go to the Cashier or Deposit section.</li>
-              <li>Find the card of the desired welcome offer.</li><li>Select the bonus before making the payment.</li>
-              <li>Deposit the required amount in one transaction.</li><li>Open the Bonuses section and check the award accrual.</li>
-              <li>Activate the Free Spins manually if they don&apos;t start automatically.</li>
-            </StepList>
-            <PlaceholderMedia src="/content/bonuses/welcome-activation.webp" alt="Player selecting and activating a welcome offer" position="70% center" />
-          </div>
-          <p>For First Deposit Bonus and Crypto First Deposit Bonus, you must deposit at least NZ$35. Highroller Bonus requires a first deposit of NZ$500. After fulfilling the conditions of the first offer, you can select the Second Deposit Bonus and make the next suitable deposit starting from NZ$35.</p>
-        </div>
-        <div className="content-subsection">
-          <h3>Important Terms</h3>
-          <p>The following basic conditions apply to National Casino&apos;s welcome offers:</p>
-          <ul className="feature-list bonus-terms-list">
-            <li>Minimum Deposit: NZ$35 for First Deposit Bonus, Second Deposit Bonus and Crypto First Deposit Bonus; NZ$500 for Highroller Bonus.</li>
-            <li>Qualifying Payment: A suitable deposit must be made in one transaction.</li>
-            <li>Wagering Requirement: Bonus funds and winnings from Free Spins are usually wagered x40.</li>
-            <li>Free Spins Delivery: in the First Deposit Bonus, the first 50 spins are given after the deposit, the second 50 after 24 hours.</li>
-            <li>Bonus Game: The Instant Bonus Round is available in Big Bass Bonanza 1000 or replaced with a suitable BGaming game.</li>
-            <li>Maximum Bet: the standard limit is NZ$8, and for the Crypto First Deposit Bonus, NZ$6.50.</li>
-            <li>Eligible Games: Slots usually give 100% of the wagering contribution; Table Games and Live Dealer Games are not counted.</li>
-            <li>Active Bonuses: Only one active bonus is allowed at a time.</li>
-            <li>Account Restrictions: One reward is given per user, email, browser, device, and IP address.</li>
-          </ul>
-          <p>The purchase of Bonus Buy, respins and other paid game features is included in the total bet amount. Exceeding the maximum bet or using an excluded game may void the winnings.</p>
-        </div>
-      </Section>
-
-      <Section id="weekly-reload-bonuses" title="Boost Your Balance with Weekly Reload Bonuses">
-        <p>After using the welcome offers, players can switch to bonuses for the following deposits. You do not need to create a new account to receive them, however, each promotion must be activated separately.</p>
-        <p>The main weekly offer is the Friday Reload Bonus. Unlimited Bonus, Secret Bonus, VIP Sunday Boost, Fortune Wheel and temporary campaigns from gaming providers are also available in Promotions. Some promotions are linked to a specific day of the week and use UTC time.</p>
-        <div className="subsection-panel">
-          <h3>Weekly Reload Offers</h3>
-          <p>Friday Reload Bonus is available every Friday from 00:00 to 23:59 UTC.</p>
-          <p>The offer includes:</p>
-          <ul className="feature-list bonus-terms-list bonus-terms-list--balanced"><li>50% of the deposit amount up to NZ$250;</li><li>100 Free Spins;</li><li>minimum deposit is NZ$35;</li><li>a wager of winnings from x40 spins.</li></ul>
-          <p>Free Spins are distributed over two accruals. The first 50 become available after a successful deposit, and another 50 are issued after 24 hours.</p>
-          <p>To receive the Friday Reload Bonus, you must:</p>
-          <div className="split-layout step-media-layout">
-            <StepList><li>Log in to the National Casino account.</li><li>Open a Cashier.</li><li>Select the Friday Reload Bonus card.</li><li>Deposit at least NZ$35 in one transaction.</li><li>Check the accrual in the Bonuses section.</li><li>Activate the bonus and Free Spins.</li><li>Execute the wager before the expiration date.</li></StepList>
-            <PlaceholderMedia src="/content/bonuses/friday-reload.webp" alt="Friday Reload Bonus and two-stage free spins" position="68% center" />
-          </div>
-          <p>A standard x40 wager and a maximum bet of NZ$8 are applied to this bonus.</p>
-        </div>
-        <div className="subsection-panel">
-          <h3>Special Reload Promotions</h3>
-          <p>In addition to Friday Reload, National Casino offers several additional promotions for repeat deposits and constant activity.</p>
-          <div className="card-grid card-grid--two bonus-detail-grid">
-            <article className="info-card"><p><BonusOptionLead>Unlimited Bonus</BonusOptionLead>Unlimited Bonus provides 15 Free Spins after each suitable deposit starting from NZ$50. The available cost of rotation can reach NZ$2. Before making a deposit, you must select an Unlimited Bonus card.</p></article>
-            <article className="info-card"><p><BonusOptionLead>VIP Sunday Boost</BonusOptionLead>VIP Sunday Boost is valid on Sundays from 00:00 to 23:59 UTC. The amount of the reward depends on the amount of one transaction:</p><ul className="feature-list"><li>deposit from NZ$40 — 10 Mega Spins;</li><li>deposit from NZ$100 — 25 Mega Spins;</li><li>deposit from NZ$200 — 50 Mega Spins.</li></ul><p>Each Mega Spin has a fixed cost of NZ$2. Only one package can be received in one week, and winnings are wagered x40.</p></article>
-            <article className="info-card"><p><BonusOptionLead>Secret Bonus</BonusOptionLead>Secret Bonus is available on Thursdays with a deposit starting from NZ$60. After replenishment, the system randomly selects one of the possible rewards - a percentage bonus, Free Spins or a cash prize without a wager. The received offer must be activated within three days, and seven days are available for wagering.</p></article>
-            <article className="info-card"><p><BonusOptionLead>Fortune Wheel Bonus</BonusOptionLead>Fortune Wheel Bonus opens the wheel rotation after a suitable deposit. Possible results may be Free Spins, bonus funds or other rewards. The exact set of prizes depends on the available wheel type.</p></article>
-          </div>
-          <p>Temporary reload offers and provider campaigns may appear and disappear from the Promotions section.</p>
-        </div>
-      </Section>
-
-      <PromotionBanner variant="second-deposit" />
-
-      <Section actionLabel={null} id="free-spins-offers" title="Grab Our Free Spins Offers">
-        <p>Free Spins are included in several National Casino offers at once. They can supplement the deposit bonus, be credited for installing the application, be given for a subscription, or become a random reward as part of a temporary promotion.</p>
-        <p>The number of spins, the order of accrual and the available slot depend on the specific offer. In some bonuses, all Free Spins appear at once, in others they are distributed over several stages. Free Spins usually need to be activated manually.</p>
-        <div className="subsection-panel">
-          <h3 className="subsection-icon-title"><Image alt="" aria-hidden="true" height={162} src="/content-icons/coin-1.png" width={162} /><span>Free Spins</span></h3>
-          <Table caption="Free Spins offers" className="free-spins-table" headers={["Promotion", "Free Spins", "Delivery"]} rows={[
-            ["First Deposit Bonus", "100", "50 after a suitable deposit and another 50 after 24 hours"],
-            ["Second Deposit Bonus", "50", "After processing the second suitable deposit"],
-            ["Friday Reload Bonus", "100", "50 after a suitable deposit and another 50 after 24 hours"],
-            ["App Bonus", "10", "Within an hour after the first installation of the PWA and login to the account"],
-            ["Subscription Reward", "10", "After fulfilling the subscription conditions"],
-            ["Unlimited Bonus", "15", "As one of the random rewards for making a deposit on Thursday"],
-            ["Secret Bonus", "From 30 to 300", "As one of the random rewards for making a deposit on Thursday"],
-            ["VIP Sunday Boost", "10, 25 or 50 Mega Spins", "The amount depends on the amount of the Sunday deposit"],
-          ]} />
-        </div>
-        <div className="subsection-panel">
-          <h3 className="subsection-icon-title"><Image alt="" aria-hidden="true" height={162} src="/content-icons/coin-1.png" width={162} /><span>Slot-Specific Promotions</span></h3>
-          <p>National Casino holds promotions related to individual developers&apos; games. In such offers, the reward may drop out directly during a regular round in a suitable slot.</p>
-          <div className="bonus-grid slot-promotion-grid">
-            <article className="bonus-card slot-promotion-card">
-              <Image className="bonus-card__background" src="/bonuses/special/backgrounds/prize-drops.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 75vw" aria-hidden="true" />
-              <div className="bonus-card__content">
-                <h3>Prize Drops</h3>
-                <p>Prize Drops distributes a portion of the total prize pool of up to NZ$160,000 among the participants.</p>
-                <p>To participate, you must:</p>
-                <StepList><li>Open the Prize Drops card.</li><li>Check the duration of the promotion.</li><li>Select a game from the list of participating slots.</li><li>Use a bid not lower than the set minimum.</li><li>Continue playing during the campaign period.</li></StepList>
-                <p>A separate participation fee is usually not required. However, the total fund of NZ$160,000 is distributed among all eligible participants and is not a guaranteed single player prize.</p>
-                <a className="button button--primary bonus-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
-              </div>
-              <div className="bonus-card__art slot-promotion-card__art" aria-hidden="true">
-                <Image src="/bonuses/special/prize-drops.webp" alt="" width={482} height={590} loading="eager" unoptimized />
-              </div>
-            </article>
-            <article className="bonus-card slot-promotion-card">
-              <Image className="bonus-card__background" src="/bonuses/special/backgrounds/pragmatic-dw.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 75vw" aria-hidden="true" />
-              <div className="bonus-card__content">
-                <h3>Pragmatic D&amp;W</h3>
-                <p>Pragmatic D&amp;W is a Pragmatic Play promotion with a stated fund of €2,000,000 per month.</p>
-                <p>The rewards are distributed in the provider&apos;s suitable games. Before starting, you need to check:</p>
-                <ul className="feature-list"><li>list of participating slots;</li><li>period of the event;</li><li>the minimum bid;</li><li>Reward drop rules;</li><li>availability of wagering;</li><li>the deadline for receiving the winnings.</li></ul>
-                <p>Despite the use of NZD in the account, the fund of this campaign is displayed in EUR.</p>
-                <a className="button button--primary bonus-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
-              </div>
-              <div className="bonus-card__art slot-promotion-card__art" aria-hidden="true">
-                <Image src="/bonuses/special/pragmatic-dw.webp" alt="" width={449} height={544} loading="eager" unoptimized />
-              </div>
-            </article>
-            <article className="bonus-card slot-promotion-card">
-              <Image className="bonus-card__background" src="/bonuses/special/backgrounds/bgaming-drops.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 75vw" aria-hidden="true" />
-              <div className="bonus-card__content">
-                <h3>BGaming Drops</h3>
-                <p>BGaming Drops includes 12,000 prizes in suitable BGaming slots.</p>
-                <p>The reward can appear directly during a regular spin. To participate, the selected game, the amount of the bet and the time of the round must comply with the rules of the current campaign.</p>
-                <p>Launching any BGaming slot does not guarantee participation: you must use a title that is included in the current promotion list.</p>
-                <a className="button button--primary bonus-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
-              </div>
-              <div className="bonus-card__art slot-promotion-card__art slot-promotion-card__art--compact" aria-hidden="true">
-                <Image src="/bonuses/special/bgaming-drops.webp" alt="" width={277} height={312} loading="eager" unoptimized />
-              </div>
-            </article>
-            <article className="bonus-card slot-promotion-card">
-              <Image className="bonus-card__background" src="/bonuses/special/backgrounds/fortune-wheel.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 75vw" aria-hidden="true" />
-              <div className="bonus-card__content">
-                <h3>Fortune Wheel Bonus</h3>
-                <p>Fortune Wheel becomes available after a suitable deposit. The user gets the opportunity to start the wheel and win one of the random rewards.</p>
-                <p>Possible results may be:</p>
-                <ul className="feature-list"><li>Free Spins;</li><li>bonus funds;</li><li>Reward Points;</li><li>a cash prize.</li></ul>
-                <p>The composition of the awards depends on the available type of wheel. After the spin, the prize may require manual activation in the Bonuses section.</p>
-                <a className="button button--primary bonus-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
-              </div>
-              <div className="bonus-card__art slot-promotion-card__art" aria-hidden="true">
-                <Image src="/bonuses/special/fortune-wheel.webp" alt="" width={481} height={590} loading="eager" unoptimized />
-              </div>
-            </article>
-          </div>
-        </div>
-      </Section>
-
-      <Section id="loyalty-rewards" title="Loyalty Rewards & VIP Perks">
-        <p>The National Casino has a VIP Program consisting of 15 levels. Participation starts automatically: the user accumulates Comp Points and moves on to the next level after reaching the set threshold.</p>
-        <p>As the level increases, two main characteristics change:</p>
-        <ul className="feature-list bonus-terms-list bonus-terms-list--balanced"><li>reward for achieving a new status;</li><li>the exchange rate of Comp Points for bonus funds.</li></ul>
-        <p>At the initial levels, mostly Free Spins are given. From Level 3, cash rewards are added to them, and starting from Level 5, prizes are completely converted to a monetary format.</p>
-        <div className="content-subsection">
-          <h3>Loyalty System</h3>
-          <p>To achieve each VIP Level, you must accumulate a set number of Comp Points.</p>
-          <Table caption="VIP loyalty levels" headers={["Level", "Points"]} rows={[
-            ["Level 1", "25 CP"], ["Level 2", "100 CP"], ["Level 3", "500 CP"], ["Level 4", "1,200 CP"], ["Level 5", "3,000 CP"],
-            ["Level 6", "10,000 CP"], ["Level 7", "25,000 CP"], ["Level 8", "50,000 CP"], ["Level 9", "100,000 CP"], ["Level 10", "200,000 CP"],
-            ["Level 11", "400,000 CP"], ["Level 12", "750,000 CP"], ["Level 13", "1,200,000 CP"], ["Level 14", "2,000,000 CP"], ["Level 15", "3,500,000 CP"],
-          ]} />
-        </div>
-        <div className="content-subsection">
-          <h3>VIP Benefits</h3>
-          <p>The higher the VIP Level, the more profitable the Comp Points exchange rate becomes. At Level 1, it takes 110 CP to receive NZ$1.25. Starting from Level 9, the best exchange rate is set at 60 CP for NZ$1.25.</p>
-          <Table caption="VIP benefits" headers={["Level", "Exchange Rate", "Prize"]} rows={[
-            ["Level 1", "110 CP : NZ$1.25", "25 Free Spins"], ["Level 2", "105 CP : NZ$1.25", "50 Free Spins"], ["Level 3", "100 CP : NZ$1.25", "NZ$15 + 20 Free Spins"],
-            ["Level 4", "95 CP : NZ$1.25", "NZ$30 + 40 Free Spins"], ["Level 5", "90 CP : NZ$1.25", "NZ$75"], ["Level 6", "85 CP : NZ$1.25", "NZ$150"],
-            ["Level 7", "80 CP : NZ$1.25", "NZ$300"], ["Level 8", "70 CP : NZ$1.25", "NZ$750"], ["Level 9", "60 CP : NZ$1.25", "NZ$1,500"],
-            ["Level 10", "60 CP : NZ$1.25", "NZ$3,200"], ["Level 11", "60 CP : NZ$1.25", "NZ$6,500"], ["Level 12", "60 CP : NZ$1.25", "NZ$16,000"],
-            ["Level 13", "60 CP : NZ$1.25", "NZ$32,000"], ["Level 14", "60 CP : NZ$1.25", "NZ$80,000"], ["Level 15", "60 CP : NZ$1.25", "NZ$160,000"],
-          ]} />
-          <p>The cash Prize can be credited to the bonus, and not to the real balance. Before using the reward, you must check the wager, expiration date, maximum bet and withdrawal limit.</p>
-        </div>
-      </Section>
-
-      <PromotionBanner variant="highroller" />
-
-      <Section actionLabel={null} id="weekly-cashback" title="Get Weekly Cashback">
-        <p>Cashback can appear as a temporary, personal, or VIP offer.</p>
-        <div className="split-layout cashback-availability-layout">
-          <div>
-            <p>The availability of the refund may depend on:</p>
-            <ul className="feature-list cashback-availability-list"><li>VIP Level;</li><li>the period of activity;</li><li>the size of the net loss;</li><li>selected games;</li><li>performing a minimum turnover;</li><li>Manual activation;</li><li>individual account conditions.</li></ul>
-          </div>
-          <PlaceholderMedia src="/content/bonuses/cashback-availability.webp" alt="Weekly cashback eligibility factors" position="right top" />
-        </div>
-        <div className="bonus-grid cashback-bonus-grid">
-          <article className="bonus-card cashback-bonus-card">
-            <Image className="bonus-card__background" src="/bonuses/backgrounds/friday-reload.png" alt="" fill sizes="(max-width: 1180px) 100vw, 75vw" aria-hidden="true" />
-            <div className="bonus-card__content">
-              <h3>How Cashback Works</h3>
-              <p>The Cashback calculation is usually based on a net loss over a set period. The system can compare the total amount of eligible bets with the winnings received and charge a portion of the negative result as a refund.</p>
-              <p>Cashback can be credited in several forms:</p>
-              <ul className="feature-list"><li>real-money balance;</li><li>bonus balance;</li><li>Free Spins;</li><li>Comp Points;</li><li>personal VIP reward.</li></ul>
-              <p>The total maximum winnings associated with the cashback bonus is NZ$10,000, unless the individual rules set a different limit.</p>
-              <a className="button button--primary bonus-card__action" href={GENERAL_AFFILIATE_URL} rel="sponsored">Jetzt beitreten</a>
-            </div>
-            <div className="bonus-card__art cashback-bonus-card__art" aria-hidden="true">
-              <Image src="/bonuses/friday-reload.png" alt="" width={448} height={431} unoptimized />
-            </div>
+      <Section id="warum-aktionen-lohnen" title="Warum sich die Aktionen hier für deutsche Spieler lohnen">
+        <div className="card-grid card-grid--two boni-reason-grid">
+          <article className="info-card">
+            <p>Ein Bonus ist nur dann großzügig, wenn du ihn tatsächlich nutzen kannst, und genau hier fallen viele Casinos leise durch — große Schlagzeilenzahl, Umsatzbedingungen, die sie ganz verschlucken. Nationals Kalender verdient deine Aufmerksamkeit aus einem einfacheren Grund: Die Angebote sind vielfältig genug, dass wirklich eines für deinen Stil dabei ist, und die Bedingungen werden eher klar benannt als vergraben. Ob du ein Neuling bist, der das größtmögliche Match jagt, ein Krypto-Spieler, der eine größere Tür will, ein Freitagabend-Stammgast beim Nachtanken oder ein VIP, der 1-€-Spins freischaltet — es gibt ein bestimmtes Angebot, das für dich gebaut ist.</p>
+          </article>
+          <article className="info-card boni-reason-card--accent">
+            <p>Der Trick, Boni gut zu spielen, besteht nicht darin, sich alle zu schnappen — sondern das richtige im richtigen Moment. Also hier jedes Ankerangebot, so aufgebaut, dass du genau das tun kannst.</p>
           </article>
         </div>
-        <div className="subsection-panel">
-          <h3>Claiming Your Cashback</h3>
-          <p>If the Cashback appears in the account, the order in which it is received is as follows:</p>
-          <div className="split-layout step-media-layout">
-            <StepList><li>Log in to your National Casino account.</li><li>Open the Promotions or VIP Club section.</li><li>Find the active Cashback card.</li><li>Check the billing period and the refund amount.</li><li>Check the list of participating games.</li><li>Check minimum loss, wagering, and maximum cashout.</li><li>Click Activate if the offer requires manual activation.</li><li>Use only suitable games and allowed bets.</li><li>After the end of the period, open the Bonuses section.</li><li>Check the refund accrual.</li><li>Perform wagering if the Cashback has been credited to the bonus balance.</li></StepList>
-            <PlaceholderMedia src="/content/bonuses/cashback-claim.webp" alt="Player claiming casino cashback" position="68% center" />
-          </div>
-          <p>Some personal offers may be activated automatically.</p>
-          <a className="button button--primary content-section__action" href={GENERAL_AFFILIATE_URL} rel="sponsored">Jetzt beitreten</a>
-        </div>
       </Section>
 
-      <Section id="tournament" title="Join Our Exciting Tournament">
-        <p>The National Casino platform has a separate Tournaments section with time-limited slot competitions. Participants launch suitable games, place bets in the range and receive tournament points.</p>
-        <p>The player&apos;s place is determined by the number of points scored. The higher the score compared to other participants, the higher the position in the leaderboard and the probability of receiving a part of the prize pool.</p>
+      <Section id="willkommenspaket" title="Das Willkommenspaket, auf zwei Arten">
         <div className="content-subsection">
-          <h3>Ongoing and Upcoming Tournaments</h3>
-          <p>The National Casino currently offers three Treasure Race formats.</p>
-          <Table caption="Treasure Race tournaments" headers={["Tournament", "Cash Prize", "Free Spins"]} rows={[
-            ["Sonic Treasure Race", "NZ$100", "300 Free Spins"], ["Flash Treasure Race", "NZ$75", "300 Free Spins"], ["Rapid Treasure Race", "NZ$50", "300 Free Spins"],
-          ]} />
+          <h3>Was du tatsächlich bekommst</h3>
+          <p>Das Willkommenspaket kommt in zwei Geschmacksrichtungen, und die richtige zu wählen, macht einen Unterschied.</p>
+          <div className="card-grid card-grid--two germany-bonus-grid boni-welcome-grid">
+            <PromotionStoryCard background="/content/main/bonuses/welcome-bg.png" character="/content/main/bonuses/welcome-character.png" title="Standard-Ersteinzahlungsbonus">
+              <p>Der Standard-Ersteinzahlungsbonus ist ein 100-%-Match bis zu 100 €, dazu ein Bonusspiel und 100 Freispiele. Diese Freispiele kommen in zwei Hälften — 50 landen sofort, 50 am Folgetag — was den Spaß leise in eine zweite Session streckt, statt alles auf die erste Nacht abzukippen.</p>
+            </PromotionStoryCard>
+            <PromotionStoryCard background="/content/main/bonuses/crypto-bg.webp" character="/content/main/bonuses/crypto-character.webp" title="Krypto-Ersteinzahlungsbonus">
+              <p>Der Krypto-Ersteinzahlungsbonus ist die größere Tür. Zahle in Kryptowährung ein, und das Match verdoppelt sich auf 200 % bis zu 500 €. Wenn du dich mit dem Spiel in Krypto ohnehin wohlfühlst, ist das schlicht das großzügigere Willkommen, und es ist ganz offensichtlich das, welches National seinen Krypto-Spielern schmackhaft machen will. Dasselbe Casino, größerer Schub — die Wahl ist im Grunde nur „Wie finanziere ich dieses Konto?&quot;</p>
+            </PromotionStoryCard>
+            <PromotionStoryCard background="/content/main/bonuses/second-deposit-bg.png" character="/content/main/bonuses/second-deposit-character.png" title="Zweiter Einzahlungsbonus" wide>
+              <p>Es gibt außerdem einen Zweiten Einzahlungsbonus, der nach dem ersten wartet: 50 % bis zu 200 € plus 50 Freispiele, sofort gutgeschrieben. Ein sanfterer Nachschlag, der deinen Auftaktlauf am Laufen hält, ohne eine große Verpflichtung zu verlangen.</p>
+            </PromotionStoryCard>
+          </div>
         </div>
         <div className="content-subsection">
-          <h3>How to Participate</h3>
-          <p>To join the active Treasure Race:</p>
-          <div className="split-layout step-media-layout">
-            <StepList><li>Log in to your National Casino account.</li><li>Open the Tournaments section.</li><li>Choose Sonic, Flash or Rapid Treasure Race.</li><li>Check the dates and times of the event.</li><li>Learn the rules of scoring tournament points.</li><li>Open the list of participating slots.</li><li>Check the allowed betting range.</li><li>Click the participate button if an opt-in is required.</li><li>Launch only suitable games.</li><li>Keep track of your place on the leaderboard.</li><li>After the event ends, check the Bonuses and account notifications section.</li></StepList>
-            <PlaceholderMedia src="/content/bonuses/tournament.webp" alt="Casino tournament race and leaderboard trophy" position="68% center" />
+          <h3>So holst du ihn dir</h3>
+          <p>Das Ganze dauert ein paar Minuten:</p>
+          <div className="split-layout step-media-layout boni-claim-layout">
+            <StepList>
+              <li>Klick auf Registrieren und erstelle dein Konto — E-Mail, Passwort, deine Angaben, bevorzugte Währung.</li>
+              <li>Bestätige, dass du volljährig bist, und schließe die schnelle Anmeldung ab.</li>
+              <li>Geh zur Kasse und mach deine erste Einzahlung, wähle Krypto, wenn du das 200-%-Match willst.</li>
+              <li>Der Bonus und deine erste Ladung Freispiele landen automatisch — für das Standard-Willkommen ist kein Code nötig.</li>
+              <li>Prüfe den Boni-Bereich deines Kontos, um dein Bonusguthaben und die wartenden Spins zu sehen.</li>
+            </StepList>
+            <div className="boni-media-panel" aria-hidden="true">
+              <Image src="/content/main/registration-signup.png" alt="" fill sizes="(max-width: 1180px) 100vw, 40vw" />
+            </div>
           </div>
-          <p>Points are usually awarded automatically. A bet may not be counted if an unsuitable game is used, the betting range is violated, or the game round is completed after the end of the tournament.</p>
+        </div>
+        <div className="content-subsection boni-terms-panel">
+          <h3>Die Bedingungen, die man kennen sollte</h3>
+          <p>Jeder Bonus, überall, trägt Strings — der ehrliche Zug ist, sie zu lesen, nicht sie zu fürchten. Für die Willkommensangebote heißt das: eine Umsatzanforderung, die du erfüllen musst, bevor Bonusgewinne zu auszahlbarem Bargeld werden, ein Gültigkeitsfenster, in dem der Bonus lebt, und eine Liste berechtigter Spiele, die zum Umsatz zählen (Slots leisten die Schwerarbeit; Tischspiele tragen meist wenig oder nichts bei). Nichts davon ist ungewöhnlich. Was zählt, ist, die Einzelheiten in den Bonusbedingungen zu prüfen, bevor du dich anmeldest, damit du genau weißt, worauf du dich einlässt. National tendiert dazu, diese klar zu benennen, was mehr ist, als man vom Großteil des Feldes sagen kann.</p>
         </div>
       </Section>
 
-      <PromotionBanner variant="friday-reload" />
-
-      <Section id="limited-time-offers" title="Grab Limited-Time Offers">
-        <p>The Promotions section is not limited to permanent deposit bonuses. National Casino offers temporary offers, promotions from gaming providers and no deposit bonuses that may disappear after the end of the established period.</p>
-        <div className="split-layout">
-          <div><p>The section contains the following suggestions:</p><ul className="feature-list limited-offers-list"><li>Get the App, Grab FS!;</li><li>A Quick Tap! A Sweet Reward!;</li><li>Prize Drops;</li><li>Fortune Wheel Bonus;</li><li>Secret Bonus;</li><li>Unlimited Bonus;</li><li>Pragmatic D&amp;W;</li><li>BGaming Drops!;</li><li>Promo Codes and Bonuses.</li></ul></div>
-          <PlaceholderMedia src="/content/bonuses/limited-offers.webp" alt="Limited-time casino rewards and events" position="66% center" />
-        </div>
-        <div className="subsection-panel">
-          <h3>Exclusive Events</h3>
-          <p>One of the no deposit offers is the App Bonus. After the first suitable installation of National Casino through the Application section, the user receives 10 Free Spins.</p>
-          <p>The main terms of the App Bonus:</p>
-          <ul className="feature-list bonus-terms-list"><li>provided once;</li><li>no deposit required;</li><li>Free Spins are awarded after installing and logging into the account;</li><li>the reward usually appears within one hour.;</li><li>Seven days are allowed for use and wagering.;</li><li>The user, email, browser, device, and IP address are taken into account.;</li><li>General Bonus Terms &amp; Conditions apply.</li></ul>
-          <p>The application is installed from the website in the PWA format. You do not need to download a separate APK or create a new account.</p>
-          <p>Offer A Quick Tap! A Sweet Reward! provides 10 Free Spins after fulfilling the subscription conditions. The appropriate slot, wager, and expiration date must be checked on the promotion page.</p>
-          <p>The Secret Bonus also applies to temporary events. The exact prize is unknown in advance: the system selects the reward after a suitable deposit on Thursday. Possible results are a percentage bonus, Free Spins or NZ$150 without wagering.</p>
-        </div>
-        <div className="subsection-panel">
-          <h3>Promotional Codes</h3>
-          <p>The National Casino has a separate Promo Codes and Bonuses card. Promo codes can be distributed through affiliate campaigns, promotional offers, email newsletters, and temporary promotions.</p>
-          <p>Depending on the specific offer, the code can be entered:</p>
-          <ul className="feature-list"><li>in a special field during registration;</li><li>in the Promotions section;</li><li>in the Cashier before depositing;</li><li>in the Bonus or Coupon field in your merchant profile.</li></ul>
-          <p>The Promo code does not cancel the General Bonus Terms. Even if the short advertising message does not specify a wager or a bid limit, the general restrictions remain in effect.</p>
+      <Section id="reload-boni" title="Reload-Boni">
+        <p>Das Willkommensangebot ist ein einmaliges Händeschütteln. Reloads sind der Grund, wiederzukommen.</p>
+        <div className="card-grid card-grid--two germany-bonus-grid boni-reload-grid">
+          <PromotionStoryCard background="/content/main/bonuses/friday-reload-bg.png" character="/content/main/bonuses/friday-reload-character.png" title="Der Freitags-Reload">
+            <p>Der Anker der Woche. Jeden Freitag betreibt National einen 50-%-Reload bis zu 250 € plus 100 Freispiele auf Book of Cats — Spins geteilt, wie immer, 50 jetzt und 50 nach 24 Stunden. Es ist der Wochenend-Nachschub, und es lohnt sich, bewusst eine Freitagseinzahlung dafür zurückzuhalten, statt sie früher in der Woche für nichts Bestimmtes auszugeben.</p>
+          </PromotionStoryCard>
+          <PromotionStoryCard background="/bonuses/special/backgrounds/fortune-wheel.webp" character="/bonuses/special/fortune-wheel.webp" title="Die Alltags-Reloads">
+            <p>Über den Freitag hinaus tankt der Kalender dich weiter auf. Der Unbegrenzte Bonus gibt dir einen Bonus auf jede Einzahlung ab 30 €, mit Freispielen und einer festgelegten Einsatzhöhe dran — das Angebot für Spieler, die regelmäßig einzahlen und jedes Mal etwas zurückwollen, statt nur zu den großen Anlässen. Es gibt auch ein Glücksrad, das bei jeder Einzahlung verfügbar ist und ein Routine-Nachtanken in einen Dreh für etwas Extra verwandelt. Der rote Faden durch das Ganze: National gibt dir lieber einen kleinen Grund, oft einzuzahlen, als einen großen Grund, einmal einzuzahlen.</p>
+          </PromotionStoryCard>
         </div>
       </Section>
 
-      <Section actionLabel={null} className="image-copy-section" id="play-responsibly" title="Play Responsibly">
-        <Image className="image-copy-section__image" src="/content/bonuses/responsible-gaming.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+      <Section id="freispiele-kalender" title="Freispiele über den ganzen Kalender">
+        <p>Freispiele sind großzügig über den ganzen Kalender verstreut, nicht hinter einem einzigen Angebot eingesperrt.</p>
+        <div className="card-grid card-grid--two germany-bonus-grid boni-spins-grid">
+          <PromotionStoryCard background="/content/main/bonuses/second-deposit-bg.png" character="/content/main/bonuses/second-deposit-character.png" title="Woher die Spins kommen">
+            <p>Allein dein Willkommenspaket bringt 100. Der Freitags-Reload legt weitere 100 auf Book of Cats drauf. Die zweite Einzahlung steuert 50 bei. Zusätzlich zu den einzahlungsgebundenen Spins gibt es zwei Wege ohne Einzahlung, die man mitnehmen sollte: Die Installation der mobilen App bringt dir 10 Freispiele, ohne dass eine Einzahlung nötig ist, und es gibt ein Abo-Angebot, das 10 weitere hinlegt, nur fürs Anmelden. Keins kostet dich einen Cent, und beide sind die Art von kleinem, leichtem Wert, den liegen zu lassen albern wäre.</p>
+          </PromotionStoryCard>
+          <PromotionStoryCard background="/content/main/bonuses/vip-sunday-bg.webp" character="/content/main/bonuses/vip-sunday-character.webp" title="Die Spins, die tatsächlich mehr wert sind">
+            <p>Hier ist der Ausreißer, und es ist ein echter. VIP-Spieler erhalten Zugang zum Sonntagsturbo: bis zu 50 Mega-Spins im Wert von je 1 €. Gewöhnliche Freispiele sind meist an einen Mindesteinsatzwert von ein paar Cent gebunden — ein Wert von 1 € pro Spin liegt spürbar höher, was diese zu den wertvollsten regelmäßigen Spins im ganzen Kalender macht. Sie sind eine Belohnung fürs Erklimmen der VIP-Leiter, was uns sauber zur Leiter selbst bringt.</p>
+          </PromotionStoryCard>
+        </div>
+      </Section>
+
+      <Section id="treuebelohnungen-vip" title="Treuebelohnungen & VIP-Vorteile" className="image-copy-section image-copy-section--wide-title boni-vip-section">
+        <Image className="image-copy-section__image" src="/content/main/vip-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
-          <p>Bonuses increase the available game balance, but do not change the mathematical advantage of the casino and do not guarantee a positive result. The wager, expiration dates, and betting restrictions may encourage you to play longer than planned.</p>
-          <p>Before activating the offer, you should evaluate not only the amount of the reward, but also the amount that you will need to put in order to fulfill the conditions.</p>
-          <p>Before starting the game, it is recommended to determine:</p>
-          <ul><li>maximum budget per session;</li><li>weekly or monthly limit;</li><li>the allowed duration of the game;</li><li>the amount to stop after losing it;</li><li>bonuses corresponding to the selected budget;</li><li>time for mandatory breaks.</li></ul>
-          <p>You should not increase the bets to refund the lost funds or make an additional deposit just to complete the wagering.</p>
+          <p>Nationals Treueprogramm ist keine Alibi-Geste, die seitlich angeschraubt wurde — es ist ein fünfzehnstufiger Aufstieg, der dich leise dafür belohnt, so zu spielen, wie du ohnehin spielen wolltest.</p>
+          <h3>Wie du verdienst</h3>
+          <p>Du sammelst Comp Points (CPs) automatisch, während du Slots spielst — einen Punkt für je 20 € Umsatz. Die Teilnahme schaltet sich in dem Moment ein, in dem du deine erste Einzahlung machst, du kletterst also vom ersten Tag an, ohne dich für irgendetwas anmelden zu müssen. Der Umtauschkurs, um diese Punkte zurück in echten Wert zu verwandeln, verbessert sich, während du durch die Stufen aufsteigst, was bedeutet, dass sich Treue verzinst: Je länger du spielst, desto mehr ist jeder Punkt wert, wenn du ihn einlöst.</p>
+          <h3>Die Stufen und was sie wert sind</h3>
+          <p>Die Leiter läuft fünfzehn Sprossen, und die Belohnungen skalieren steil. Die frühen Stufen handeln mit Freispielen — 25 auf Stufe 1, 50 auf Stufe 2 — dann kommt Bargeld ins Spiel: 10 € plus Spins auf Stufe 3, hoch über 50 €, 100 €, 200 € und weit darüber hinaus, während du aufsteigst. In den oberen Stufen werden die Zahlen wirklich ernst, die Belohnung für anhaltendes, engagiertes Spiel.</p>
+          <p>Ein paar ehrliche Mechaniken, damit dich nichts überrascht: Comp Points werden alle zwei Monate zurückgesetzt, das Programm belohnt also stetiges Spiel statt eines langsamen Mehrjahres-Rinnsals; mit Bonusgeld getätigte Einsätze zählen nicht zu den CP; und Punkte fallen an Slots an, nicht an Tischspielen. VIP-Belohnungen tragen eine 10x-Umsatzanforderung, und aus CPs in Bargeld umgewandelte Mittel tragen 5x. Es ist ein Programm, gebaut genau für die regelmäßige Slot-Spielerin und den regelmäßigen Slot-Spieler — und erfrischend offen darin, genau das zu sein.</p>
         </div>
       </Section>
 
-      <Section actionLabel={null} className="image-copy-section summary-section" id="gaming-bonuses-summary" title="Join National Casino for Gaming Bonuses">
-        <Image className="image-copy-section__image" src="/content/bonuses/summary.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+      <Section id="mehr-wege-zum-wert" title="Mehr Wege, auf denen der Wert zurückkommt">
+        <p>Über die Einzahlungsboni und die VIP-Leiter hinaus betreibt National eine Reihe von Angeboten, deren ganze Aufgabe es ist, laufenden Spielern zusätzlichen Wert in die Hand zu drücken — die Alltagsbelohnungen, die eine Session so anfühlen lassen, als gäbe sie etwas zurück.</p>
+        <article className="info-card boni-network-card">
+          <p>Das Glücksrad verwandelt jede Einzahlung in einen Dreh um Preise, die von Freispielen und Belohnungspunkten bis zu einem Aushängesegment von 10.000 € reichen. Die Sonntags-Mega-Spins, die wir behandelt haben, sind das VIP-Ende davon. Und die Netzwerk-Events sind dort, wo die größeren Pools leben: Prize Drops teilt einen Pool von 100.000 € unter Spielern auf, während anbietergeführte Kampagnen wie Pragmatic Plays Drops & Wins und BGaming Drops zufällige Bargeldpreise und Tausende einzelner Belohnungen in gewöhnliche Spins auf berechtigten Spielen fallen lassen. Bei den meisten davon meldest du dich nicht an — du spielst einfach ein qualifizierendes Spiel und bist im Rennen. Es ist gefundenes Geld, aufgeschichtet auf das Spiel, das du ohnehin schon gespielt hast.</p>
+          <div className="boni-event-art" aria-hidden="true">
+            {bonusEventArt.map(([src, label]) => (
+              <div className="boni-event-art__item" key={src}>
+                <Image src={src} alt={label} width={240} height={280} />
+              </div>
+            ))}
+          </div>
+        </article>
+      </Section>
+
+      <Section id="turniere-bestenlisten" title="Turniere und Bestenlisten" className="image-copy-section image-copy-section--wide-title boni-tournament-section">
+        <Image className="image-copy-section__image" src="/content/main/tournament-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
-          <p>National Casino offers New Zealand players bonuses for both first and second deposits. The initial series includes the First Deposit Bonus, Crypto First Deposit Bonus and Highroller Bonus, after which the Second Deposit Bonus, Friday Reload, Unlimited Bonus and other offers become available.</p>
-          <p>Slot lovers can also get Free Spins, participate in Prize Drops and use Pragmatic Play and BGaming promotions. Regular users have access to Comp Points, 15 VIP Club levels, Status upgrade rewards, and VIP Sunday Boost.</p>
-          <p>National Casino offers a wide range of promotions, but the optimal bonus remains, the terms of which correspond to the gaming budget and do not require an increase in planned expenses.</p>
+          <p>Wenn eine Bestenliste die Art von Sache ist, die einen gewöhnlichen Abend wichtig anfühlen lässt, dann sind Nationals Turniere für dich gebaut.</p>
+          <h3>Was läuft</h3>
+          <p>Die wiederkehrende Treasure-Race-Reihe ist das Rückgrat. Es gibt ein Sonic Treasure Race mit einem Preispool von 100 € plus 300 Freispielen, ein Flash Treasure Race mit 75 € plus 300 Spins und ein Rapid Treasure Race mit 50 € plus 300 Spins — jedes auf seinem eigenen Countdown, jedes rankt dein Spiel gegen das aller anderen. Über die Treasure Races hinaus rotiert die Turnier-Auswahl, es lohnt sich also ein Blick, wann immer du dich einloggst.</p>
+          <h3>Wie du mitmachst</h3>
+          <p>Das Schöne daran ist, dass es meist nichts Zusätzliches zu riskieren gibt. Du spielst während des Turnierfensters qualifizierende Spiele, dein Umsatz klettert die Bestenliste hoch, und die Bestplatzierten teilen den Preispool in Bargeld und Freispielen. Du setzt nichts obendrauf zu deinem normalen Spiel — du wirst nur für die Spins gerankt, die du ohnehin gemacht hast. Für einen Wettbewerbsspieler ist das der ganze Haken: dieselbe Session, zusätzlicher Reiz, echte Preise an der Spitze.</p>
+        </div>
+      </Section>
+
+      <Section id="aktionscodes" title="Aktionscodes: Dein Ticket für etwas Extra">
+        <p>Manche von Nationals besten Angeboten schaltet man mit einem Aktionscode frei — und das ehrliche Detail hier spricht für das Casino. National streut keine zufälligen Codes über das Internet; seine Codes werden ausschließlich über seine vertrauenswürdigen Partner und Affiliates bereitgestellt. Wenn du einen hast, kam er aus einer legitimen Quelle, und er ist meist an ein zeitlich begrenztes Angebot gebunden, bei dem es sich lohnt, schnell zu handeln.</p>
+        <p>Einen zu nutzen, ist eine Angelegenheit in vier Schritten:</p>
+        <div className="split-layout step-media-layout boni-code-layout">
+          <StepList>
+            <li>Neuer Spieler? Gib deinen einzigartigen Aktionscode bei der Anmeldung ein, um einen exklusiven Willkommensbonus freizuschalten.</li>
+            <li>Bestehendes Konto? Wirf den Code während deiner Einzahlung ins Gutscheinfeld, um das damit verbundene Sonderangebot zu beanspruchen.</li>
+            <li>Aktiviere den Bonus in deinem Konto.</li>
+            <li>Spiel — die Belohnung landet, und du bist in den Spielen der Top-Anbieter.</li>
+          </StepList>
+          <div className="boni-media-panel" aria-hidden="true">
+            <Image src="/content/main/registration-signup.png" alt="" fill sizes="(max-width: 1180px) 100vw, 40vw" />
+          </div>
+        </div>
+        <p>Weil es sich um begrenzte Angebote handelt, ist ein Code die Definition von „jetzt oder nie&quot;. Wenn dir einer über den Weg läuft, lass ihn nicht liegen.</p>
+      </Section>
+
+      <Section id="saisonale-angebote" title="Zeitlich begrenzte und saisonale Angebote" className="image-copy-section image-copy-section--wide-title boni-seasonal-section">
+        <Image className="image-copy-section__image" src="/content/bonuses/limited-offers.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <div className="image-copy-section__overlay" aria-hidden="true" />
+        <div className="image-copy-section__copy">
+          <p>Der Kalender besteht nicht nur aus den festen Angeboten — es gibt eine rotierende Schicht des Vorübergehenden und Saisonalen, und hier zahlt sich Aufmerksamkeit aus.</p>
+          <p>Der Geheimbonus ist genau das, wonach er klingt: Mach eine qualifizierende Einzahlung am richtigen Wochentag und enthülle eine verborgene Belohnung — ein bisschen Geheimnis, ganz im Einklang mit einem Casino, das um das Aufdecken von Dingen herum gestaltet ist. Rund um Feiertage und besondere Anlässe erwarten dich saisonale Reloads und thematische Aktionen zusätzlich zur üblichen Auswahl. Für deutsche Spieler heißt das in der Praxis: Rund um die großen Termine des Jahres — vom Oktoberfest bis zur Adventszeit — lohnt der Blick besonders, denn dann tauchen die themengebundenen Extras auf. Und die großen Netzwerk-Pools wie Prize Drops laufen in definierten Fenstern statt für immer, die 100.000 €, um die es geht, sind also nur zu haben, solange das Event live ist.</p>
+          <p>Die praktische Erkenntnis: Prüfe den Aktionen-Tab, wenn du dich einloggst. Die festen Angebote werden immer da sein, aber die begrenzten sind per Definition die, die du verpasst, wenn du nicht hinschaust.</p>
+        </div>
+      </Section>
+
+      <Section id="verantwortungsvoll-spielen-boni" title="Verantwortungsvoll spielen" className="image-copy-section image-copy-section--wide-title boni-responsible-section">
+        <Image className="image-copy-section__image" src="/content/main/responsible-gaming-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <div className="image-copy-section__overlay" aria-hidden="true" />
+        <div className="image-copy-section__copy">
+          <p>Ein Bonus ist Extra-Spiel, niemals ein Plan, um Geld zurückzugewinnen — und der Moment, in dem es sich anfängt wie Letzteres anzufühlen, ist der Moment, zurückzutreten. National stellt die üblichen Werkzeuge für verantwortungsvolles Spielen bereit: Du kannst Limits für Einzahlungen, Verluste, Sitzungsdauer und Umsatz setzen, indem du den Support kontaktierst, und Selbstausschluss ist über den Live-Chat verfügbar, der rund um die Uhr läuft. Ein ehrlicher Vorbehalt, der genannt werden muss: Einzahlungslimits decken Standard-Zahlungsmethoden ab, aber nicht Kryptowährung, wenn du dein Spiel also in Krypto finanzierst, muss diese Disziplin von dir kommen.</p>
+          <p>Setz dir einen Betrag, den du bequem verlieren kannst, bevor du auch nur ein einziges Angebot beanspruchst, und behandle jeden Bonus als das, was er ist — ein bisschen Extra-Spaß obendrauf, keine Strategie. Wenn das Spiel je von Unterhaltung in etwas Schwereres kippt, gibt es Hilfe über Organisationen wie die BZgA-Spielsucht-Beratung (Telefon 0800 1 37 27 00), Gamblers Anonymous und Gambling Therapy. Es beim Spaß zu belassen, ist der ganze Sinn.</p>
+        </div>
+      </Section>
+
+      <Section id="angebot-waehlen" title="Dein Angebot wählen" className="image-copy-section summary-section image-copy-section--wide-title boni-summary-section">
+        <Image className="image-copy-section__image" src="/content/main/summary-characters-v2.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <div className="image-copy-section__overlay" aria-hidden="true" />
+        <div className="image-copy-section__copy">
+          <p>Das ist der ganze Kalender. Du brauchst nicht alles davon — niemand spielt jeden Bonus, und der Versuch, es zu tun, ist genau, wie Leute am Ende mehr umsetzen, als sie vorhatten. Finde das eine, das zu deiner tatsächlichen Spielweise passt, prüfe, was es von dir verlangt, und beanspruche genau dieses richtig. Der Rest wird immer noch hier sein, wenn du dich das nächste Mal einloggst.</p>
           <a className="button button--primary content-section__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
         </div>
       </Section>
