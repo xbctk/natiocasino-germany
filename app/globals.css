@@ -580,6 +580,28 @@ a {
   object-position: center;
 }
 
+@media (min-width: 961px) {
+  .boni-code-layout {
+    align-items: start;
+  }
+
+  .boni-code-layout .step-list {
+    gap: var(--space-control);
+    align-self: start;
+  }
+
+  .boni-code-layout .step-list li {
+    min-height: 0;
+    padding: var(--space-control);
+  }
+
+  .boni-code-art {
+    align-self: stretch;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+}
+
 @media (max-width: 1180px) {
   .boni-hero .hero__content {
     width: min(100%, 860px);
