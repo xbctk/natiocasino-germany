@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { BONUS_AFFILIATE_URL, GENERAL_AFFILIATE_URL } from "./affiliateLinks";
+import { PromotionBanner } from "./PromotionBanner";
 
 export const bonusesSections: ReadonlyArray<readonly [string, string]> = [
   ["national-casino-boni-aktionen", "National Casino Boni & Aktionen in Deutschland"],
@@ -91,6 +92,8 @@ export function BonusesContent() {
         </div>
       </Section>
 
+      <PromotionBanner variant="first-deposit" />
+
       <Section id="willkommenspaket" title="Das Willkommenspaket, auf zwei Arten">
         <div className="content-subsection">
           <h3>Was du tatsächlich bekommst</h3>
@@ -130,6 +133,8 @@ export function BonusesContent() {
         <SectionCta type="join" />
       </Section>
 
+      <PromotionBanner variant="second-deposit" />
+
       <Section id="reload-boni" title="Reload-Boni">
         <p>Das Willkommensangebot ist ein einmaliges Händeschütteln. Reloads sind der Grund, wiederzukommen.</p>
         <div className="card-grid card-grid--two germany-bonus-grid boni-reload-grid">
@@ -141,6 +146,8 @@ export function BonusesContent() {
           </PromotionStoryCard>
         </div>
       </Section>
+
+      <PromotionBanner variant="friday-reload" />
 
       <Section id="freispiele-kalender" title="Freispiele über den ganzen Kalender">
         <p>Freispiele sind großzügig über den ganzen Kalender verstreut, nicht hinter einem einzigen Angebot eingesperrt.</p>
@@ -167,6 +174,8 @@ export function BonusesContent() {
           <SectionCta type="join" />
         </div>
       </Section>
+
+      <PromotionBanner variant="highroller" />
 
       <Section id="mehr-wege-zum-wert" title="Mehr Wege, auf denen der Wert zurückkommt">
         <p>Über die Einzahlungsboni und die VIP-Leiter hinaus betreibt National eine Reihe von Angeboten, deren ganze Aufgabe es ist, laufenden Spielern zusätzlichen Wert in die Hand zu drücken — die Alltagsbelohnungen, die eine Session so anfühlen lassen, als gäbe sie etwas zurück.</p>
