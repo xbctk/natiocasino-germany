@@ -51,6 +51,7 @@ function PromotionStoryCard({ background, character, children, title, wide = fal
         <div className="promotion-art-card__copy">
           <h3>{title}</h3>
           {children}
+          <a className="button button--primary promotion-art-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
         </div>
       </div>
     </article>
