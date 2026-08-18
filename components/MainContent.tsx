@@ -234,14 +234,21 @@ export function MainContent() {
         <JoinNowButton />
       </Section>
 
-      <Section id="lobby-landkarte" title="Die Lobby wie eine Landkarte lesen" className="image-copy-section image-copy-section--wide-title">
-        <Image className="image-copy-section__image" src="/content/main/overview.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
-        <div className="image-copy-section__overlay" aria-hidden="true" />
-        <div className="image-copy-section__copy">
-          <p>Öffne das Spielemenü, und du blickst nicht auf einen wahllos zusammengeworfenen Haufen Titel — du blickst auf einen Grundriss. Die Regale verraten dir, für wen dieser Ort gemacht ist. Für Sie und Beliebt sind die Schaufenster. Neu und Hits halten die Stammgäste bei Laune. Dann wird es interessant: Bonuskauf bekommt ein eigenes Regal auf oberster Ebene, und Hold-&amp;-Win-Mechanik auch, und Megaways ebenso. Ein Casino, das Bonuskauf und Hold-&amp;-Win auf die Startseite stellt, ist ein Casino, gebaut von Leuten, die davon ausgehen, dass du bereits weißt, was ein Feature Buy ist und was ein Respin-Lock macht. Das ist ein Grundriss für Spieler mit ein wenig Erfahrung, keine Lobby, die die Mechanik vor dir versteckt.</p>
-          <p>Es gibt ein Regal für Schnelle Spiele für die Crash-und-Sofort-Fraktion, ein Drops-&amp;-Wins-Regal für die Jäger der Netzwerk-Preise und eine Jackpot-Ecke für alle, die den einen lebensverändernden Treffer suchen. Über die Suchleiste kannst du nach Anbieter filtern, was mehr zählt, als es klingt — wenn du entschieden hast, dass du nur der Mathematik eines bestimmten Studios vertraust, kannst du dich mit zwei Klicks darin einmauern. Die Lobby belohnt es, wenn du weißt, was du willst. Sie ist eine Landkarte und setzt voraus, dass du eine lesen kannst.</p>
-          <JoinNowButton />
+      <Section id="lobby-landkarte" title="Die Lobby wie eine Landkarte lesen" className="">
+        <p>Öffne das Spielemenü, und du blickst nicht auf einen wahllos zusammengeworfenen Haufen Titel — du blickst auf einen Grundriss. Die Regale verraten dir, für wen dieser Ort gemacht ist. Für Sie und Beliebt sind die Schaufenster. Neu und Hits halten die Stammgäste bei Laune. Dann wird es interessant: Bonuskauf bekommt ein eigenes Regal auf oberster Ebene, und Hold-&amp;-Win-Mechanik auch, und Megaways ebenso. Ein Casino, das Bonuskauf und Hold-&amp;-Win auf die Startseite stellt, ist ein Casino, gebaut von Leuten, die davon ausgehen, dass du bereits weißt, was ein Feature Buy ist und was ein Respin-Lock macht. Das ist ein Grundriss für Spieler mit ein wenig Erfahrung, keine Lobby, die die Mechanik vor dir versteckt.</p>
+        <div className="lobby-map-scroll" role="region" tabIndex={0} aria-label="Ansicht der National-Casino-Lobby">
+          <Image
+            className="lobby-map-image"
+            src="/content/main/lobby-map.png"
+            alt="National-Casino-Lobby mit Kategorien, Suche, Spielempfehlungen und Live-RTP-Werten"
+            width={3304}
+            height={1396}
+            sizes="(max-width: 1180px) 100vw, 82vw"
+            unoptimized
+          />
         </div>
+        <p>Es gibt ein Regal für Schnelle Spiele für die Crash-und-Sofort-Fraktion, ein Drops-&amp;-Wins-Regal für die Jäger der Netzwerk-Preise und eine Jackpot-Ecke für alle, die den einen lebensverändernden Treffer suchen. Über die Suchleiste kannst du nach Anbieter filtern, was mehr zählt, als es klingt — wenn du entschieden hast, dass du nur der Mathematik eines bestimmten Studios vertraust, kannst du dich mit zwei Klicks darin einmauern. Die Lobby belohnt es, wenn du weißt, was du willst. Sie ist eine Landkarte und setzt voraus, dass du eine lesen kannst.</p>
+        <JoinNowButton />
       </Section>
 
       <PromotionBanner variant="first-deposit" />

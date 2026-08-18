@@ -1355,12 +1355,14 @@ tr > :last-child {
   object-fit: cover;
 }
 
+#lobby-landkarte p,
 #zahlen-auf-der-kachel p,
 #spielkachel-lesen p,
 #live-etage p {
   max-width: none;
 }
 
+.lobby-map-scroll,
 .rtp-strip-scroll {
   width: 100%;
   padding: var(--space-control);
@@ -1374,6 +1376,7 @@ tr > :last-child {
   scrollbar-width: thin;
 }
 
+.lobby-map-image,
 .rtp-strip-image {
   display: block;
   width: 100%;
@@ -3236,6 +3239,7 @@ tr > :last-child {
     height: 22px;
   }
 
+  .lobby-map-image,
   .rtp-strip-image {
     min-width: 900px;
   }
