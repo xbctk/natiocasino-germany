@@ -763,6 +763,14 @@ a {
   box-shadow: none;
 }
 
+#haeufig-gestellte-fragen .faq-list,
+#spielermeinungen .reviews-slider,
+#bewertungskarte > p:last-child,
+#verantwortungsvolles-spielen .image-copy-section__copy > :last-child,
+#zahlungen-und-support .image-copy-section__copy > :last-child {
+  margin-bottom: 0;
+}
+
 .content-section > h2 {
   display: grid;
   grid-template-columns: minmax(0, auto) minmax(48px, 1fr);
@@ -1502,6 +1510,36 @@ tr > :last-child {
 }
 
 @media (min-width: 1181px) {
+  #anbieter {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto 1fr;
+    column-gap: 40px;
+    align-items: center;
+  }
+
+  #anbieter > h2 {
+    grid-column: 1 / -1;
+  }
+
+  #anbieter .image-copy-section__copy {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  #anbieter .provider-showcase {
+    position: static;
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  #zahlungen-und-support,
+  #turniere {
+    min-height: 0;
+  }
+
   .main-content .image-copy-section--wide-title > h2 {
     grid-template-columns: max-content minmax(48px, 1fr);
     width: 100%;
@@ -1556,7 +1594,7 @@ tr > :last-child {
   top: 104px;
   right: var(--space-content);
   width: calc(50% - 40px);
-  padding: var(--space-control);
+  padding: var(--space-content);
   background: rgb(30 27 28 / 92%);
   border: 1px solid rgb(254 200 130 / 64%);
   border-radius: 14px;
