@@ -603,14 +603,14 @@ export function MainContent() {
             </table>
           </div>
           <div className="rating-card-layout__media">
-            <Image src="/content/main/support-characters.webp" alt="National Casino Kundenservice" fill sizes="(max-width: 960px) 100vw, 41vw" />
+            <Image src="/content/main/support-characters-v2.webp" alt="National Casino Kundenservice" fill sizes="(max-width: 960px) 100vw, 41vw" />
           </div>
         </div>
         <p>Vielfalt und Support tragen die Bewertungskarte; mobil ist hervorragend, sobald man den Web-App-Weg versteht; die Boni sind stark und häufig; die Auszahlungszeit ist der eine Bereich, in dem der reine Karten-Auszahlungsweg und die Standard-Bearbeitung sie von einer Top-Note abhalten.</p>
       </Section>
 
       <Section id="letztes-wort" title="Das letzte Wort" className="image-copy-section summary-section">
-        <Image className="image-copy-section__image" src="/content/main/summary-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/main/summary-characters-v2.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>National Casino setzt eine gezielte Wette darauf, wer seine Spielerin und sein Spieler ist: jemand, dem man lieber die Zahlen zeigt, als ihm eine Fantasie zu verkaufen. Diese eine Entscheidung — RTP auf jeder Kachel, offen — zieht sich durch alles andere, vom Detektiv-Thema, das den Spielsaal einkleidet, bis zur fünfzehnstufigen VIP-Leiter, die dich dafür belohnt, dass du weißt, was du tust. Es ist nicht der am strengsten regulierte Raum, in dem du je spielen wirst, und die Krypto-rein-Karte-raus-Auszahlungseigenheit ist eine echte Falte. Aber was du im Gegenzug bekommst, ist ein Spielsaal mit echtem Charakter, ein Live-Dealer-Katalog, der an der Spitze des Formats zuschlägt, eine Slot-Bibliothek mit echter Bandbreite und ein Betreiber, der mehr als die meisten damit im Reinen scheint, dich genau hinschauen zu lassen.</p>
