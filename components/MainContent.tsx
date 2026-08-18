@@ -163,7 +163,7 @@ export function MainContent() {
   return (
     <div className="main-content">
       <Section id="national-casino-spielsaal" title="National Casino: Ein Spielsaal, der seine Karten offenlegt" className="image-copy-section image-copy-section--wide-title">
-        <Image className="image-copy-section__image" src="/content/main/overview.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/main/overview-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
             <p>Die meisten Casinos bitten dich, der Atmosphäre zu vertrauen. Tritt ein, bewundere das Licht, glaube einfach daran, dass die Spiele hinter den hübschen Kacheln auch wirklich auszahlen, was sie versprechen. National Casino macht etwas Leiseres und, sobald man es bemerkt, ein wenig Entwaffnendes: Es reicht dir die Beweise, bevor du dich überhaupt hinsetzt. Jedes Spiel im Saal trägt seinen Return-to-Player-Wert offen im Gesicht, direkt auf der Kachel, und aktualisiert ihn, während der Raum spielt. Es ist eine kleine Design-Entscheidung, die fast alles über diesen Ort verrät.</p>
@@ -393,7 +393,7 @@ export function MainContent() {
       </Section>
 
       <Section id="anbieter" title="Die Anbieter hinter dem Spielsaal" className="image-copy-section image-copy-section--wide-title">
-        <Image className="image-copy-section__image" src="/content/main/license.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/main/providers-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
             <p>Ein Spiel ist nur so gut wie das Studio, das es gebaut hat, und Nationals Aufgebot liest sich wie ein Who&#x27;s Who dessen, was die Leute gerade wirklich spielen. Pragmatic Play bringt die Volatilitätsmaschinen mit hohem Deckel und das Gates-of-Olympus-Universum. Hacksaw Gaming liefert die scharfen, modernen Titel hoher Varianz, denen die Streaming-Szene hinterherjagt. BGaming deckt das krypto-freundliche, nachweislich faire Ende mit einem riesigen Backkatalog ab. Dann füllen Felix Gaming, Spinomenal, Novomatic, Fugaso und NetGame die Breite auf — klassische Walzen, Book-Slots, Hold-&amp;-Win-Gitter, das ganze Programm.</p>
@@ -458,7 +458,7 @@ export function MainContent() {
       </Section>
 
       <Section id="vip-aufstieg" title="Der VIP-Aufstieg" className="image-copy-section">
-        <Image className="image-copy-section__image" src="/content/main/vip.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/main/vip-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>Nationals Treueprogramm ist eine richtige Leiter — fünfzehn Stufen, erklommen durch das Sammeln von Comp Points beim Slot-Spiel. Du verdienst einen CP für je 20 €/$ Umsatz an Slots, und der Umtauschkurs, um diese Punkte zurück in Wert zu verwandeln, verbessert sich, während du aufsteigst. Die Teilnahme setzt automatisch mit deiner ersten Einzahlung ein, du bist also vom Moment deines Starts an auf der Leiter.</p>
@@ -468,7 +468,7 @@ export function MainContent() {
       </Section>
 
       <Section id="turniere" title="Turniere" className="image-copy-section image-copy-section--wide-title">
-        <Image className="image-copy-section__image" src="/content/shared/tournament.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/main/tournament-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
             <p>Neben dem VIP-Grind betreibt National eine rotierende Auswahl an Turnieren — zeitlich begrenzte Rennen, bei denen dein Spiel eine Bestenliste gegen die aller anderen hochklettert. Die wiederkehrende „Treasure Race&quot;-Reihe ist das Rückgrat: ein Sonic Treasure Race mit einem Pool von 100 € plus 300 Freispielen, ein Flash Treasure Race mit 75 € plus 300 Spins, ein Rapid Treasure Race mit 50 € plus 300 Spins, jedes auf seinem eigenen Countdown. Das sind druckarme Wege, einer Session, die du ohnehin gespielt hättest, einen Wettbewerbsreiz hinzuzufügen — du riskierst nichts Zusätzliches, du wirst nur für die Spins gerankt, die du sowieso machst. Für einen bestimmten Spielertyp ist genau diese Bestenliste der Haken, der einen gewöhnlichen Abend interessanter macht.</p>
@@ -500,7 +500,7 @@ export function MainContent() {
       </Section>
 
       <Section id="spielen-am-handy" title="Spielen am Handy" className="image-copy-section image-copy-section--wide-title">
-        <Image className="image-copy-section__image" src="/content/app/general-install.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/main/mobile-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
             <p>National drängt an den meisten Orten keinen klassischen App-Store-Download auf, und ehrlich gesagt erweist sich das als die bessere Lösung. Statt einer nativen App bietet es eine installierbare Web-App — eine Version, die du direkt aus dem Browser zu deinem Startbildschirm hinzufügst, die dann in ihrem eigenen Fenster mit eigenem Icon öffnet und sich fast genau wie eine heruntergeladene App verhält, aber automatisch mit der Seite aktuell bleibt. In einigen Regionen ist ein nativer Download verfügbar, aber die installierbare Web-Version ist überall der verlässliche Weg, und sie kommt mit einer kleinen Karotte: einer 10-Freispiele-Belohnung fürs Installieren, ohne Einzahlung.</p>
@@ -511,7 +511,7 @@ export function MainContent() {
       <AppPromoBanner />
 
       <Section id="zahlungen-und-support" title="Einzahlungen, Auszahlungen und Support" className="image-copy-section image-copy-section--wide-title">
-        <Image className="image-copy-section__image" src="/content/main/payments.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/main/payments-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
             <p>Auf dem Weg hinein ist National großzügig mit Optionen: Karten, eine Reihe von E-Wallets und ein solides Spektrum an Kryptowährungen, wobei Krypto- und E-Wallet-Einzahlungen in der Regel sofort ankommen. Auf dem Weg hinaus gilt der ehrliche Hinweis, den wir früher markiert haben — Auszahlungen werden über Visa und Mastercard abgewickelt, selbst wenn du in Krypto eingezahlt hast, ist der Auszahlungsweg also kartenbasiert. Das solltest du eher einplanen, als dich davon überraschen zu lassen. Ein- und Auszahlungslimits variieren je nach Methode, und die genauen Zahlen tauchen in der Kasse auf, sobald du eingeloggt bist.</p>
@@ -520,7 +520,7 @@ export function MainContent() {
       </Section>
 
       <Section id="verantwortungsvolles-spielen" title="Ein Wort zum verantwortungsvollen Spielen" className="image-copy-section image-copy-section--wide-title">
-        <Image className="image-copy-section__image" src="/content/shared/responsible-gaming.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/main/responsible-gaming-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>Nichts von alledem zählt, wenn der Spaß aufhört, Spaß zu sein. National stellt den üblichen Werkzeugkasten für verantwortungsvolles Spielen bereit — du kannst Limits für Einzahlungen, Verluste, Sitzungsdauer und Umsatz setzen, indem du den Support kontaktierst, und Selbstausschluss ist über den Live-Chat verfügbar, der rund um die Uhr läuft. Der eine ehrliche Vorbehalt, der genannt werden muss: Einzahlungslimits decken Standardmethoden ab, aber nicht Kryptowährung, wenn du also in Krypto spielst, muss die Disziplin von dir kommen und nicht von einer Systemgrenze.</p>
@@ -603,14 +603,14 @@ export function MainContent() {
             </table>
           </div>
           <div className="rating-card-layout__media">
-            <Image src="/content/main/support.webp" alt="National Casino Kundenservice" fill sizes="(max-width: 960px) 100vw, 41vw" />
+            <Image src="/content/main/support-characters.webp" alt="National Casino Kundenservice" fill sizes="(max-width: 960px) 100vw, 41vw" />
           </div>
         </div>
         <p>Vielfalt und Support tragen die Bewertungskarte; mobil ist hervorragend, sobald man den Web-App-Weg versteht; die Boni sind stark und häufig; die Auszahlungszeit ist der eine Bereich, in dem der reine Karten-Auszahlungsweg und die Standard-Bearbeitung sie von einer Top-Note abhalten.</p>
       </Section>
 
       <Section id="letztes-wort" title="Das letzte Wort" className="image-copy-section summary-section">
-        <Image className="image-copy-section__image" src="/content/main/summary.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/main/summary-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>National Casino setzt eine gezielte Wette darauf, wer seine Spielerin und sein Spieler ist: jemand, dem man lieber die Zahlen zeigt, als ihm eine Fantasie zu verkaufen. Diese eine Entscheidung — RTP auf jeder Kachel, offen — zieht sich durch alles andere, vom Detektiv-Thema, das den Spielsaal einkleidet, bis zur fünfzehnstufigen VIP-Leiter, die dich dafür belohnt, dass du weißt, was du tust. Es ist nicht der am strengsten regulierte Raum, in dem du je spielen wirst, und die Krypto-rein-Karte-raus-Auszahlungseigenheit ist eine echte Falte. Aber was du im Gegenzug bekommst, ist ein Spielsaal mit echtem Charakter, ein Live-Dealer-Katalog, der an der Spitze des Formats zuschlägt, eine Slot-Bibliothek mit echter Bandbreite und ein Betreiber, der mehr als die meisten damit im Reinen scheint, dich genau hinschauen zu lassen.</p>
