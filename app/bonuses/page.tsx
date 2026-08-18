@@ -36,7 +36,7 @@ export default function BonusesPage() {
       <div className="page-layout">
         <Sidebar label="Abschnitte der Boni-Seite" sections={bonusesSections} />
         <main className="page-main">
-          <Hero breadcrumbLabel="Boni" breadcrumbPath="/bonuses" descriptionLines={descriptionLines} imageSrc="/content/bonuses/hero.webp" titleLines={titleLines} />
+          <Hero breadcrumbLabel="Boni" breadcrumbPath="/bonuses" className="boni-hero" descriptionLines={descriptionLines} imageSrc="/content/bonuses/hero.webp" titleLines={titleLines} />
           <BonusesContent />
           <Footer />
         </main>

@@ -110,7 +110,7 @@ export function BonusesContent() {
             </div>
           </div>
         </div>
-        <div className="content-subsection boni-terms-panel">
+        <div className="content-subsection">
           <h3>Die Bedingungen, die man kennen sollte</h3>
           <p>Jeder Bonus, überall, trägt Strings — der ehrliche Zug ist, sie zu lesen, nicht sie zu fürchten. Für die Willkommensangebote heißt das: eine Umsatzanforderung, die du erfüllen musst, bevor Bonusgewinne zu auszahlbarem Bargeld werden, ein Gültigkeitsfenster, in dem der Bonus lebt, und eine Liste berechtigter Spiele, die zum Umsatz zählen (Slots leisten die Schwerarbeit; Tischspiele tragen meist wenig oder nichts bei). Nichts davon ist ungewöhnlich. Was zählt, ist, die Einzelheiten in den Bonusbedingungen zu prüfen, bevor du dich anmeldest, damit du genau weißt, worauf du dich einlässt. National tendiert dazu, diese klar zu benennen, was mehr ist, als man vom Großteil des Feldes sagen kann.</p>
         </div>

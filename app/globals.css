@@ -419,6 +419,10 @@ a {
   white-space: normal;
 }
 
+.boni-hero .hero__content {
+  width: min(1000px, 90%);
+}
+
 .boni-reason-grid,
 .boni-welcome-grid,
 .boni-reload-grid,
@@ -433,8 +437,7 @@ a {
 }
 
 .boni-reason-grid .info-card p,
-.boni-network-card > p,
-.boni-terms-panel > p {
+.boni-network-card > p {
   margin-bottom: 0;
 }
 
@@ -480,21 +483,6 @@ a {
 .boni-media-panel img {
   object-fit: cover;
   object-position: center;
-}
-
-.boni-terms-panel {
-  padding: var(--space-card);
-  background:
-    radial-gradient(circle at 100% 0%, rgb(254 200 130 / 12%), transparent 34%),
-    var(--dark);
-  border: 1px solid rgb(254 200 130 / 26%);
-  border-radius: 14px;
-}
-
-.boni-terms-panel > h3 {
-  padding-bottom: var(--space-nested);
-  margin-top: 0;
-  border-bottom: 1px solid rgb(254 200 130 / 22%);
 }
 
 .boni-vip-section,
@@ -562,6 +550,10 @@ a {
 }
 
 @media (max-width: 1180px) {
+  .boni-hero .hero__content {
+    width: min(100%, 860px);
+  }
+
   .boni-vip-section .image-copy-section__copy,
   .boni-tournament-section .image-copy-section__copy {
     width: min(100%, 760px);
