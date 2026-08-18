@@ -94,6 +94,34 @@ function Section({ children, className = "", id, title }: { children: ReactNode;
   return <section className={`content-section ${className}`.trim()} id={id}><h2>{title}</h2>{children}</section>;
 }
 
+function FireRating({ value }: { value: number }) {
+  const fullIcons = Math.floor(value);
+  const hasHalfIcon = value % 1 !== 0;
+  const accessibleValue = value.toLocaleString("de-DE", { maximumFractionDigits: 1 });
+
+  return (
+    <span className="fire-rating" role="img" aria-label={`${accessibleValue} von 5`}>
+      {Array.from({ length: fullIcons }, (_, index) => (
+        <Image
+          className="fire-rating__icon"
+          src="/icons/fire.svg"
+          alt=""
+          width={28}
+          height={28}
+          aria-hidden="true"
+          key={index}
+        />
+      ))}
+      {hasHalfIcon ? (
+        <span className="fire-rating__half" aria-hidden="true">
+          <Image className="fire-rating__half-base" src="/icons/fire.svg" alt="" width={28} height={28} />
+          <Image className="fire-rating__half-fill" src="/icons/fire.svg" alt="" width={28} height={28} />
+        </span>
+      ) : null}
+    </span>
+  );
+}
+
 export function MainContent() {
   return (
     <div className="main-content">
@@ -472,37 +500,42 @@ export function MainContent() {
       </Section>
 
       <Section id="bewertungskarte" title="Die Bewertungskarte" className="">
-        <div className="table-scroll" role="region" tabIndex={0}>
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Kategorie</th>
-                <th scope="col">Bewertung</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Wettvielfalt</th>
-                <td>★★★★★</td>
-              </tr>
-              <tr>
-                <th scope="row">Mobile Anpassungsfähigkeit</th>
-                <td>★★★★½</td>
-              </tr>
-              <tr>
-                <th scope="row">Bonusangebote</th>
-                <td>★★★★½</td>
-              </tr>
-              <tr>
-                <th scope="row">Support</th>
-                <td>★★★★★</td>
-              </tr>
-              <tr>
-                <th scope="row">Auszahlungszeit</th>
-                <td>★★★½</td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="rating-card-layout">
+          <div className="table-scroll rating-card-layout__table" role="region" tabIndex={0}>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Kategorie</th>
+                  <th scope="col">Bewertung</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Wettvielfalt</th>
+                  <td><FireRating value={5} /></td>
+                </tr>
+                <tr>
+                  <th scope="row">Mobile Anpassungsfähigkeit</th>
+                  <td><FireRating value={4.5} /></td>
+                </tr>
+                <tr>
+                  <th scope="row">Bonusangebote</th>
+                  <td><FireRating value={4.5} /></td>
+                </tr>
+                <tr>
+                  <th scope="row">Support</th>
+                  <td><FireRating value={5} /></td>
+                </tr>
+                <tr>
+                  <th scope="row">Auszahlungszeit</th>
+                  <td><FireRating value={3.5} /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="rating-card-layout__media">
+            <Image src="/content/main/support.webp" alt="National Casino Kundenservice" fill sizes="(max-width: 960px) 100vw, 41vw" />
+          </div>
         </div>
         <p>Vielfalt und Support tragen die Bewertungskarte; mobil ist hervorragend, sobald man den Web-App-Weg versteht; die Boni sind stark und häufig; die Auszahlungszeit ist der eine Bereich, in dem der reine Karten-Auszahlungsweg und die Standard-Bearbeitung sie von einer Top-Note abhalten.</p>
       </Section>
