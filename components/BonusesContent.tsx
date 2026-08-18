@@ -207,7 +207,7 @@ export function BonusesContent() {
             <li>Spiel — die Belohnung landet, und du bist in den Spielen der Top-Anbieter.</li>
           </StepList>
           <div className="boni-code-art" aria-hidden="true">
-            <Image src="/content/bonuses/promotion-code-v2.webp" alt="" fill sizes="(max-width: 960px) 100vw, 40vw" />
+            <Image src="/content/bonuses/promotion-code-v3.webp" alt="" fill sizes="(max-width: 960px) 100vw, 40vw" />
           </div>
         </div>
         <p>Weil es sich um begrenzte Angebote handelt, ist ein Code die Definition von „jetzt oder nie&quot;. Wenn dir einer über den Weg läuft, lass ihn nicht liegen.</p>
