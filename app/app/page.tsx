@@ -5,8 +5,8 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Sidebar } from "@/components/Sidebar";
 
-const title = "National Casino App NZ | iOS & Android PWA Guide";
-const description = "Use the National Casino PWA in New Zealand: install it on Android, iPhone and iPad, explore mobile games, bonuses, security and key features.";
+const title = "National Casino App Deutschland: Web-App holen & spielen";
+const description = "Installiere die National Casino App direkt von der Seite — kein App Store, keine APK-Suche. Ein Konto, alle Spiele und 10 Freispiele fürs Einrichten.";
 
 export const metadata: Metadata = {
   title,
@@ -16,17 +16,17 @@ export const metadata: Metadata = {
     title,
     description,
     url: "/app",
-    siteName: "National Casino New Zealand",
-    locale: "en_NZ",
+    siteName: "National Casino Deutschland",
+    locale: "de_DE",
     type: "website",
     images: [{ url: "/content/app/hero.webp", width: 1672, height: 941, alt: title }],
   },
 };
 
-const titleLines = ["National Casino App New Zealand |", "Installation on iOS and Android"];
+const titleLines = ["National Casino App Deutschland:", "Web-App holen & spielen"];
 const descriptionLines = [
-  "Download the National Casino apps for New Zealand players: installing PWA on Android,",
-  "iPhone and iPad, mobile games, download bonus, security and basic features.",
+  "Installiere die National Casino App direkt von der Seite — kein App Store, keine APK-Suche.",
+  "Ein Konto, alle Spiele und 10 Freispiele fürs Einrichten.",
 ];
 
 export default function AppPage() {
@@ -34,7 +34,7 @@ export default function AppPage() {
     <div className="site-shell">
       <Header />
       <div className="page-layout">
-        <Sidebar label="App page sections" sections={appSections} />
+        <Sidebar label="Bereiche der App-Seite" sections={appSections} />
         <main className="page-main">
           <Hero breadcrumbLabel="App" breadcrumbPath="/app" descriptionLines={descriptionLines} imageSrc="/content/app/hero.webp" titleLines={titleLines} />
           <AppContent />
