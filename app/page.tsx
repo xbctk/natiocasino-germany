@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "National Casino Deutschland",
     locale: "de_DE",
     type: "website",
-    images: [{ url: "/content/main/hero.webp", width: 1672, height: 941, alt: title }],
+    images: [{ url: "/content/main/hero-characters-v2.webp", width: 1672, height: 941, alt: title }],
   },
 };
 

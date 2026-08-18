@@ -15,7 +15,7 @@ export function Hero({
   breadcrumbPath,
   className = "",
   descriptionLines = mainDescriptionLines,
-  imageSrc = "/content/main/hero.webp",
+  imageSrc = "/content/main/hero-characters-v2.webp",
   showAction = true,
   titleLines = mainTitleLines,
 }: {

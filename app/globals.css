@@ -671,7 +671,7 @@ a {
 }
 
 .hero__content {
-  width: min(1050px, 90%);
+  width: min(860px, 90%);
   padding-block: 40px;
   padding-inline: var(--space-content);
 }
@@ -3195,7 +3195,7 @@ tr > :last-child {
   }
 
   .hero__content {
-    width: min(100%, 900px);
+    width: min(100%, 860px);
   }
 
   .image-copy-section > h2,
