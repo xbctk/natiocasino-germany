@@ -27,7 +27,7 @@ export function AppPromoBanner() {
     <div className="app-promo-banner">
       <Image
         className="app-promo-banner__background"
-        src="/app/app-promo-background.webp"
+        src="/app/app-promo-background-v2.jpg"
         alt=""
         fill
         sizes="(max-width: 1180px) 100vw, 80vw"
