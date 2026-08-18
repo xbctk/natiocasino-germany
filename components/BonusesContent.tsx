@@ -1,7 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { BONUS_AFFILIATE_URL, GENERAL_AFFILIATE_URL } from "./affiliateLinks";
-import { PlaceholderMedia } from "./PlaceholderMedia";
 
 export const bonusesSections: ReadonlyArray<readonly [string, string]> = [
   ["national-casino-boni-aktionen", "National Casino Boni & Aktionen in Deutschland"],
@@ -75,7 +74,7 @@ export function BonusesContent() {
   return (
     <div className="main-content bonuses-content boni-page-content">
       <Section id="national-casino-boni-aktionen" title="National Casino Boni & Aktionen in Deutschland" className="image-copy-section image-copy-section--wide-title">
-        <Image className="image-copy-section__image" src="/content/bonuses/intro.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/bonuses/intro-calendar-v2.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>Manche Casinos betreiben ein einziges Willkommensangebot und nennen das eine Aktionsseite. National Casino betreibt einen Kalender — eine rollende Auswahl an Matches, Spins, Reloads, Rädern und Turnieren, die den meisten Wochentagen einen Grund zum Einloggen gibt. Das hier ist die Landkarte zu allem: was angeboten wird, was jedes Einzelne tatsächlich wert ist und wo das Kleingedruckte steckt, damit du die Angebote auswählen kannst, die zu deiner Spielweise passen, statt den erstbesten glänzenden Button zu drücken.</p>
@@ -83,7 +82,7 @@ export function BonusesContent() {
       </Section>
 
       <Section id="warum-aktionen-lohnen" title="Warum sich die Aktionen hier für deutsche Spieler lohnen" className="image-copy-section image-copy-section--wide-title boni-reason-section">
-        <Image className="image-copy-section__image" src="/content/bonuses/promotions-overview.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/bonuses/promotions-choice-v2.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>Ein Bonus ist nur dann großzügig, wenn du ihn tatsächlich nutzen kannst, und genau hier fallen viele Casinos leise durch — große Schlagzeilenzahl, Umsatzbedingungen, die sie ganz verschlucken. Nationals Kalender verdient deine Aufmerksamkeit aus einem einfacheren Grund: Die Angebote sind vielfältig genug, dass wirklich eines für deinen Stil dabei ist, und die Bedingungen werden eher klar benannt als vergraben. Ob du ein Neuling bist, der das größtmögliche Match jagt, ein Krypto-Spieler, der eine größere Tür will, ein Freitagabend-Stammgast beim Nachtanken oder ein VIP, der 1-€-Spins freischaltet — es gibt ein bestimmtes Angebot, das für dich gebaut ist.</p>
@@ -156,7 +155,7 @@ export function BonusesContent() {
       </Section>
 
       <Section id="treuebelohnungen-vip" title="Treuebelohnungen & VIP-Vorteile" className="image-copy-section image-copy-section--wide-title boni-vip-section">
-        <Image className="image-copy-section__image" src="/content/main/vip-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/bonuses/vip-rewards-v2.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>Nationals Treueprogramm ist keine Alibi-Geste, die seitlich angeschraubt wurde — es ist ein fünfzehnstufiger Aufstieg, der dich leise dafür belohnt, so zu spielen, wie du ohnehin spielen wolltest.</p>
@@ -185,7 +184,7 @@ export function BonusesContent() {
       </Section>
 
       <Section id="turniere-bestenlisten" title="Turniere und Bestenlisten" className="image-copy-section image-copy-section--wide-title boni-tournament-section">
-        <Image className="image-copy-section__image" src="/content/main/tournament-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/bonuses/tournaments-v2.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>Wenn eine Bestenliste die Art von Sache ist, die einen gewöhnlichen Abend wichtig anfühlen lässt, dann sind Nationals Turniere für dich gebaut.</p>
@@ -207,14 +206,16 @@ export function BonusesContent() {
             <li>Aktiviere den Bonus in deinem Konto.</li>
             <li>Spiel — die Belohnung landet, und du bist in den Spielen der Top-Anbieter.</li>
           </StepList>
-          <PlaceholderMedia label="Bildplatzhalter für Aktionscodes" />
+          <div className="boni-code-art" aria-hidden="true">
+            <Image src="/content/bonuses/promotion-code-v2.webp" alt="" fill sizes="(max-width: 960px) 100vw, 40vw" />
+          </div>
         </div>
         <p>Weil es sich um begrenzte Angebote handelt, ist ein Code die Definition von „jetzt oder nie&quot;. Wenn dir einer über den Weg läuft, lass ihn nicht liegen.</p>
         <SectionCta type="join" />
       </Section>
 
       <Section id="saisonale-angebote" title="Zeitlich begrenzte und saisonale Angebote" className="image-copy-section image-copy-section--wide-title boni-seasonal-section">
-        <Image className="image-copy-section__image" src="/content/bonuses/limited-offers.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/bonuses/seasonal-offers-v2.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>Der Kalender besteht nicht nur aus den festen Angeboten — es gibt eine rotierende Schicht des Vorübergehenden und Saisonalen, und hier zahlt sich Aufmerksamkeit aus.</p>
@@ -225,7 +226,7 @@ export function BonusesContent() {
       </Section>
 
       <Section id="verantwortungsvoll-spielen-boni" title="Verantwortungsvoll spielen" className="image-copy-section image-copy-section--wide-title boni-responsible-section">
-        <Image className="image-copy-section__image" src="/content/main/responsible-gaming-characters.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/bonuses/responsible-play-v2.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>Ein Bonus ist Extra-Spiel, niemals ein Plan, um Geld zurückzugewinnen — und der Moment, in dem es sich anfängt wie Letzteres anzufühlen, ist der Moment, zurückzutreten. National stellt die üblichen Werkzeuge für verantwortungsvolles Spielen bereit: Du kannst Limits für Einzahlungen, Verluste, Sitzungsdauer und Umsatz setzen, indem du den Support kontaktierst, und Selbstausschluss ist über den Live-Chat verfügbar, der rund um die Uhr läuft. Ein ehrlicher Vorbehalt, der genannt werden muss: Einzahlungslimits decken Standard-Zahlungsmethoden ab, aber nicht Kryptowährung, wenn du dein Spiel also in Krypto finanzierst, muss diese Disziplin von dir kommen.</p>
@@ -234,7 +235,7 @@ export function BonusesContent() {
       </Section>
 
       <Section id="angebot-waehlen" title="Dein Angebot wählen" className="image-copy-section summary-section image-copy-section--wide-title boni-summary-section">
-        <Image className="image-copy-section__image" src="/content/main/summary-characters-v2.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/bonuses/offer-choice-v2.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>Das ist der ganze Kalender. Du brauchst nicht alles davon — niemand spielt jeden Bonus, und der Versuch, es zu tun, ist genau, wie Leute am Ende mehr umsetzen, als sie vorhatten. Finde das eine, das zu deiner tatsächlichen Spielweise passt, prüfe, was es von dir verlangt, und beanspruche genau dieses richtig. Der Rest wird immer noch hier sein, wenn du dich das nächste Mal einloggst.</p>

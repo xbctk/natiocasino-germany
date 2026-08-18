@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "National Casino Deutschland",
     locale: "de_DE",
     type: "website",
-    images: [{ url: "/content/bonuses/hero.webp", width: 1672, height: 941, alt: title }],
+    images: [{ url: "/content/bonuses/hero-characters-v2.webp", width: 1672, height: 941, alt: title }],
   },
 };
 
@@ -36,7 +36,7 @@ export default function BonusesPage() {
       <div className="page-layout">
         <Sidebar label="Abschnitte der Boni-Seite" sections={bonusesSections} />
         <main className="page-main">
-          <Hero breadcrumbLabel="Boni" breadcrumbPath="/bonuses" className="boni-hero" descriptionLines={descriptionLines} imageSrc="/content/bonuses/hero.webp" titleLines={titleLines} />
+          <Hero breadcrumbLabel="Boni" breadcrumbPath="/bonuses" className="boni-hero" descriptionLines={descriptionLines} imageSrc="/content/bonuses/hero-characters-v2.webp" titleLines={titleLines} />
           <BonusesContent />
           <Footer />
         </main>
