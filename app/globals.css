@@ -2323,11 +2323,22 @@ tr > :last-child {
 }
 
 .germany-bonus-grid .promotion-art-card h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-control);
   padding: 0 0 var(--space-nested);
   margin: 0 0 var(--space-nested);
   color: var(--gold);
   border-bottom: 1px solid rgb(254 200 130 / 28%);
   text-shadow: 0 2px 16px rgb(0 0 0 / 70%);
+}
+
+.germany-bonus-grid .promotion-art-card h3::before {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  background: url("/icons/fire.svg") center / contain no-repeat;
+  content: "";
 }
 
 .germany-bonus-grid .promotion-art-card p {
