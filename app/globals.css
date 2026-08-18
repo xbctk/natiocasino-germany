@@ -423,29 +423,14 @@ a {
   width: min(1000px, 90%);
 }
 
-.boni-reason-grid,
 .boni-welcome-grid,
 .boni-reload-grid,
 .boni-spins-grid {
   margin-top: var(--space-content);
 }
 
-.boni-reason-grid .info-card {
-  display: flex;
-  align-items: center;
-  min-height: 230px;
-}
-
-.boni-reason-grid .info-card p,
-.boni-network-card > p {
-  margin-bottom: 0;
-}
-
-.boni-reason-card--accent {
-  background:
-    radial-gradient(circle at 88% 12%, rgb(255 159 108 / 24%), transparent 34%),
-    linear-gradient(145deg, #40342f 0%, #221f20 72%);
-  border-color: rgb(254 200 130 / 38%);
+.boni-reason-section {
+  min-height: 520px;
 }
 
 .boni-promotion-card.info-card {
@@ -506,15 +491,42 @@ a {
   border-bottom: 1px solid rgb(254 200 130 / 24%);
 }
 
-.boni-network-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
-  gap: var(--space-content);
+.boni-icon-heading {
+  display: flex;
   align-items: center;
-  margin-top: var(--space-content);
-  background:
-    radial-gradient(circle at 78% 50%, rgb(254 200 130 / 12%), transparent 42%),
-    var(--dark);
+  gap: var(--space-control);
+}
+
+.boni-icon-heading::before {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+}
+
+.boni-icon-heading--fire::before {
+  background-image: url("/icons/fire.svg");
+}
+
+.boni-icon-heading--cards::before {
+  background-image: url("/content-icons/cards.png");
+}
+
+#mehr-wege-zum-wert > p {
+  max-width: none;
+}
+
+.boni-event-art-frame {
+  margin: var(--space-content) 0;
+  padding: var(--space-nested);
+  overflow: hidden;
+  background: var(--dark);
+  border: 1px solid #ff9100;
+  border-radius: 14px;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 4%);
 }
 
 .boni-event-art {
@@ -549,6 +561,11 @@ a {
   margin-bottom: 0;
 }
 
+.boni-code-layout > .media-placeholder {
+  min-height: 420px;
+  margin: 0;
+}
+
 @media (max-width: 1180px) {
   .boni-hero .hero__content {
     width: min(100%, 860px);
@@ -558,14 +575,9 @@ a {
   .boni-tournament-section .image-copy-section__copy {
     width: min(100%, 760px);
   }
-
-  .boni-network-card {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }
 
 @media (max-width: 960px) {
-  .boni-reason-grid,
   .boni-welcome-grid,
   .boni-reload-grid,
   .boni-spins-grid {
@@ -589,10 +601,6 @@ a {
 @media (max-width: 719px) {
   .boni-page-content .content-section > h2 {
     display: block;
-  }
-
-  .boni-reason-grid .info-card {
-    min-height: 0;
   }
 
   .boni-promotion-card.info-card,
@@ -621,6 +629,10 @@ a {
   }
 
   .boni-media-panel {
+    min-height: 280px;
+  }
+
+  .boni-code-layout > .media-placeholder {
     min-height: 280px;
   }
 
