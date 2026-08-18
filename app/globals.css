@@ -642,7 +642,7 @@ a {
 
 .page-main {
   min-width: 0;
-  padding: 0 var(--content-padding) var(--content-padding);
+  padding: 0 0 var(--content-padding);
 }
 
 .hero {
@@ -3190,7 +3190,7 @@ tr > :last-child {
   }
 
   .page-main {
-    padding-inline: 20px;
+    padding-inline: 0;
   }
 
   .hero {
@@ -3402,7 +3402,7 @@ tr > :last-child {
   }
 
   .page-main {
-    padding-inline: 12px;
+    padding-inline: 0;
   }
 
   .mobile-section-nav {
