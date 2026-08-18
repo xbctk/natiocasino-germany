@@ -79,7 +79,6 @@ export function BonusesContent() {
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>Manche Casinos betreiben ein einziges Willkommensangebot und nennen das eine Aktionsseite. National Casino betreibt einen Kalender — eine rollende Auswahl an Matches, Spins, Reloads, Rädern und Turnieren, die den meisten Wochentagen einen Grund zum Einloggen gibt. Das hier ist die Landkarte zu allem: was angeboten wird, was jedes Einzelne tatsächlich wert ist und wo das Kleingedruckte steckt, damit du die Angebote auswählen kannst, die zu deiner Spielweise passen, statt den erstbesten glänzenden Button zu drücken.</p>
-          <SectionCta type="join" />
         </div>
       </Section>
 
