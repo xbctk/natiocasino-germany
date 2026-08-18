@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { BONUS_AFFILIATE_URL } from "./affiliateLinks";
+import { BONUS_AFFILIATE_URL, GENERAL_AFFILIATE_URL } from "./affiliateLinks";
 import { AppPromoBanner } from "./AppPromoBanner";
 import { JsonLd } from "./JsonLd";
 import { PromotionBanner } from "./PromotionBanner";
@@ -92,6 +92,10 @@ function BonusVisualCard({ background, character, children, title, wide = false 
 
 function Section({ children, className = "", id, title }: { children: ReactNode; className?: string; id: string; title: string }) {
   return <section className={`content-section ${className}`.trim()} id={id}><h2>{title}</h2>{children}</section>;
+}
+
+function JoinNowButton() {
+  return <a className="button button--primary content-section__action" href={GENERAL_AFFILIATE_URL} rel="sponsored">Jetzt beitreten</a>;
 }
 
 function FireRating({ value }: { value: number }) {
@@ -227,6 +231,7 @@ export function MainContent() {
           <p>Eine Anmerkung zu dieser Lizenzzeile, denn sie verdient Ehrlichkeit statt eines Schulterzuckens. Eine Curaçao-Lizenz ist die häufigste Berechtigung im Online-Glücksspiel. Sie bedeutet, dass echte Aufsicht besteht — der Betreiber muss sich gegenüber einer Regulierungsbehörde verantworten, die Spiele laufen auf zertifizierten Zufallsgeneratoren — aber es ist ein Regime mit leichterer Hand als etwa das im Vereinigten Königreich oder auf Malta. Wer den strengstmöglichen Verbraucherschutz will, ist hier nicht richtig. Wer ein legitimes, funktionierendes Casino mit vernünftigen Schutzmechanismen will, ist es sehr wohl. Wenn du weißt, was du suchst, weißt du auch, ob das hier passt.</p>
           <p>Für deutsche Spielerinnen und Spieler lohnt ein zusätzlicher Satz: Der streng regulierte, lizenzierte deutsche Markt nach dem Glücksspielstaatsvertrag funktioniert nach anderen Regeln als ein Curaçao-Angebot. Das ist keine Wertung, sondern ein Hinweis — kenne den Rahmen, in dem du spielst, dann triffst du eine informierte Entscheidung.</p>
         </div>
+        <JoinNowButton />
       </Section>
 
       <Section id="lobby-landkarte" title="Die Lobby wie eine Landkarte lesen" className="image-copy-section image-copy-section--wide-title">
@@ -235,6 +240,7 @@ export function MainContent() {
         <div className="image-copy-section__copy">
           <p>Öffne das Spielemenü, und du blickst nicht auf einen wahllos zusammengeworfenen Haufen Titel — du blickst auf einen Grundriss. Die Regale verraten dir, für wen dieser Ort gemacht ist. Für Sie und Beliebt sind die Schaufenster. Neu und Hits halten die Stammgäste bei Laune. Dann wird es interessant: Bonuskauf bekommt ein eigenes Regal auf oberster Ebene, und Hold-&amp;-Win-Mechanik auch, und Megaways ebenso. Ein Casino, das Bonuskauf und Hold-&amp;-Win auf die Startseite stellt, ist ein Casino, gebaut von Leuten, die davon ausgehen, dass du bereits weißt, was ein Feature Buy ist und was ein Respin-Lock macht. Das ist ein Grundriss für Spieler mit ein wenig Erfahrung, keine Lobby, die die Mechanik vor dir versteckt.</p>
           <p>Es gibt ein Regal für Schnelle Spiele für die Crash-und-Sofort-Fraktion, ein Drops-&amp;-Wins-Regal für die Jäger der Netzwerk-Preise und eine Jackpot-Ecke für alle, die den einen lebensverändernden Treffer suchen. Über die Suchleiste kannst du nach Anbieter filtern, was mehr zählt, als es klingt — wenn du entschieden hast, dass du nur der Mathematik eines bestimmten Studios vertraust, kannst du dich mit zwei Klicks darin einmauern. Die Lobby belohnt es, wenn du weißt, was du willst. Sie ist eine Landkarte und setzt voraus, dass du eine lesen kannst.</p>
+          <JoinNowButton />
         </div>
       </Section>
 
@@ -255,6 +261,7 @@ export function MainContent() {
         </div>
         <p>Das ist echt nützlich und echt ehrlich, solange du es richtig liest. Der konfigurierte RTP — der Langzeitwert, um den herum das Spiel gebaut ist — ist die Zahl, die deine Gewinnchancen über Tausende von Spins tatsächlich bestimmt, und er liegt meist irgendwo zwischen 94 % und 97 %, je nachdem, wie der Betreiber das Spiel eingestellt hat. Der Live-RTP auf der Kachel sagt dir, was zuletzt passiert ist. Keiner von beiden sagt deinen nächsten Spin voraus, denn das kann nichts. Aber beide offen gezeigt zu bekommen, ist eine Höflichkeit, die die meisten Betreiber nicht erweisen. Sie behandelt dich wie jemanden, der den Unterschied verstehen kann — was, da du bis hierher gelesen hast, offenkundig auf dich zutrifft.</p>
         <p>Das Detektiv-Thema und diese Gewohnheit sind im Grunde dieselbe Geste. Ein Casino, das sich rund um Spuren und verborgene Dinge einkleidet und dir dann tatsächlich die Beweise auf jeder Kachel zeigt, ist zumindest in sich stimmig, was seine eigene Prämisse angeht. Es bittet dich, genau hinzuschauen, und belohnt dich dann fürs Hinschauen.</p>
+        <JoinNowButton />
       </Section>
 
       <Section id="spielkachel-lesen" title="Wie man eine Spielkachel im National Casino liest" className="">
@@ -274,6 +281,7 @@ export function MainContent() {
         <p>Der Anbietername steht unter dem Titel. Wenn du genug gespielt hast, ist das eine Kurzformel dafür, welche Art von Erlebnis dich erwartet — ein Hacksaw-Spiel fühlt sich völlig anders an als ein Novomatic-Spiel, und das Studium zu kennen sagt dir grob, welche Mathematik und welches Tempo dich erwarten, bevor du je einen Spin drehst.</p>
         <p>Die Kategorie-Tags und Badges — eine Drops-&amp;-Wins-Krone, ein Hold-&amp;-Win-Marker, ein Megaways-Etikett — sagen dir, an welche Mechanik und welche Netzwerk-Aktionen das Spiel angeschlossen ist. Ein Drops-&amp;-Wins-Badge bedeutet, dass das Spiel zusätzlich zu seiner eigenen Auszahlungstabelle in einen netzwerkweiten Preispool einspeist.</p>
         <p>Setz diese vier Ablesungen zusammen, und du kannst ein Spiel in etwa zwei Sekunden einschätzen, ohne es zu öffnen. Das ist die ganze Detektiv-Prämisse in die Praxis übersetzt: Die Spuren liegen alle auf der Kachel, wenn du weißt, wo du hinschauen musst.</p>
+        <JoinNowButton />
       </Section>
 
       <Section id="slots-mit-zahlen" title="Die Slots, mit ihren Zahlen" className="">
@@ -341,6 +349,7 @@ export function MainContent() {
           </table>
         </div>
         <p>Wo ein Wert mit einer Tilde markiert ist, behandle ihn als Arbeitsschätzung, die gegen das Info-Panel des Spiels selbst zu prüfen ist — RTP und Limits können sich zwischen Betreiber-Konfigurationen verschieben, und der ehrliche Zug ist, die Auszahlungstabelle im Spiel zu prüfen, statt irgendeine einzelne veröffentlichte Zahl als Evangelium zu nehmen. Das Muster, das zählt: Das ist eine Bibliothek mit echter Bandbreite. Burning Chilli X ist ein Grinder mit niedriger Volatilität und hohem RTP für eine lange ruhige Session; Gates of Olympus Super Scatter ist ein Monster sehr hoher Volatilität, das hundert Spins kalt bleiben und dir dann 50.000x in die Hand drücken kann. Zu wissen, in welcher Stimmung du gerade bist, ist die halbe Miete, um hier gut zu spielen.</p>
+        <JoinNowButton />
       </Section>
 
       <Section id="anbieter" title="Die Anbieter hinter dem Spielsaal" className="image-copy-section image-copy-section--wide-title">
@@ -349,6 +358,7 @@ export function MainContent() {
         <div className="image-copy-section__copy">
             <p>Ein Spiel ist nur so gut wie das Studio, das es gebaut hat, und Nationals Aufgebot liest sich wie ein Who&#x27;s Who dessen, was die Leute gerade wirklich spielen. Pragmatic Play bringt die Volatilitätsmaschinen mit hohem Deckel und das Gates-of-Olympus-Universum. Hacksaw Gaming liefert die scharfen, modernen Titel hoher Varianz, denen die Streaming-Szene hinterherjagt. BGaming deckt das krypto-freundliche, nachweislich faire Ende mit einem riesigen Backkatalog ab. Dann füllen Felix Gaming, Spinomenal, Novomatic, Fugaso und NetGame die Breite auf — klassische Walzen, Book-Slots, Hold-&amp;-Win-Gitter, das ganze Programm.</p>
             <p>Auf der Live-Seite ist die ehrliche Anmerkung, dass sich der Spielsaal stark auf Evolution stützt. Das ist eine Stärke, formuliert als milde Verengung: Evolution ist schlicht das beste Studio im Live-Dealer-Geschäft, sich darauf zu stützen bedeutet also, dass die Qualität hoch und beständig ist. Aber es bedeutet eben auch, dass du, wenn du über die Live-Etage gehst, größtenteils durch die Welt eines einzigen Unternehmens gehst, wobei Pragmatic Play Live, Ezugi, Playtech und Winfinity eher die Ränder abrunden, als sich den Raum gleichberechtigt zu teilen. Wenn Evolutions Tische ohnehin deine Favoriten sind — und für viele Spieler sind sie das — dann ist das ein Feature, keine Einschränkung.</p>
+            <JoinNowButton />
         </div>
       </Section>
 
@@ -361,6 +371,7 @@ export function MainContent() {
         <p>Dann sind da die klassischen Tische, und hier ist die Tiefe ernst gemeint. Allein das Blackjack reicht tief — Aurora Blackjack, Speed Blackjack, VIP-Tische, Free-Bet-Varianten, dazu Casino Hold&#x27;em, Texas Hold&#x27;em Bonus, Roulette, Baccarat und Craps mit Live-Dealern. Für die Spielerin und den Spieler, die das tatsächliche Casino-Erlebnis wollen — ein echter Mensch, der echte Karten über einen echten Tisch gibt, in HD gestreamt — liefert diese Etage genau das, ohne auszudünnen.</p>
         <LiveGameStrip games={liveTableGames} label="Originale Spielkarten der genannten klassischen Live-Tische" />
         <p>Eine kurze Einführung, falls die Tischspiele noch nicht dein Terrain sind. Blackjack ist das Spiel, bei dem du versuchst, den Dealer bis 21 zu schlagen, ohne dich zu überkaufen — das Nächste, was ein Casino zu einem Geschicklichkeitsspiel hat, denn deine Entscheidungen bewegen die Quoten wirklich. Roulette ist der pure Zufall in Zeremonie gekleidet: Wähle eine Zahl, eine Farbe oder ein Segment des Rads und sieh zu, wie die Kugel entscheidet. Baccarat ist das elegante, fast passive Spiel — du setzt auf Spieler oder Bank, und die Regeln spielen sich von selbst aus, was genau der Grund ist, warum High Roller es seit jeher lieben. Craps ist das laute Würfelspiel mit dem einschüchternden Tischlayout, das sich als einfacher entpuppt, als es aussieht, sobald dich jemand durch die Pass Line führt. Jedes dieser Spiele ist hier mit einem Live-Dealer vertreten, du kannst also durch Zuschauen lernen, bevor du dich festlegst.</p>
+        <JoinNowButton />
       </Section>
 
       <Section id="boni-und-aktionen" title="Boni und Aktionen" className="">
@@ -397,6 +408,7 @@ export function MainContent() {
         <div className="image-copy-section__copy">
           <p>Nationals Treueprogramm ist eine richtige Leiter — fünfzehn Stufen, erklommen durch das Sammeln von Comp Points beim Slot-Spiel. Du verdienst einen CP für je 20 €/$ Umsatz an Slots, und der Umtauschkurs, um diese Punkte zurück in Wert zu verwandeln, verbessert sich, während du aufsteigst. Die Teilnahme setzt automatisch mit deiner ersten Einzahlung ein, du bist also vom Moment deines Starts an auf der Leiter.</p>
           <p>Die Belohnungen skalieren steil. Die frühen Sprossen geben Freispiele aus — 25 Spins auf Stufe 1, 50 auf Stufe 2 — dann beginnen die Stufen, Bargeld einzumischen: 10 € plus Spins auf Stufe 3, hoch über 50 €, 100 €, 200 € und weiter. An der Spitze der Leiter werden die Zahlen wirklich groß, wobei die höchsten Stufen ernsthaftes kumuliertes Spiel repräsentieren. Ein paar ehrliche Mechaniken, die man im Kopf behalten sollte: Comp Points werden alle zwei Monate zurückgesetzt, das belohnt also anhaltendes Spiel statt eines langsamen Rinnsals; mit Bonusgeld getätigte Einsätze zählen nicht zu den CP; und CP fallen an Slots an, nicht an Tischspielen. Es ist ein Programm, gebaut für die regelmäßige Slot-Spielerin und den regelmäßigen Slot-Spieler, und es ist transparent darin, genau das zu sein.</p>
+          <JoinNowButton />
         </div>
       </Section>
 
@@ -405,6 +417,7 @@ export function MainContent() {
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
             <p>Neben dem VIP-Grind betreibt National eine rotierende Auswahl an Turnieren — zeitlich begrenzte Rennen, bei denen dein Spiel eine Bestenliste gegen die aller anderen hochklettert. Die wiederkehrende „Treasure Race&quot;-Reihe ist das Rückgrat: ein Sonic Treasure Race mit einem Pool von 100 € plus 300 Freispielen, ein Flash Treasure Race mit 75 € plus 300 Spins, ein Rapid Treasure Race mit 50 € plus 300 Spins, jedes auf seinem eigenen Countdown. Das sind druckarme Wege, einer Session, die du ohnehin gespielt hättest, einen Wettbewerbsreiz hinzuzufügen — du riskierst nichts Zusätzliches, du wirst nur für die Spins gerankt, die du sowieso machst. Für einen bestimmten Spielertyp ist genau diese Bestenliste der Haken, der einen gewöhnlichen Abend interessanter macht.</p>
+            <JoinNowButton />
         </div>
       </Section>
 
@@ -416,6 +429,7 @@ export function MainContent() {
         <div className="image-copy-section__copy">
             <p>Die Anmeldung ist bewusst schnell gehalten. Von der Startseite aus klickst du auf Registrieren, gibst die Basics an — E-Mail, Passwort, deine Angaben, bevorzugte Währung — und bestätigst, dass du volljährig bist. Irgendwann vor deiner ersten Auszahlung gibt es einen leichten Verifizierungsschritt, der Standard ist und ebenso zu deinem Schutz existiert wie zu dem des Casinos. Bist du einmal drin, ist das erneute Einloggen nur deine E-Mail und dein Passwort, von jedem Gerät aus.</p>
             <p>Dieser letzte Teil zählt mehr, als er klingt: Dein Konto ist an dein Profil gebunden, nicht an dein Gerät. Registriere dich auf einem Laptop, logge dich später auf dem Handy ein, und dein Guthaben, deine Boni, deine VIP-Stufe und deine Historie sind alle genau da, wo du sie gelassen hast. Es gibt kein separates Mobil-Konto zu jonglieren — eine Anmeldung folgt dir überallhin.</p>
+            <JoinNowButton />
         </div>
         <div className="registration-signup-card">
           <Image
@@ -547,6 +561,7 @@ export function MainContent() {
           <p>National Casino setzt eine gezielte Wette darauf, wer seine Spielerin und sein Spieler ist: jemand, dem man lieber die Zahlen zeigt, als ihm eine Fantasie zu verkaufen. Diese eine Entscheidung — RTP auf jeder Kachel, offen — zieht sich durch alles andere, vom Detektiv-Thema, das den Spielsaal einkleidet, bis zur fünfzehnstufigen VIP-Leiter, die dich dafür belohnt, dass du weißt, was du tust. Es ist nicht der am strengsten regulierte Raum, in dem du je spielen wirst, und die Krypto-rein-Karte-raus-Auszahlungseigenheit ist eine echte Falte. Aber was du im Gegenzug bekommst, ist ein Spielsaal mit echtem Charakter, ein Live-Dealer-Katalog, der an der Spitze des Formats zuschlägt, eine Slot-Bibliothek mit echter Bandbreite und ein Betreiber, der mehr als die meisten damit im Reinen scheint, dich genau hinschauen zu lassen.</p>
           <p>Wenn du es magst, wenn man dir das Kleingedruckte zutraut — wenn du lieber die Kachel liest, als von ihr geblendet zu werden — dann ist das ein Spielsaal, gebaut für genau deine Art von Neugier. Und selbst wenn du lieber jeden Prozentwert auf dem Bildschirm ignorierst und einfach einen Abend lang dem Elvis-Frosch hinterherjagst, sind die Spiele gut genug, dass du so oder so eine gute Zeit haben wirst. Beide Spielertypen sind hier willkommen. Das ist die stille Stärke dieses Ortes.</p>
           <p className="summary-section__byline">— Bewertet von Daniel Roche, Chefredakteur iGaming</p>
+          <JoinNowButton />
         </div>
       </Section>
 
