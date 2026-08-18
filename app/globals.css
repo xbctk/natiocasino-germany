@@ -9,7 +9,9 @@
 }
 
 :root {
-  --background: #292526;
+  --background: #000000;
+  --content-background: #000000;
+  --content-border: #ff9100;
   --sidebar: #2a2829;
   --surface: #322e2f;
   --surface-raised: #4e4842;
@@ -323,6 +325,7 @@ a {
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   gap: var(--layout-gap);
   padding-top: var(--layout-gap);
+  background: var(--background);
 }
 
 .sidebar {
@@ -757,8 +760,8 @@ a {
   padding: var(--space-content);
   background:
     radial-gradient(circle at 100% 0%, rgb(254 200 130 / 5%), transparent 30%),
-    var(--surface);
-  border: 1px solid rgb(212 197 177 / 10%);
+    var(--content-background);
+  border: 1px solid var(--content-border);
   border-radius: 18px;
   box-shadow: none;
 }
@@ -848,7 +851,7 @@ a {
   margin: var(--space-content) 0;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
-  border: 1px solid rgb(254 200 130 / 28%);
+  border: 1px solid var(--content-border);
   border-radius: 14px;
   background: var(--dark);
   box-shadow: inset 0 1px 0 rgb(255 255 255 / 4%);
@@ -908,7 +911,7 @@ tbody th {
   position: relative;
   min-height: 100%;
   overflow: hidden;
-  border: 1px solid rgb(254 200 130 / 28%);
+  border: 1px solid var(--content-border);
   border-radius: 14px;
   background: var(--dark);
   box-shadow: inset 0 1px 0 rgb(255 255 255 / 4%);
@@ -1280,7 +1283,7 @@ tr > :last-child {
   height: 350px;
   overflow: hidden;
   background: var(--dark);
-  border: 1px solid rgb(212 197 177 / 10%);
+  border: 1px solid var(--content-border);
   border-radius: 18px;
   box-shadow: none;
   isolation: isolate;
@@ -1377,7 +1380,7 @@ tr > :last-child {
   margin: 0 0 var(--space-content);
   overflow-x: auto;
   background: var(--dark);
-  border: 1px solid rgb(254 200 130 / 64%);
+  border: 1px solid var(--content-border);
   border-radius: 14px;
   box-shadow: inset 0 1px 0 rgb(255 255 255 / 5%);
   scrollbar-color: var(--gold) var(--dark);
@@ -1398,7 +1401,7 @@ tr > :last-child {
   margin: 0 0 var(--space-content);
   overflow-x: auto;
   background: var(--dark);
-  border: 1px solid rgb(254 200 130 / 64%);
+  border: 1px solid var(--content-border);
   border-radius: 14px;
   box-shadow: inset 0 1px 0 rgb(255 255 255 / 5%);
   scrollbar-color: var(--gold) var(--dark);
@@ -1576,7 +1579,7 @@ tr > :last-child {
   padding: var(--space-control);
   overflow: hidden;
   background: var(--dark);
-  border: 1px solid rgb(254 200 130 / 64%);
+  border: 1px solid var(--content-border);
   border-radius: 14px;
   box-shadow: inset 0 1px 0 rgb(255 255 255 / 5%);
 }
@@ -1596,7 +1599,7 @@ tr > :last-child {
   width: calc(50% - 40px);
   padding: var(--space-content);
   background: rgb(30 27 28 / 92%);
-  border: 1px solid rgb(254 200 130 / 64%);
+  border: 1px solid var(--content-border);
   border-radius: 14px;
   box-shadow: inset 0 1px 0 rgb(255 255 255 / 5%), 0 16px 36px rgb(0 0 0 / 28%);
   backdrop-filter: blur(8px);
