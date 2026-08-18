@@ -932,6 +932,10 @@ a {
   object-position: center top;
 }
 
+.hero__image--mobile {
+  display: none;
+}
+
 .hero__overlay {
   z-index: -1;
   background: linear-gradient(90deg, rgb(0 0 0 / 88%) 0%, rgb(0 0 0 / 88%) 35%, rgb(0 0 0 / 0%) 70%);
@@ -2869,12 +2873,9 @@ tr > :last-child {
   min-height: 620px;
 }
 
-.app-install-row--android .app-install-media img {
-  object-position: 78% center;
-}
-
+.app-install-row--android .app-install-media img,
 .app-install-row--ios .app-install-media img {
-  object-position: 22% center;
+  object-position: center;
 }
 
 .app-platform-panel p {
@@ -2936,8 +2937,21 @@ tr > :last-child {
   margin: 0;
 }
 
-.app-benefits-reward-layout .media-placeholder {
-  min-height: 0;
+.app-benefits-reward-art {
+  position: relative;
+  align-self: center;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--dark);
+  border: 1px solid var(--content-border);
+  border-radius: 14px;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 5%);
+}
+
+.app-benefits-reward-art img {
+  object-fit: cover;
+  object-position: center;
 }
 
 .app-requirements-section {
@@ -2951,7 +2965,7 @@ tr > :last-child {
 .app-requirements-section .image-copy-section__image {
   right: 0;
   left: auto !important;
-  width: 70% !important;
+  width: 100% !important;
   object-position: center;
 }
 
@@ -3676,10 +3690,6 @@ tr > :last-child {
     min-height: 420px;
   }
 
-  .app-benefits-reward-layout .media-placeholder {
-    min-height: 320px;
-  }
-
   .app-requirements-section .image-copy-section__copy {
     width: min(100%, 780px);
   }
@@ -3694,6 +3704,26 @@ tr > :last-child {
   .bonus-card__background,
   .promotion-banner__image {
     object-position: 68% top;
+  }
+
+  .app-hero .hero__image,
+  .app-intro-image-section .image-copy-section__image,
+  .app-apk-section .image-copy-section__image,
+  .app-requirements-section .image-copy-section__image,
+  .app-responsible-section .image-copy-section__image {
+    object-position: 95% top;
+  }
+
+  .hero__image--desktop {
+    display: none;
+  }
+
+  .hero__image--mobile {
+    display: block;
+  }
+
+  .app-hero .hero__image--mobile {
+    object-position: center top;
   }
 
   .hero__overlay,
@@ -4027,10 +4057,6 @@ tr > :last-child {
   .app-definition-art,
   .app-install-media {
     min-height: 300px;
-  }
-
-  .app-benefits-reward-layout .media-placeholder {
-    min-height: 260px;
   }
 
   .app-benefit-card h3 {

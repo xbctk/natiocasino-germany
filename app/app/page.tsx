@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "National Casino Deutschland",
     locale: "de_DE",
     type: "website",
-    images: [{ url: "/content/app/hero.webp", width: 1672, height: 941, alt: title }],
+    images: [{ url: "/content/app/hero-v2.webp", width: 1672, height: 941, alt: title }],
   },
 };
 
@@ -36,7 +36,7 @@ export default function AppPage() {
       <div className="page-layout">
         <Sidebar label="Bereiche der App-Seite" sections={appSections} />
         <main className="page-main">
-          <Hero breadcrumbLabel="App" breadcrumbPath="/app" className="app-hero" descriptionLines={descriptionLines} imageSrc="/content/app/hero.webp" titleLines={titleLines} />
+          <Hero breadcrumbLabel="App" breadcrumbPath="/app" className="app-hero" descriptionLines={descriptionLines} imageSrc="/content/app/hero-v2.webp" mobileImageSrc="/content/app/hero-mobile-v2.webp" titleLines={titleLines} />
           <AppContent />
           <Footer />
         </main>

@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import { GENERAL_AFFILIATE_URL } from "./affiliateLinks";
 import { AppPromoBanner } from "./AppPromoBanner";
 import { JsonLd } from "./JsonLd";
-import { PlaceholderMedia } from "./PlaceholderMedia";
 import { PromotionBanner } from "./PromotionBanner";
 
 const appFaqItems = [
@@ -112,7 +111,7 @@ export function AppContent() {
   return (
     <div className="main-content app-content">
       <Section className="image-copy-section app-intro-image-section" id="die-national-casino-app-in-deutschland" title="Die National Casino App in Deutschland">
-        <Image className="image-copy-section__image" src="/content/app/intro.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/app/intro-v2.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>Hier ist etwas, das die meisten Casino-App-Seiten dir nicht geradeheraus sagen: Viele „Casino-Apps&quot; sind überhaupt keine echten Apps. Sie sind ein Download-Button, der dich entweder zu einem Store-Eintrag schickt, den es vielleicht gibt und vielleicht nicht, oder — schlimmer — dich auf eine Datei zeigt, die du von irgendwoher installieren sollst, wo du noch nie warst. National Casino spart sich das Theater. Was es bietet, ist eine Web-App, die du direkt von der Seite auf deinen Startbildschirm installierst, und sobald du verstehst, was das tatsächlich ist, erweist es sich ohnehin als die sinnvollere Lösung.</p>
@@ -129,7 +128,7 @@ export function AppContent() {
             <p>Es gibt auch eine kleine Karotte fürs Einrichten: Die Installation der App bringt dir 10 Freispiele, ohne Einzahlung. Mehr zum Beanspruchen weiter unten.</p>
           </div>
           <div className="app-definition-art" aria-hidden="true">
-            <Image alt="" fill sizes="(max-width: 960px) 100vw, 40vw" src="/content/app/general-install.webp" />
+            <Image alt="" fill sizes="(max-width: 960px) 100vw, 40vw" src="/content/app/general-install-v2.webp" />
           </div>
         </div>
         <JoinNowButton />
@@ -143,7 +142,7 @@ export function AppContent() {
         <div className="app-install-layout app-page-install-layout">
           <div className="split-layout app-install-row app-install-row--android">
             <div className="app-install-media" aria-hidden="true">
-              <Image alt="" fill sizes="(max-width: 960px) 100vw, 40vw" src="/content/app/android-install.webp" />
+              <Image alt="" fill sizes="(max-width: 960px) 100vw, 40vw" src="/content/app/android-install-v2.webp" />
             </div>
             <div className="app-install-copy app-platform-panel">
               <PlatformTitle icon="android" title="Auf Android" />
@@ -181,7 +180,7 @@ export function AppContent() {
               <p>Die App öffnet sich von da an in ihrem eigenen Fenster, mit vollem Zugriff auf die Spiele-Lobby, Aktionen, Kasse, den VIP-Bereich, das Sportwetten-Angebot und den Support.</p>
             </div>
             <div className="app-install-media" aria-hidden="true">
-              <Image alt="" fill sizes="(max-width: 960px) 100vw, 40vw" src="/content/app/ios-install.webp" />
+              <Image alt="" fill sizes="(max-width: 960px) 100vw, 40vw" src="/content/app/ios-install-v2.webp" />
             </div>
           </div>
         </div>
@@ -189,7 +188,7 @@ export function AppContent() {
       </Section>
 
       <Section className="image-copy-section app-apk-section" id="ein-klares-wort-zu-apk-dateien" title="Ein klares Wort zu APK-Dateien">
-        <Image className="image-copy-section__image" src="/content/shared/android-install.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/app/apk-warning-v2.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>Du wirst den Begriff „APK&quot; auf vielen Android-Casino-Seiten herumgeworfen sehen, machen wir also Klartext dazu. Eine APK ist eine Android-Installationsdatei, und manche Seiten drängen dich, eine aus einem Drittanbieter-Verzeichnis herunterzuladen. Davon würden wir dich wegsteuern. Eine Datei aus einer inoffiziellen Quelle zu installieren bedeutet, Androids Schutz gegen unbekannte Installationsquellen abzuschalten und einer Kopie der App zu vertrauen, die du nicht überprüfen kannst — was genau die Art von Risiko ist, die man mit einem Konto, das dein Geld hält, besser nicht eingeht.</p>
@@ -233,7 +232,9 @@ export function AppContent() {
               <li>Prüfe den Boni-Bereich auf deine Spins.</li>
             </StepList>
           </div>
-          <PlaceholderMedia label="Platzhalter für eine zukünftige App-Bonus-Illustration" />
+          <div className="app-benefits-reward-art" aria-hidden="true">
+            <Image alt="" fill sizes="(max-width: 960px) 100vw, 40vw" src="/content/app/app-reward-v2.webp" />
+          </div>
         </div>
 
         <p className="app-benefits-closing">Das Angebot kann einmal beansprucht werden, es ist also ein einmaliger Bonus fürs Einrichten der App — klein, aber gratis, und es gibt keinen Grund, ihn unbeansprucht zu lassen.</p>
@@ -243,7 +244,7 @@ export function AppContent() {
       <AppPromoBanner />
 
       <Section className="image-copy-section app-requirements-section" id="was-dein-geraet-braucht" title="Was dein Gerät braucht">
-        <Image className="image-copy-section__image" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" src="/content/shared/ios-install-centered.webp" aria-hidden="true" />
+        <Image className="image-copy-section__image" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" src="/content/app/requirements-v2.webp" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy app-requirements-copy">
           <p>Weil dies eine PWA ist, sind die Anforderungen erfrischend leicht. Vergiss das Durchsuchen einer Liste bestimmter Modellnummern — die ehrliche Antwort lautet: Wenn dein Handy einen aktuellen Browser hat, bist du dabei. Konkret willst du:</p>
@@ -319,7 +320,7 @@ export function AppContent() {
       <PromotionBanner variant="friday-reload" />
 
       <Section className="image-copy-section app-responsible-section" id="verantwortungsvoll-spielen" title="Verantwortungsvoll spielen">
-        <Image className="image-copy-section__image" src="/content/shared/responsible-gaming.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+        <Image className="image-copy-section__image" src="/content/app/responsible-play-v2.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
         <div className="image-copy-section__overlay" aria-hidden="true" />
         <div className="image-copy-section__copy">
           <p>Die Werkzeuge für verantwortungsvolles Spielen sind auf dem Handy genau so verfügbar wie auf dem Desktop — sowohl über die installierte App als auch über die mobile Seite. Du kannst Limits oder Selbstausschluss anfordern, indem du den Live-Chat oder Support kontaktierst, der rund um die Uhr läuft.</p>

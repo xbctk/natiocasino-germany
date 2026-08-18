@@ -16,6 +16,7 @@ export function Hero({
   className = "",
   descriptionLines = mainDescriptionLines,
   imageSrc = "/content/main/hero-characters-v2.webp",
+  mobileImageSrc,
   showAction = true,
   titleLines = mainTitleLines,
 }: {
@@ -24,6 +25,7 @@ export function Hero({
   className?: string;
   descriptionLines?: readonly string[];
   imageSrc?: string;
+  mobileImageSrc?: string;
   showAction?: boolean;
   titleLines?: readonly string[];
 }) {
@@ -41,7 +43,8 @@ export function Hero({
           }}
         />
       ) : null}
-      <Image className="hero__image" src={imageSrc} alt="" fill priority sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+      <Image className={`hero__image${mobileImageSrc ? " hero__image--desktop" : ""}`} src={imageSrc} alt="" fill priority sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
+      {mobileImageSrc ? <Image className="hero__image hero__image--mobile" src={mobileImageSrc} alt="" fill priority sizes="100vw" aria-hidden="true" /> : null}
       <div className="hero__overlay" aria-hidden="true" />
       <div className="hero__content">
         {breadcrumbLabel ? (
