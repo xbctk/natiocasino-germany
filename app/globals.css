@@ -429,8 +429,18 @@ a {
   margin-top: var(--space-content);
 }
 
-.boni-reason-section {
-  min-height: 520px;
+.boni-page-content .image-copy-section {
+  min-height: 0;
+}
+
+.boni-page-content .content-section:not(.image-copy-section) > p {
+  max-width: none;
+}
+
+.boni-page-content .content-section > :last-child,
+.boni-page-content .content-subsection > :last-child,
+.boni-page-content .image-copy-section__copy > :last-child {
+  margin-bottom: 0;
 }
 
 .boni-promotion-card.info-card {
@@ -468,14 +478,6 @@ a {
 .boni-media-panel img {
   object-fit: cover;
   object-position: center;
-}
-
-.boni-vip-section,
-.boni-tournament-section,
-.boni-seasonal-section,
-.boni-responsible-section,
-.boni-summary-section {
-  min-height: 680px;
 }
 
 .boni-vip-section .image-copy-section__copy,
@@ -640,13 +642,6 @@ a {
     min-height: 190px;
   }
 
-  .boni-vip-section,
-  .boni-tournament-section,
-  .boni-seasonal-section,
-  .boni-responsible-section,
-  .boni-summary-section {
-    min-height: 760px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
