@@ -2790,10 +2790,13 @@ tr > :last-child {
 }
 
 .app-intro-image-section {
-  min-height: 620px;
+  min-height: 0;
 }
 
-.app-responsible-section,
+.app-responsible-section {
+  min-height: 0;
+}
+
 .app-final-section {
   min-height: 720px;
 }
@@ -2824,7 +2827,11 @@ tr > :last-child {
 .app-definition-copy > :last-child,
 .app-requirements-copy > :last-child,
 .app-platform-panel > :last-child,
-.app-benefits-section > :last-child {
+.app-benefits-section > :last-child,
+.app-intro-image-section .image-copy-section__copy > :last-child,
+.app-apk-section .image-copy-section__copy > :last-child,
+.app-responsible-section .image-copy-section__copy > :last-child,
+#die-mobile-seite > :last-child {
   margin-bottom: 0;
 }
 
@@ -2875,7 +2882,7 @@ tr > :last-child {
 }
 
 .app-apk-section {
-  min-height: 640px;
+  min-height: 0;
 }
 
 .app-apk-section .image-copy-section__copy {
@@ -2934,7 +2941,7 @@ tr > :last-child {
 }
 
 .app-requirements-section {
-  min-height: 720px;
+  min-height: 0;
 }
 
 .app-requirements-section .image-copy-section__copy {
