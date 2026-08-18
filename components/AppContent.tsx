@@ -213,7 +213,7 @@ export function AppContent() {
           </article>
         </div>
 
-        <h3 className="boni-icon-heading boni-icon-heading--cards app-benefits-reward-title">Sie kommt mit ihrer eigenen Belohnung</h3>
+        <h3>Sie kommt mit ihrer eigenen Belohnung</h3>
         <p className="app-benefits-reward-intro">Der bestätigte App-exklusive Vorteil sind 10 Freispiele ohne Einzahlung. Um sie zu beanspruchen:</p>
 
         <div className="app-benefits-reward-layout">
@@ -257,24 +257,29 @@ export function AppContent() {
       <Section id="die-mobile-seite" title="Die mobile Seite, falls du lieber nichts installierst">
         <p>Du musst überhaupt nichts installieren. Das volle Casino läuft in jedem mobilen Browser — Chrome, Safari, Edge, was auch immer du nutzt — mit demselben Konto, denselben Spielen und demselben Alles, nur durch einen Tab statt ein Icon. Für gelegentliches Spiel ist das oft alles, was du brauchst.</p>
         <p>Hier die ehrliche Gegenüberstellung.</p>
-        <div className="table-scroll" role="region" aria-label="Vergleich zwischen mobiler Seite und installierter App" tabIndex={0}>
-          <table>
-            <caption className="sr-only">Mobile Seite und installierte App im Vergleich</caption>
-            <thead>
-              <tr>
-                <th scope="col">Mobile Seite</th>
-                <th scope="col">Installierte App</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">Keine Installation nötig</th><td>Startet von ihrem eigenen Icon</td></tr>
-              <tr><th scope="row">Läuft in jedem mobilen Browser</th><td>Öffnet sich in ihrem eigenen Fenster</td></tr>
-              <tr><th scope="row">Nichts zu deinem Gerät hinzugefügt</th><td>Sitzt auf deinem Startbildschirm</td></tr>
-              <tr><th scope="row">Immer die aktuelle Seite</th><td>Aktualisiert sich automatisch mit der Seite</td></tr>
-              <tr><th scope="row">Gut für gelegentliches Spiel</th><td>Besser für regelmäßige Besuche</td></tr>
-              <tr><th scope="row">Kein Installations-Bonus</th><td>10 Freispiele fürs Installieren</td></tr>
-            </tbody>
-          </table>
+        <div className="app-comparison-grid" aria-label="Vergleich zwischen mobiler Seite und installierter App">
+          <article className="info-card app-comparison-card">
+            <h3 className="boni-icon-heading boni-icon-heading--cards">Mobile Seite</h3>
+            <ul className="feature-list">
+              <li>Keine Installation nötig</li>
+              <li>Läuft in jedem mobilen Browser</li>
+              <li>Nichts zu deinem Gerät hinzugefügt</li>
+              <li>Immer die aktuelle Seite</li>
+              <li>Gut für gelegentliches Spiel</li>
+              <li>Kein Installations-Bonus</li>
+            </ul>
+          </article>
+          <article className="info-card app-comparison-card">
+            <h3 className="boni-icon-heading boni-icon-heading--cards">Installierte App</h3>
+            <ul className="feature-list">
+              <li>Startet von ihrem eigenen Icon</li>
+              <li>Öffnet sich in ihrem eigenen Fenster</li>
+              <li>Sitzt auf deinem Startbildschirm</li>
+              <li>Aktualisiert sich automatisch mit der Seite</li>
+              <li>Besser für regelmäßige Besuche</li>
+              <li>10 Freispiele fürs Installieren</li>
+            </ul>
+          </article>
         </div>
         <p>Beide Wege verbinden sich mit demselben Profil, du bist also nie auf eine Wahl festgelegt — du kannst heute im Browser spielen und die App nächste Woche installieren, ohne irgendetwas zu verlieren. Die Installation tauscht nur dreißig Sekunden Einrichtung gegen einen schnelleren Weg hinein und einen kleinen Freispiel-Bonus. Für alle, die mehr als gelegentlich spielen, lohnt sich dieser Tausch.</p>
       </Section>
