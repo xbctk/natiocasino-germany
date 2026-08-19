@@ -558,6 +558,7 @@ export function MainContent() {
               "@type": "Review",
               name: title,
               author: { "@type": "Person", name },
+              itemReviewed: { "@type": "Organization", name: "National Casino" },
               reviewBody: review,
             })),
           }}
