@@ -3936,6 +3936,14 @@ tr > :last-child {
     font-size: 16px;
   }
 
+  .responsible-gaming-hero .hero__breadcrumbs li,
+  .responsible-gaming-hero h1,
+  .responsible-gaming-hero .hero__description {
+    min-width: 0;
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+
   .content-section {
     padding: var(--space-content);
     border-radius: 14px;

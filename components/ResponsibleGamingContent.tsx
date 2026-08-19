@@ -75,7 +75,7 @@ export function ResponsibleGamingContent() {
             <dl className="license-facts">
               <div className="info-card"><dt><CardsTitle>Betreiber & Lizenzinhaber</CardsTitle></dt><dd>TechSolutions Group N.V.</dd></div>
               <div className="info-card"><dt><CardsTitle>Unternehmensnummer</CardsTitle></dt><dd>144920</dd></div>
-              <div className="info-card"><dt><CardsTitle>Lizenz</CardsTitle></dt><dd>OGL/2024/590/0758</dd></div>
+              <div className="info-card"><dt><CardsTitle>Lizenz</CardsTitle></dt><dd>8048/JAZ2017-067</dd></div>
               <div className="info-card"><dt><CardsTitle>Regulierungsbehörde</CardsTitle></dt><dd>Curaçao Gaming Authority</dd></div>
             </dl>
           </div>

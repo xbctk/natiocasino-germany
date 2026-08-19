@@ -271,7 +271,7 @@ export function MainContent() {
         <div className="lobby-map-scroll" role="region" tabIndex={0} aria-label="Ansicht der National-Casino-Lobby">
           <Image
             className="lobby-map-image"
-            src="/content/main/lobby-map.png"
+            src="/content/main/lobby-map.webp"
             alt="National-Casino-Lobby mit Kategorien, Suche, Spielempfehlungen und Live-RTP-Werten"
             width={3304}
             height={1396}
@@ -486,7 +486,7 @@ export function MainContent() {
         <div className="registration-signup-card">
           <Image
             className="registration-signup-card__image"
-            src="/content/main/registration-signup.png"
+            src="/content/main/registration-signup.webp"
             alt="Registrierungsformular mit Willkommensbonus und den Schritten zur Kontoerstellung"
             width={1587}
             height={991}

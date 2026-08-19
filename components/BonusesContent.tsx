@@ -123,7 +123,7 @@ export function BonusesContent() {
               <li>Prüfe den Boni-Bereich deines Kontos, um dein Bonusguthaben und die wartenden Spins zu sehen.</li>
             </StepList>
             <div className="boni-media-panel" aria-hidden="true">
-              <Image src="/content/main/registration-signup.png" alt="" fill sizes="(max-width: 1180px) 100vw, 40vw" />
+              <Image src="/content/main/registration-signup.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 40vw" />
             </div>
           </div>
         </div>
