@@ -46,12 +46,13 @@ function SectionCta({ type }: { type: "bonus" | "join" }) {
   );
 }
 
-function PromotionStoryCard({ background, character, children, title, wide = false }: {
+function PromotionStoryCard({ background, character, children, title, wide = false, showCta = true }: {
   background: string;
   character: string;
   children: ReactNode;
   title: string;
   wide?: boolean;
+  showCta?: boolean;
 }) {
   return (
     <article className={`info-card promotion-art-card boni-promotion-card${wide ? " promotion-art-card--wide" : ""}`}>
@@ -64,7 +65,7 @@ function PromotionStoryCard({ background, character, children, title, wide = fal
         <div className="promotion-art-card__copy">
           <h3>{title}</h3>
           {children}
-          <a className="button button--primary promotion-art-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a>
+          {showCta ? <a className="button button--primary promotion-art-card__action" href={BONUS_AFFILIATE_URL} rel="sponsored">Bonus Holen</a> : null}
         </div>
       </div>
     </article>
@@ -152,10 +153,10 @@ export function BonusesContent() {
       <Section id="freispiele-kalender" title="Freispiele über den ganzen Kalender">
         <p>Freispiele sind großzügig über den ganzen Kalender verstreut, nicht hinter einem einzigen Angebot eingesperrt.</p>
         <div className="card-grid card-grid--two germany-bonus-grid boni-spins-grid">
-          <PromotionStoryCard background="/content/main/bonuses/second-deposit-bg.png" character="/content/main/bonuses/second-deposit-character.png" title="Woher die Spins kommen">
+          <PromotionStoryCard background="/content/main/bonuses/second-deposit-bg.png" character="/content/main/bonuses/second-deposit-character.png" title="Woher die Spins kommen" showCta={false}>
             <p>Allein dein Willkommenspaket bringt 100. Der Freitags-Reload legt weitere 100 auf Book of Cats drauf. Die zweite Einzahlung steuert 50 bei. Zusätzlich zu den einzahlungsgebundenen Spins gibt es zwei Wege ohne Einzahlung, die man mitnehmen sollte: Die Installation der mobilen App bringt dir 10 Freispiele, ohne dass eine Einzahlung nötig ist, und es gibt ein Abo-Angebot, das 10 weitere hinlegt, nur fürs Anmelden. Keins kostet dich einen Cent, und beide sind die Art von kleinem, leichtem Wert, den liegen zu lassen albern wäre.</p>
           </PromotionStoryCard>
-          <PromotionStoryCard background="/content/main/bonuses/vip-sunday-bg.webp" character="/content/main/bonuses/vip-sunday-character.webp" title="Die Spins, die tatsächlich mehr wert sind">
+          <PromotionStoryCard background="/content/main/bonuses/vip-sunday-bg.webp" character="/content/main/bonuses/vip-sunday-character.webp" title="Die Spins, die tatsächlich mehr wert sind" showCta={false}>
             <p>Hier ist der Ausreißer, und es ist ein echter. VIP-Spieler erhalten Zugang zum Sonntagsturbo: bis zu 50 Mega-Spins im Wert von je 1 €. Gewöhnliche Freispiele sind meist an einen Mindesteinsatzwert von ein paar Cent gebunden — ein Wert von 1 € pro Spin liegt spürbar höher, was diese zu den wertvollsten regelmäßigen Spins im ganzen Kalender macht. Sie sind eine Belohnung fürs Erklimmen der VIP-Leiter, was uns sauber zur Leiter selbst bringt.</p>
           </PromotionStoryCard>
         </div>
@@ -189,7 +190,6 @@ export function BonusesContent() {
           </div>
         </div>
         <p>Das Glücksrad verwandelt jede Einzahlung in einen Dreh um Preise, die von Freispielen und Belohnungspunkten bis zu einem Aushängesegment von 10.000 € reichen. Die Sonntags-Mega-Spins, die wir behandelt haben, sind das VIP-Ende davon. Und die Netzwerk-Events sind dort, wo die größeren Pools leben: Prize Drops teilt einen Pool von 100.000 € unter Spielern auf, während anbietergeführte Kampagnen wie Pragmatic Plays Drops & Wins und BGaming Drops zufällige Bargeldpreise und Tausende einzelner Belohnungen in gewöhnliche Spins auf berechtigten Spielen fallen lassen. Bei den meisten davon meldest du dich nicht an — du spielst einfach ein qualifizierendes Spiel und bist im Rennen. Es ist gefundenes Geld, aufgeschichtet auf das Spiel, das du ohnehin schon gespielt hast.</p>
-        <SectionCta type="join" />
       </Section>
 
       <Section id="turniere-bestenlisten" title="Turniere und Bestenlisten" className="image-copy-section image-copy-section--wide-title boni-tournament-section">
@@ -220,7 +220,6 @@ export function BonusesContent() {
           </div>
         </div>
         <p>Weil es sich um begrenzte Angebote handelt, ist ein Code die Definition von „jetzt oder nie&quot;. Wenn dir einer über den Weg läuft, lass ihn nicht liegen.</p>
-        <SectionCta type="join" />
       </Section>
 
       <Section id="saisonale-angebote" title="Zeitlich begrenzte und saisonale Angebote" className="image-copy-section image-copy-section--wide-title boni-seasonal-section">
@@ -230,7 +229,6 @@ export function BonusesContent() {
           <p>Der Kalender besteht nicht nur aus den festen Angeboten — es gibt eine rotierende Schicht des Vorübergehenden und Saisonalen, und hier zahlt sich Aufmerksamkeit aus.</p>
           <p>Der Geheimbonus ist genau das, wonach er klingt: Mach eine qualifizierende Einzahlung am richtigen Wochentag und enthülle eine verborgene Belohnung — ein bisschen Geheimnis, ganz im Einklang mit einem Casino, das um das Aufdecken von Dingen herum gestaltet ist. Rund um Feiertage und besondere Anlässe erwarten dich saisonale Reloads und thematische Aktionen zusätzlich zur üblichen Auswahl. Für deutsche Spieler heißt das in der Praxis: Rund um die großen Termine des Jahres — vom Oktoberfest bis zur Adventszeit — lohnt der Blick besonders, denn dann tauchen die themengebundenen Extras auf. Und die großen Netzwerk-Pools wie Prize Drops laufen in definierten Fenstern statt für immer, die 100.000 €, um die es geht, sind also nur zu haben, solange das Event live ist.</p>
           <p>Die praktische Erkenntnis: Prüfe den Aktionen-Tab, wenn du dich einloggst. Die festen Angebote werden immer da sein, aber die begrenzten sind per Definition die, die du verpasst, wenn du nicht hinschaust.</p>
-          <SectionCta type="join" />
         </div>
       </Section>
 

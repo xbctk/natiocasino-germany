@@ -264,7 +264,6 @@ export function MainContent() {
           <p>Eine Anmerkung zu dieser Lizenzzeile, denn sie verdient Ehrlichkeit statt eines Schulterzuckens. Eine Curaçao-Lizenz ist die häufigste Berechtigung im Online-Glücksspiel. Sie bedeutet, dass echte Aufsicht besteht — der Betreiber muss sich gegenüber einer Regulierungsbehörde verantworten, die Spiele laufen auf zertifizierten Zufallsgeneratoren — aber es ist ein Regime mit leichterer Hand als etwa das im Vereinigten Königreich oder auf Malta. Wer den strengstmöglichen Verbraucherschutz will, ist hier nicht richtig. Wer ein legitimes, funktionierendes Casino mit vernünftigen Schutzmechanismen will, ist es sehr wohl. Wenn du weißt, was du suchst, weißt du auch, ob das hier passt.</p>
           <p>Für deutsche Spielerinnen und Spieler lohnt ein zusätzlicher Satz: Der streng regulierte, lizenzierte deutsche Markt nach dem Glücksspielstaatsvertrag funktioniert nach anderen Regeln als ein Curaçao-Angebot. Das ist keine Wertung, sondern ein Hinweis — kenne den Rahmen, in dem du spielst, dann triffst du eine informierte Entscheidung.</p>
         </div>
-        <JoinNowButton />
       </Section>
 
       <Section id="lobby-landkarte" title="Die Lobby wie eine Landkarte lesen" className="">
@@ -281,7 +280,6 @@ export function MainContent() {
           />
         </div>
         <p>Es gibt ein Regal für Schnelle Spiele für die Crash-und-Sofort-Fraktion, ein Drops-&amp;-Wins-Regal für die Jäger der Netzwerk-Preise und eine Jackpot-Ecke für alle, die den einen lebensverändernden Treffer suchen. Über die Suchleiste kannst du nach Anbieter filtern, was mehr zählt, als es klingt — wenn du entschieden hast, dass du nur der Mathematik eines bestimmten Studios vertraust, kannst du dich mit zwei Klicks darin einmauern. Die Lobby belohnt es, wenn du weißt, was du willst. Sie ist eine Landkarte und setzt voraus, dass du eine lesen kannst.</p>
-        <JoinNowButton />
       </Section>
 
       <PromotionBanner variant="first-deposit" />
@@ -301,7 +299,6 @@ export function MainContent() {
         </div>
         <p>Das ist echt nützlich und echt ehrlich, solange du es richtig liest. Der konfigurierte RTP — der Langzeitwert, um den herum das Spiel gebaut ist — ist die Zahl, die deine Gewinnchancen über Tausende von Spins tatsächlich bestimmt, und er liegt meist irgendwo zwischen 94 % und 97 %, je nachdem, wie der Betreiber das Spiel eingestellt hat. Der Live-RTP auf der Kachel sagt dir, was zuletzt passiert ist. Keiner von beiden sagt deinen nächsten Spin voraus, denn das kann nichts. Aber beide offen gezeigt zu bekommen, ist eine Höflichkeit, die die meisten Betreiber nicht erweisen. Sie behandelt dich wie jemanden, der den Unterschied verstehen kann — was, da du bis hierher gelesen hast, offenkundig auf dich zutrifft.</p>
         <p>Das Detektiv-Thema und diese Gewohnheit sind im Grunde dieselbe Geste. Ein Casino, das sich rund um Spuren und verborgene Dinge einkleidet und dir dann tatsächlich die Beweise auf jeder Kachel zeigt, ist zumindest in sich stimmig, was seine eigene Prämisse angeht. Es bittet dich, genau hinzuschauen, und belohnt dich dann fürs Hinschauen.</p>
-        <JoinNowButton />
       </Section>
 
       <Section id="spielkachel-lesen" title="Wie man eine Spielkachel im National Casino liest" className="">

@@ -184,7 +184,6 @@ export function AppContent() {
             </div>
           </div>
         </div>
-        <JoinNowButton />
       </Section>
 
       <Section className="image-copy-section app-apk-section" id="ein-klares-wort-zu-apk-dateien" title="Ein klares Wort zu APK-Dateien">
@@ -238,7 +237,6 @@ export function AppContent() {
         </div>
 
         <p className="app-benefits-closing">Das Angebot kann einmal beansprucht werden, es ist also ein einmaliger Bonus fürs Einrichten der App — klein, aber gratis, und es gibt keinen Grund, ihn unbeansprucht zu lassen.</p>
-        <JoinNowButton />
       </Section>
 
       <AppPromoBanner />
@@ -258,7 +256,6 @@ export function AppContent() {
           </ul>
           <p>Du musst keine APK herunterladen, keine Installationen aus unbekannten Quellen erlauben und nicht durch Google Play oder den App Store gehen. Das ist das ganze Design.</p>
           <p>Zur Verbindung: Ein normales Mobilsignal reicht für Slots reichlich. Live-Casino und Live-Wetten verlangen etwas Beständigeres, da sie Echtzeit-Video streamen — wenn du eine Live-Dealer-Session planst, dient dir WLAN oder ein starkes Signal besser. Und wenn die App sich je träge anfühlt, greifen die üblichen Kniffe: Browser aktualisieren, überzählige Tabs schließen, ein wenig Speicher freimachen und neu starten. Bleibt ein Problem bestehen, ist dasselbe Casino immer nur einen Tipp entfernt in einem normalen Browser-Tab, was uns zur Alternative bringt.</p>
-          <JoinNowButton />
         </div>
       </Section>
 
