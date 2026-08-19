@@ -5,8 +5,8 @@ import { Hero } from "@/components/Hero";
 import { ResponsibleGamingContent, responsibleGamingSections } from "@/components/ResponsibleGamingContent";
 import { Sidebar } from "@/components/Sidebar";
 
-const title = "National Casino NZ Responsible Gaming & Support";
-const description = "Responsible gaming at National Casino for New Zealand players: licence, security, KYC and AML checks, self-exclusion, limits, reality checks and local support.";
+const title = "National Casino Deutschland: Verantwortungsvolles Spielen";
+const description = "Verantwortungsvolles Spielen bei National Casino in Deutschland: Sicherheit, KYC- und AML-Prüfungen, Selbstsperre, Limits und unabhängige Hilfe.";
 
 export const metadata: Metadata = {
   title,
@@ -16,17 +16,17 @@ export const metadata: Metadata = {
     title,
     description,
     url: "/responsible-gaming",
-    siteName: "National Casino New Zealand",
-    locale: "en_NZ",
+    siteName: "National Casino Deutschland",
+    locale: "de_DE",
     type: "website",
     images: [{ url: "/content/responsible-gaming/hero.webp", width: 1672, height: 941, alt: title }],
   },
 };
 
-const titleLines = ["National Casino Responsible Gaming", "New Zealand"];
+const titleLines = ["National Casino: Verantwortungsvolles Spielen", "in Deutschland"];
 const descriptionLines = [
-  "Responsible gaming at National Casino for New Zealand players: licence, security,",
-  "KYC and AML checks, self-exclusion, limits, reality checks and local support.",
+  "Sicherheit, KYC- und AML-Prüfungen, Selbstsperre, Limits",
+  "und unabhängige Hilfe für Spielerinnen und Spieler in Deutschland.",
 ];
 
 export default function ResponsibleGamingPage() {
@@ -34,7 +34,7 @@ export default function ResponsibleGamingPage() {
     <div className="site-shell">
       <Header />
       <div className="page-layout">
-        <Sidebar label="Responsible Gaming page sections" sections={responsibleGamingSections} />
+        <Sidebar label="Abschnitte zum verantwortungsvollen Spielen" sections={responsibleGamingSections} />
         <main className="page-main">
           <Hero breadcrumbLabel="VERANTWORTUNGSVOLLES SPIELEN" breadcrumbPath="/responsible-gaming" className="responsible-gaming-hero" descriptionLines={descriptionLines} imageSrc="/content/responsible-gaming/hero.webp" showAction={false} titleLines={titleLines} />
           <ResponsibleGamingContent />

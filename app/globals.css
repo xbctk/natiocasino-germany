@@ -3521,6 +3521,11 @@ tr > :last-child {
   margin: 0;
 }
 
+.site-footer__copyright {
+  color: var(--text);
+  font-weight: 500;
+}
+
 .site-footer__validator {
   display: grid;
   width: 100%;

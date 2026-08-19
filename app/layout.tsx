@@ -11,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://natiocasino.vercel.app"),
+  metadataBase: new URL("https://natiocasino-germany.vercel.app"),
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

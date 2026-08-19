@@ -13,6 +13,8 @@ const footerLinks = [
 ] as const;
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="site-footer">
       <div className="site-footer__ornament" aria-hidden="true">
@@ -48,6 +50,7 @@ export function Footer() {
             (8048/JAZ2017-067) mit der Adresse in Dr. H. Fergusonweg 1, Curacao betrieben.
           </p>
           <p>Das Glücksspiel kann süchtig machen. Spielen Sie verantwortungsvoll.</p>
+          <p className="site-footer__copyright">© {currentYear} National Casino Deutschland.</p>
         </div>
         <div className="site-footer__validator">
           <Image alt="GCB certification — cert.gcb.cw" height={180} src="/footer/gcb-validator.png" width={326} />

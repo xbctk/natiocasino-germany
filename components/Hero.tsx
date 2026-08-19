@@ -3,7 +3,7 @@ import Link from "next/link";
 import { GENERAL_AFFILIATE_URL } from "./affiliateLinks";
 import { JsonLd } from "./JsonLd";
 
-const siteUrl = "https://natiocasino.vercel.app";
+const siteUrl = "https://natiocasino-germany.vercel.app";
 
 const mainTitleLines = ["National Casino: Slots, Live-Spiele & echte RTP in Deutschland"];
 const mainDescriptionLines = [

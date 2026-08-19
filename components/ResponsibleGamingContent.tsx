@@ -2,10 +2,10 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 export const responsibleGamingSections: ReadonlyArray<readonly [string, string]> = [
-  ["responsible-gaming-overview", "Responsible Gaming"],
-  ["licensing-security", "Licensing & Security"],
-  ["self-exclusion-limits", "Self-Exclusion & Limits"],
-  ["responsible-gambling-help", "Help in New Zealand"],
+  ["responsible-gaming-overview", "Verantwortungsvolles Spielen"],
+  ["licensing-security", "Lizenz & Sicherheit"],
+  ["self-exclusion-limits", "Selbstsperre & Limits"],
+  ["responsible-gambling-help", "Hilfe in Deutschland"],
 ];
 
 function Section({ children, className = "", id, title }: { children: ReactNode; className?: string; id: string; title: string }) {
@@ -18,10 +18,10 @@ function Section({ children, className = "", id, title }: { children: ReactNode;
 }
 
 const playerControls = [
-  ["Loss", "Set the maximum amount you are prepared to lose."],
-  ["Deposit", "Restrict deposits before play begins; cryptocurrency is excluded on the published page."],
-  ["Gambling Session", "Limit the duration of casino play or sports betting."],
-  ["Wager", "Set a boundary for the amount placed in bets."],
+  ["Verlust", "Lege den Höchstbetrag fest, den du bereit bist zu verlieren."],
+  ["Einzahlung", "Begrenze Einzahlungen vor Spielbeginn; Kryptowährungen sind auf der veröffentlichten Seite davon ausgenommen."],
+  ["Spielsitzung", "Begrenze die Dauer von Casinospielen oder Sportwetten."],
+  ["Einsatz", "Lege eine Obergrenze für den Betrag fest, den du setzen möchtest."],
 ] as const;
 
 function CardsTitle({ children }: { children: ReactNode }) {
@@ -35,91 +35,91 @@ function CardsTitle({ children }: { children: ReactNode }) {
 
 const supportResources = [
   {
-    description: "The brand’s public guidance on self-exclusion and account limits.",
-    label: "National Casino Responsible Game",
+    description: "Die veröffentlichten Hinweise der Marke zu Selbstsperre und Kontolimits.",
+    label: "National Casino: Verantwortungsvolles Spielen",
   },
   {
-    description: "Guidance, warning signs and local support services across Aotearoa.",
-    label: "Safer Gambling Aotearoa",
+    description: "Kostenlose und anonyme BIÖG-Beratung unter 0800 1 37 27 00: Montag bis Donnerstag 10–22 Uhr, Freitag bis Sonntag 10–18 Uhr.",
+    label: "Check dein Spiel",
   },
   {
-    description: "Free and confidential 24/7 support: 0800 654 655 or free text 8006.",
-    label: "Gambling Helpline",
+    description: "Über Check dein Spiel und das Suchthilfeverzeichnis lassen sich Beratungsstellen in der Nähe finden.",
+    label: "Hilfe vor Ort",
   },
   {
-    description: "Free counselling and support for players and whānau: 0800 664 262.",
-    label: "PGF Services",
+    description: "Bundesweites, spielformübergreifendes System für Selbst- und Fremdsperren.",
+    label: "OASIS-Spielersperrsystem",
   },
 ] as const;
 
 export function ResponsibleGamingContent() {
   return (
     <div className="main-content responsible-gaming-content">
-      <Section className="responsible-overview" id="responsible-gaming-overview" title="Responsible Gaming at National Casino New Zealand">
+      <Section className="responsible-overview" id="responsible-gaming-overview" title="Verantwortungsvolles Spielen bei National Casino Deutschland">
         <div className="responsible-overview__layout">
-          <p className="responsible-overview__lead">Casino games and sports betting should be paid entertainment, not a way to earn income or recover losses.</p>
-          <ul className="responsible-principles" aria-label="Responsible gaming principles">
-            <li className="info-card"><strong><CardsTitle>Set boundaries first</CardsTitle></strong><span>Set a budget and a finishing time before playing.</span></li>
-            <li className="info-card"><strong><CardsTitle>Never chase losses</CardsTitle></strong><span>Do not borrow to gamble or increase bets to recover money.</span></li>
-            <li className="info-card"><strong><CardsTitle>Notice the impact</CardsTitle></strong><span>Stop if play affects your finances, work, health or relationships.</span></li>
+          <p className="responsible-overview__lead">Casinospiele und Sportwetten sollten bezahlte Unterhaltung sein – kein Weg, um Einkommen zu erzielen oder Verluste auszugleichen.</p>
+          <ul className="responsible-principles" aria-label="Grundsätze für verantwortungsvolles Spielen">
+            <li className="info-card"><strong><CardsTitle>Grenzen zuerst festlegen</CardsTitle></strong><span>Lege vor dem Spielen ein Budget und eine Endzeit fest.</span></li>
+            <li className="info-card"><strong><CardsTitle>Verlusten nie hinterherjagen</CardsTitle></strong><span>Leihe dir kein Geld zum Spielen und erhöhe Einsätze nicht, um Verluste auszugleichen.</span></li>
+            <li className="info-card"><strong><CardsTitle>Auswirkungen ernst nehmen</CardsTitle></strong><span>Höre auf, wenn das Spielen deine Finanzen, Arbeit, Gesundheit oder Beziehungen beeinträchtigt.</span></li>
           </ul>
         </div>
       </Section>
 
-      <Section id="licensing-security" title="Licensing, Ownership & Account Security">
-        <p className="license-intro">National Casino’s published licence information identifies TechSolutions Group N.V. as the operator and licence holder. This is an international Curaçao licence, not a New Zealand local licence. Check the current certificate on the brand website before registering because regulatory status and displayed details can change.</p>
+      <Section id="licensing-security" title="Lizenz, Betreiber & Kontosicherheit">
+        <p className="license-intro">Der veröffentlichten Lizenzinformation von National Casino zufolge ist TechSolutions Group N.V. Betreiber und Lizenzinhaber. Es handelt sich um eine internationale Curaçao-Lizenz, nicht um eine deutsche Lizenz. Prüfe vor der Registrierung das aktuelle Zertifikat auf der Markenwebsite, da sich Regulierungsstatus und angezeigte Angaben ändern können.</p>
         <div className="license-feature">
           <Image className="license-feature__image" src="/content/responsible-gaming/license-security.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
           <div className="license-feature__overlay" aria-hidden="true" />
           <div className="license-feature__content">
             <dl className="license-facts">
-              <div className="info-card"><dt><CardsTitle>Operator & licence holder</CardsTitle></dt><dd>TechSolutions Group N.V.</dd></div>
-              <div className="info-card"><dt><CardsTitle>Company number</CardsTitle></dt><dd>144920</dd></div>
-              <div className="info-card"><dt><CardsTitle>Licence</CardsTitle></dt><dd>OGL/2024/590/0758</dd></div>
-              <div className="info-card"><dt><CardsTitle>Regulator</CardsTitle></dt><dd>Curaçao Gaming Authority</dd></div>
+              <div className="info-card"><dt><CardsTitle>Betreiber & Lizenzinhaber</CardsTitle></dt><dd>TechSolutions Group N.V.</dd></div>
+              <div className="info-card"><dt><CardsTitle>Unternehmensnummer</CardsTitle></dt><dd>144920</dd></div>
+              <div className="info-card"><dt><CardsTitle>Lizenz</CardsTitle></dt><dd>OGL/2024/590/0758</dd></div>
+              <div className="info-card"><dt><CardsTitle>Regulierungsbehörde</CardsTitle></dt><dd>Curaçao Gaming Authority</dd></div>
             </dl>
           </div>
         </div>
         <div className="security-grid">
           <article className="responsible-info-card">
-            <h3>SSL / Security</h3>
-            <p>The website is delivered over HTTPS/TLS, commonly called SSL, to encrypt data in transit. Encryption does not remove gambling risk: use a unique password, confirm the website address and never share login details.</p>
+            <h3>SSL / Sicherheit</h3>
+            <p>Die Website wird über HTTPS/TLS ausgeliefert, häufig als SSL bezeichnet, um Daten während der Übertragung zu verschlüsseln. Verschlüsselung beseitigt die Risiken des Glücksspiels nicht: Verwende ein einzigartiges Passwort, prüfe die Website-Adresse und gib deine Zugangsdaten niemals weiter.</p>
           </article>
           <article className="responsible-info-card">
             <h3>KYC / AML</h3>
-            <p>KYC and AML reviews may require proof of identity, age, address, payment ownership or source of funds. Withdrawals may be paused until verification is complete.</p>
+            <p>Für KYC- und AML-Prüfungen können Nachweise zu Identität, Alter, Adresse, Inhaberschaft des Zahlungsmittels oder Herkunft der Mittel verlangt werden. Auszahlungen können bis zum Abschluss der Verifizierung pausiert werden.</p>
           </article>
         </div>
       </Section>
 
-      <Section id="self-exclusion-limits" title="Self-Exclusion, Limits & Reality Checks">
+      <Section id="self-exclusion-limits" title="Selbstsperre, Limits & Spielzeiterinnerungen">
         <div className="self-exclusion-intro">
-          <span className="responsible-eyebrow">24/7 Live Chat</span>
-          <h3>Request self-exclusion</h3>
-          <p>The original Responsible Game page directs customers to 24/7 Live Chat to request self-exclusion. If control is slipping, stop depositing, request self-exclusion and seek independent help immediately.</p>
+          <span className="responsible-eyebrow">24/7-Live-Chat</span>
+          <h3>Selbstsperre beantragen</h3>
+          <p>Die veröffentlichte Seite zum verantwortungsvollen Spielen verweist für eine Selbstsperre auf den 24/7-Live-Chat. Wenn du die Kontrolle verlierst, zahle nicht weiter ein, beantrage eine Selbstsperre und suche sofort unabhängige Hilfe.</p>
         </div>
         <div className="self-exclusion-feature">
           <Image className="self-exclusion-section__image" src="/content/responsible-gaming/self-exclusion-wide.webp" alt="" fill sizes="(max-width: 1180px) 100vw, 82vw" aria-hidden="true" />
           <div className="self-exclusion-section__overlay" aria-hidden="true" />
           <div className="self-exclusion-section__content">
-            <h3 className="responsible-subheading">Available account limits</h3>
+            <h3 className="responsible-subheading">Verfügbare Kontolimits</h3>
             <ul className="player-control-list">
               {playerControls.map(([name, description]) => (
                 <li className="info-card" key={name}><strong><CardsTitle>{name}</CardsTitle></strong><span>{description}</span></li>
               ))}
             </ul>
-            <p>Choose limits before casino play or sports betting begins; do not increase them after a loss.</p>
+            <p>Lege Limits fest, bevor du mit Casinospielen oder Sportwetten beginnst, und erhöhe sie nicht nach einem Verlust.</p>
           </div>
         </div>
         <aside className="reality-check-panel" aria-labelledby="reality-check-title">
-          <h3 id="reality-check-title">Reality checks</h3>
-          <p>The public page does not separately confirm an automated reality-check feature. Use the Gambling Session limit, device timers and account transaction history as manual reality checks, and ask Live Chat whether periodic pop-up reminders are available for your account.</p>
-          <p>A reminder should prompt you to review elapsed time, deposits, wagers and net spend before continuing.</p>
+          <h3 id="reality-check-title">Spielzeiterinnerungen</h3>
+          <p>Die öffentliche Seite bestätigt keine separate automatische Erinnerungsfunktion. Nutze das Sitzungslimit, Gerätetimer und den Transaktionsverlauf deines Kontos als manuelle Kontrolle und frage im Live-Chat, ob regelmäßige Pop-up-Erinnerungen für dein Konto verfügbar sind.</p>
+          <p>Eine Erinnerung sollte dich dazu veranlassen, vergangene Zeit, Einzahlungen, Einsätze und Nettoausgaben zu prüfen, bevor du weiterspielst.</p>
         </aside>
       </Section>
 
-      <Section id="responsible-gambling-help" title="Responsible Gambling Help in New Zealand">
-        <p>Independent support is free and confidential. These resources are suitable for players and for whānau concerned about someone else’s gambling:</p>
+      <Section id="responsible-gambling-help" title="Hilfe bei Glücksspielproblemen in Deutschland">
+        <p>Unabhängige Hilfe ist kostenlos und vertraulich. Diese Angebote richten sich an Spielerinnen und Spieler sowie an Angehörige, die sich wegen des Spielverhaltens einer nahestehenden Person sorgen:</p>
         <ul className="support-link-list">
           {supportResources.map((resource) => (
             <li key={resource.label}>
@@ -129,7 +129,7 @@ export function ResponsibleGamingContent() {
         </ul>
         <div className="legal-age-warning">
           <span aria-hidden="true">18+</span>
-          <p><strong>Adults only.</strong> Gambling is not appropriate for minors. Do not register or play unless you meet both the platform’s minimum age and the legal age that applies where you are located. If gambling is no longer enjoyable or affordable, stop now and contact the Gambling Helpline.</p>
+          <p><strong>Nur für Erwachsene.</strong> Glücksspiel ist für Minderjährige ungeeignet. Registriere dich nicht und spiele nicht, wenn du das Mindestalter der Plattform oder das an deinem Aufenthaltsort geltende gesetzliche Alter nicht erfüllst. Wenn Glücksspiel keinen Spaß mehr macht oder nicht mehr bezahlbar ist, höre jetzt auf und wende dich an das BIÖG-Beratungstelefon.</p>
         </div>
       </Section>
     </div>
