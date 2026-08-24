@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
-import { ResponsibleGamingContent, responsibleGamingSections } from "@/components/ResponsibleGamingContent";
-import { Sidebar } from "@/components/Sidebar";
+import { TechnicalPage } from "@/components/TechnicalPage";
 
 const title = "National Casino Deutschland: Verantwortungsvolles Spielen";
-const description = "Verantwortungsvolles Spielen bei National Casino in Deutschland: Sicherheit, KYC- und AML-Prüfungen, Selbstsperre, Limits und unabhängige Hilfe.";
+const description = "Hinweise zu verantwortungsvollem Spielen, Kontolimits, Selbstsperre und externer Hilfe bei National Casino.";
 
 export const metadata: Metadata = {
   title,
@@ -19,28 +15,39 @@ export const metadata: Metadata = {
     siteName: "National Casino Deutschland",
     locale: "de_DE",
     type: "website",
-    images: [{ url: "/content/responsible-gaming/hero.webp", width: 1672, height: 941, alt: title }],
   },
 };
 
-const titleLines = ["National Casino: Verantwortungsvolles Spielen", "in Deutschland"];
-const descriptionLines = [
-  "Sicherheit, KYC- und AML-Prüfungen, Selbstsperre, Limits",
-  "und unabhängige Hilfe für Spielerinnen und Spieler in Deutschland.",
-];
+const sections = [
+  {
+    title: "Glücksspiel als Unterhaltung",
+    paragraphs: [
+      "Glücksspiel sollte ausschließlich der Unterhaltung dienen. Es ist kein verlässlicher Weg, Einkommen zu erzielen oder Verluste zurückzugewinnen. Wer Zeit und Ausgaben nicht mehr sicher kontrollieren kann, sollte das Spielen unterbrechen.",
+    ],
+  },
+  {
+    title: "Selbstsperre und Kontolimits",
+    paragraphs: [
+      "Spieler können eine Selbstsperre beantragen. Außerdem lassen sich Grenzen für Verluste, Einzahlungen, Spielsitzungen und Einsätze festlegen. Diese Schutzmaßnahmen sollten eingerichtet werden, bevor das Spielen problematisch wird.",
+    ],
+  },
+  {
+    title: "Warnzeichen ernst nehmen",
+    items: [
+      "Nicht mit Geld spielen, das für laufende Ausgaben benötigt wird.",
+      "Verluste nicht durch höhere oder zusätzliche Einsätze ausgleichen.",
+      "Spielzeit und eingesetzte Beträge regelmäßig kontrollieren.",
+      "Bei Kontrollverlust das Spielen beenden und fachliche Hilfe suchen.",
+    ],
+  },
+  {
+    title: "Externe Hilfe",
+    paragraphs: [
+      "Unabhängige Beratungsangebote unterstützen Betroffene und Angehörige bei problematischem Spielverhalten. Der Originalhinweis nennt hierfür Gamblers Anonymous, GamCare und Gambling Therapy.",
+    ],
+  },
+] as const;
 
 export default function ResponsibleGamingPage() {
-  return (
-    <div className="site-shell">
-      <Header />
-      <div className="page-layout">
-        <Sidebar label="Abschnitte zum verantwortungsvollen Spielen" sections={responsibleGamingSections} />
-        <main className="page-main">
-          <Hero breadcrumbLabel="VERANTWORTUNGSVOLLES SPIELEN" breadcrumbPath="/responsible-gaming" className="responsible-gaming-hero" descriptionLines={descriptionLines} imageSrc="/content/responsible-gaming/hero.webp" showAction={false} titleLines={titleLines} />
-          <ResponsibleGamingContent />
-          <Footer />
-        </main>
-      </div>
-    </div>
-  );
+  return <TechnicalPage intro="Informationen zum sicheren und kontrollierten Umgang mit Glücksspiel." label="Verantwortungsvolles Spielen" path="/responsible-gaming" sections={sections} />;
 }

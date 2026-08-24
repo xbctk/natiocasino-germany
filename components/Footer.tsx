@@ -1,15 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { GENERAL_AFFILIATE_URL } from "./affiliateLinks";
 
 const footerLinks = [
-  ["VERANTWORTUNGSVOLLES SPIELEN", GENERAL_AFFILIATE_URL],
-  ["ALLGEMEINE GESCHÄFTSBEDINGUNGEN", GENERAL_AFFILIATE_URL],
-  ["DATENSCHUTRICHTLINIE", GENERAL_AFFILIATE_URL],
-  ["BONUSBEDINGUNGEN", GENERAL_AFFILIATE_URL],
-  ["FAQ", GENERAL_AFFILIATE_URL],
-  ["ÜBER UNS", GENERAL_AFFILIATE_URL],
-  ["KONTAKT", GENERAL_AFFILIATE_URL],
+  ["VERANTWORTUNGSVOLLES SPIELEN", "/responsible-gaming"],
+  ["ALLGEMEINE GESCHÄFTSBEDINGUNGEN", "/terms-and-conditions"],
+  ["DATENSCHUTRICHTLINIE", "/privacy-policy"],
+  ["BONUSBEDINGUNGEN", "/bonus-terms"],
+  ["FAQ", "/faq"],
+  ["ÜBER UNS", "/about-us"],
+  ["KONTAKT", "/contact"],
 ] as const;
 
 export function Footer() {
@@ -25,7 +24,7 @@ export function Footer() {
         <ul>
           {footerLinks.map(([label, href]) => (
             <li key={label}>
-              {href.startsWith("/") ? <Link href={href}>{label}</Link> : <a href={href} rel="sponsored">{label}</a>}
+              <Link href={href}>{label}</Link>
             </li>
           ))}
         </ul>
