@@ -100,13 +100,13 @@ export function BonusesContent() {
           <h3>Was du tatsächlich bekommst</h3>
           <p>Das Willkommenspaket kommt in zwei Geschmacksrichtungen, und die richtige zu wählen, macht einen Unterschied.</p>
           <div className="card-grid card-grid--two germany-bonus-grid boni-welcome-grid">
-            <PromotionStoryCard background="/content/main/bonuses/welcome-bg.png" character="/content/main/bonuses/welcome-character.png" title="Standard-Ersteinzahlungsbonus">
+            <PromotionStoryCard background="/content/main/bonuses/welcome-bg.webp" character="/content/main/bonuses/welcome-character.webp" title="Standard-Ersteinzahlungsbonus">
               <p>Der Standard-Ersteinzahlungsbonus ist ein 100-%-Match bis zu 100 €, dazu ein Bonusspiel und 100 Freispiele. Diese Freispiele kommen in zwei Hälften — 50 landen sofort, 50 am Folgetag — was den Spaß leise in eine zweite Session streckt, statt alles auf die erste Nacht abzukippen.</p>
             </PromotionStoryCard>
             <PromotionStoryCard background="/content/main/bonuses/crypto-bg.webp" character="/content/main/bonuses/crypto-character.webp" title="Krypto-Ersteinzahlungsbonus">
               <p>Der Krypto-Ersteinzahlungsbonus ist die größere Tür. Zahle in Kryptowährung ein, und das Match verdoppelt sich auf 200 % bis zu 500 €. Wenn du dich mit dem Spiel in Krypto ohnehin wohlfühlst, ist das schlicht das großzügigere Willkommen, und es ist ganz offensichtlich das, welches National seinen Krypto-Spielern schmackhaft machen will. Dasselbe Casino, größerer Schub — die Wahl ist im Grunde nur „Wie finanziere ich dieses Konto?&quot;</p>
             </PromotionStoryCard>
-            <PromotionStoryCard background="/content/main/bonuses/second-deposit-bg.png" character="/content/main/bonuses/second-deposit-character.png" title="Zweiter Einzahlungsbonus" wide>
+            <PromotionStoryCard background="/content/main/bonuses/second-deposit-bg.webp" character="/content/main/bonuses/second-deposit-character.webp" title="Zweiter Einzahlungsbonus" wide>
               <p>Es gibt außerdem einen Zweiten Einzahlungsbonus, der nach dem ersten wartet: 50 % bis zu 200 € plus 50 Freispiele, sofort gutgeschrieben. Ein sanfterer Nachschlag, der deinen Auftaktlauf am Laufen hält, ohne eine große Verpflichtung zu verlangen.</p>
             </PromotionStoryCard>
           </div>
@@ -139,7 +139,7 @@ export function BonusesContent() {
       <Section id="reload-boni" title="Reload-Boni">
         <p>Das Willkommensangebot ist ein einmaliges Händeschütteln. Reloads sind der Grund, wiederzukommen.</p>
         <div className="card-grid card-grid--two germany-bonus-grid boni-reload-grid">
-          <PromotionStoryCard background="/content/main/bonuses/friday-reload-bg.png" character="/content/main/bonuses/friday-reload-character.png" title="Der Freitags-Reload">
+          <PromotionStoryCard background="/content/main/bonuses/friday-reload-bg.webp" character="/content/main/bonuses/friday-reload-character.webp" title="Der Freitags-Reload">
             <p>Der Anker der Woche. Jeden Freitag betreibt National einen 50-%-Reload bis zu 250 € plus 100 Freispiele auf Book of Cats — Spins geteilt, wie immer, 50 jetzt und 50 nach 24 Stunden. Es ist der Wochenend-Nachschub, und es lohnt sich, bewusst eine Freitagseinzahlung dafür zurückzuhalten, statt sie früher in der Woche für nichts Bestimmtes auszugeben.</p>
           </PromotionStoryCard>
           <PromotionStoryCard background="/bonuses/special/backgrounds/fortune-wheel.webp" character="/bonuses/special/fortune-wheel.webp" title="Die Alltags-Reloads">
@@ -153,7 +153,7 @@ export function BonusesContent() {
       <Section id="freispiele-kalender" title="Freispiele über den ganzen Kalender">
         <p>Freispiele sind großzügig über den ganzen Kalender verstreut, nicht hinter einem einzigen Angebot eingesperrt.</p>
         <div className="card-grid card-grid--two germany-bonus-grid boni-spins-grid">
-          <PromotionStoryCard background="/content/main/bonuses/second-deposit-bg.png" character="/content/main/bonuses/second-deposit-character.png" title="Woher die Spins kommen" showCta={false}>
+          <PromotionStoryCard background="/content/main/bonuses/second-deposit-bg.webp" character="/content/main/bonuses/second-deposit-character.webp" title="Woher die Spins kommen" showCta={false}>
             <p>Allein dein Willkommenspaket bringt 100. Der Freitags-Reload legt weitere 100 auf Book of Cats drauf. Die zweite Einzahlung steuert 50 bei. Zusätzlich zu den einzahlungsgebundenen Spins gibt es zwei Wege ohne Einzahlung, die man mitnehmen sollte: Die Installation der mobilen App bringt dir 10 Freispiele, ohne dass eine Einzahlung nötig ist, und es gibt ein Abo-Angebot, das 10 weitere hinlegt, nur fürs Anmelden. Keins kostet dich einen Cent, und beide sind die Art von kleinem, leichtem Wert, den liegen zu lassen albern wäre.</p>
           </PromotionStoryCard>
           <PromotionStoryCard background="/content/main/bonuses/vip-sunday-bg.webp" character="/content/main/bonuses/vip-sunday-character.webp" title="Die Spins, die tatsächlich mehr wert sind" showCta={false}>

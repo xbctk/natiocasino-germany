@@ -52,7 +52,7 @@ export function Footer() {
           <p className="site-footer__copyright">© {currentYear} National Casino Deutschland.</p>
         </div>
         <div className="site-footer__validator">
-          <Image alt="GCB certification — cert.gcb.cw" height={180} src="/footer/gcb-validator.png" width={326} />
+          <Image alt="GCB certification — cert.gcb.cw" height={180} src="/footer/gcb-validator.webp" width={326} />
         </div>
       </div>
     </footer>

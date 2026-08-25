@@ -106,7 +106,7 @@ function BrandSidebarMenu() {
           <p>Lade unsere App herunter!</p>
         </div>
         <div className="brand-menu__application-media" aria-hidden="true">
-          <Image alt="" height={332} src="/sidebar/application.png" width={284} />
+          <Image alt="" height={332} src="/sidebar/application.webp" width={284} />
         </div>
       </a>
     </div>

@@ -27,7 +27,7 @@ const playerControls = [
 function CardsTitle({ children }: { children: ReactNode }) {
   return (
     <span className="responsible-card-title">
-      <Image alt="" aria-hidden="true" height={180} src="/content-icons/cards.png" width={188} />
+      <Image alt="" aria-hidden="true" height={180} src="/content-icons/cards.webp" width={188} />
       <span>{children}</span>
     </span>
   );

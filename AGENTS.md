@@ -229,7 +229,7 @@ docs/
 - `Games` и `Live dealers` не раскрываются и не имеют стрелок.
 - У `Promotions` badge `14`, у `Tournaments` badge `3`.
 - Карточки `Fortune wheel`, `Missions` и `Application` используют локальные оригинальные ассеты из `public/sidebar`.
-- Карточка `Application` является зафиксированным исключением из правила серых заглушек и использует `public/sidebar/application.png`.
+- Карточка `Application` является зафиксированным исключением из правила серых заглушек и использует `public/sidebar/application.webp`.
 
 ## 13. Компоновка контентных блоков
 

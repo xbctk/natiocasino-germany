@@ -290,7 +290,7 @@ export function MainContent() {
         <div className="rtp-strip-scroll" role="region" tabIndex={0} aria-label="Live-RTP-Spielübersicht">
           <Image
             className="rtp-strip-image"
-            src="/content/main/live-rtp-strip.png"
+            src="/content/main/live-rtp-strip.webp"
             alt="Spielkarten mit Live-RTP-Werten und aktuellen Spielerzahlen"
             width={2494}
             height={518}
@@ -308,7 +308,7 @@ export function MainContent() {
         <div className="rtp-strip-scroll" role="region" tabIndex={0} aria-label="Live-RTP-Spielübersicht">
           <Image
             className="rtp-strip-image"
-            src="/content/main/live-rtp-strip.png"
+            src="/content/main/live-rtp-strip.webp"
             alt="Spielkarten mit Live-RTP-Werten und aktuellen Spielerzahlen"
             width={2494}
             height={518}
@@ -429,19 +429,19 @@ export function MainContent() {
       <Section id="boni-und-aktionen" title="Boni und Aktionen" className="">
         <p>Der Aktionskalender ist der Ort, an dem sich National seinen „Komm morgen wieder&quot;-Sog verdient. Er ist breit und darauf gebaut, den meisten Wochentagen einen Grund zu geben. Hier die Ankerpunkte.</p>
         <div className="card-grid card-grid--two germany-bonus-grid">
-          <BonusVisualCard title="Ersteinzahlungsbonus" background="/content/main/bonuses/welcome-bg.png" character="/content/main/bonuses/welcome-character.png">
+          <BonusVisualCard title="Ersteinzahlungsbonus" background="/content/main/bonuses/welcome-bg.webp" character="/content/main/bonuses/welcome-character.webp">
             100 % bis zu 100 €, dazu ein Bonusspiel und 100 Freispiele. Die Freispiele kommen in zwei Hälften — 50 sofort gutgeschrieben, 50 nach 24 Stunden — was ein kleiner, vernünftiger Kniff ist, der den Spaß in deine zweite Session zieht, statt alles auf einmal abzukippen.
           </BonusVisualCard>
           <BonusVisualCard title="Krypto-Ersteinzahlungsbonus" background="/content/main/bonuses/crypto-bg.webp" character="/content/main/bonuses/crypto-character.webp">
             Die größere Tür. Zahle in Krypto ein, und das Match springt auf 200 % bis zu 500 €. Wenn du dich mit dem Spiel in Krypto ohnehin wohlfühlst, ist das schlicht das großzügigere Willkommen, und es ist das Angebot, das das Casino seinen Krypto-Spielern ganz offensichtlich schmackhaft machen will.
           </BonusVisualCard>
-          <BonusVisualCard title="Zweite Einzahlungsbonus" background="/content/main/bonuses/second-deposit-bg.png" character="/content/main/bonuses/second-deposit-character.png">
+          <BonusVisualCard title="Zweite Einzahlungsbonus" background="/content/main/bonuses/second-deposit-bg.webp" character="/content/main/bonuses/second-deposit-character.webp">
             50 % bis zu 200 € plus 50 Freispiele, sofort gutgeschrieben. Ein sanfterer Nachschlag für deinen zweiten Besuch, der den Schwung hält, ohne eine große Verpflichtung zu verlangen.
           </BonusVisualCard>
           <BonusVisualCard title="Highroller-Bonus" background="/content/main/bonuses/highroller-bg.webp" character="/content/main/bonuses/highroller-character.webp">
             100 % bis zu 750 €, Mindesteinzahlung 300 €. Der zielt direkt auf Spieler mit größerer Bankroll, die ein Match wollen, das sie widerspiegelt — nicht für jeden, und mit seiner Zugangsvoraussetzung ehrlich darin.
           </BonusVisualCard>
-          <BonusVisualCard title="Freitags-Reload-Bonus" background="/content/main/bonuses/friday-reload-bg.png" character="/content/main/bonuses/friday-reload-character.png">
+          <BonusVisualCard title="Freitags-Reload-Bonus" background="/content/main/bonuses/friday-reload-bg.webp" character="/content/main/bonuses/friday-reload-character.webp">
             50 % bis zu 250 € plus 100 Freispiele auf Book of Cats, Freispiele geteilt 50 jetzt / 50 nach 24 Stunden. Der Wochenend-Nachschub, und ein guter Grund, eine Freitagseinzahlung dafür aufzuheben.
           </BonusVisualCard>
           <BonusVisualCard title="VIP-Sonntagsturbo" background="/content/main/bonuses/vip-sunday-bg.webp" character="/content/main/bonuses/vip-sunday-character.webp">

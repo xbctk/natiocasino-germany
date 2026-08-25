@@ -6,25 +6,25 @@ const promotionBanners = {
     title: "Einzahlungsbonus",
     offer: "100 % bis zu 100 EUR",
     bonus: "+ 100 Freispiele",
-    image: "/banners/first-deposit-v2.jpg",
+    image: "/banners/first-deposit-v2.webp",
   },
   "second-deposit": {
     title: "Zweite Einzahlungsbonus",
     offer: "50 % bis zu 200 EUR",
     bonus: "+ 50 Freispiele",
-    image: "/banners/second-deposit-v2.jpg",
+    image: "/banners/second-deposit-v2.webp",
   },
   highroller: {
     title: "Highroller-Bonus",
     offer: "100 % bis zu 750 EUR",
     bonus: null,
-    image: "/banners/highroller-v2.jpg",
+    image: "/banners/highroller-v2.webp",
   },
   "friday-reload": {
     title: "Freitags-Reload-Bonus",
     offer: "50 % bis zu 250 EUR",
     bonus: "+ 100 Freispiele",
-    image: "/banners/friday-reload-v2.jpg",
+    image: "/banners/friday-reload-v2.webp",
   },
 } as const;
 

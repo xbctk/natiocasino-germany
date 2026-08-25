@@ -518,7 +518,7 @@ a {
 }
 
 .boni-icon-heading--cards::before {
-  background-image: url("/content-icons/cards.png");
+  background-image: url("/content-icons/cards.webp");
 }
 
 #mehr-wege-zum-wert > p {
@@ -1356,15 +1356,15 @@ tr > :last-child {
 }
 
 .feature-list.limited-offers-list > li::before {
-  background-image: url("/content-icons/cards.png");
+  background-image: url("/content-icons/cards.webp");
 }
 
 .feature-list.promotion-types-list > li::before {
-  background-image: url("/content-icons/cards.png");
+  background-image: url("/content-icons/cards.webp");
 }
 
 .feature-list.cashback-availability-list > li::before {
-  background-image: url("/content-icons/cards.png");
+  background-image: url("/content-icons/cards.webp");
 }
 
 .list-card ul > li,
