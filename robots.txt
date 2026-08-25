@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://natiocasino-germany.vercel.app/sitemap.xml
