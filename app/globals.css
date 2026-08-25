@@ -1789,6 +1789,36 @@ tr > :last-child {
 }
 
 @media (min-width: 1181px) {
+  #registrierung-und-anmeldung {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+    column-gap: 40px;
+    align-items: start;
+  }
+
+  #registrierung-und-anmeldung > h2 {
+    grid-column: 1 / -1;
+  }
+
+  #registrierung-und-anmeldung .image-copy-section__copy {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  #registrierung-und-anmeldung .registration-signup-card {
+    position: static;
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  #registrierung-und-anmeldung .content-section__action {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+
   #anbieter {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

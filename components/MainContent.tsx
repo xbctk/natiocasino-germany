@@ -481,7 +481,6 @@ export function MainContent() {
         <div className="image-copy-section__copy">
             <p>Die Anmeldung ist bewusst schnell gehalten. Von der Startseite aus klickst du auf Registrieren, gibst die Basics an — E-Mail, Passwort, deine Angaben, bevorzugte Währung — und bestätigst, dass du volljährig bist. Irgendwann vor deiner ersten Auszahlung gibt es einen leichten Verifizierungsschritt, der Standard ist und ebenso zu deinem Schutz existiert wie zu dem des Casinos. Bist du einmal drin, ist das erneute Einloggen nur deine E-Mail und dein Passwort, von jedem Gerät aus.</p>
             <p>Dieser letzte Teil zählt mehr, als er klingt: Dein Konto ist an dein Profil gebunden, nicht an dein Gerät. Registriere dich auf einem Laptop, logge dich später auf dem Handy ein, und dein Guthaben, deine Boni, deine VIP-Stufe und deine Historie sind alle genau da, wo du sie gelassen hast. Es gibt kein separates Mobil-Konto zu jonglieren — eine Anmeldung folgt dir überallhin.</p>
-            <JoinNowButton />
         </div>
         <div className="registration-signup-card">
           <Image
@@ -494,6 +493,7 @@ export function MainContent() {
             unoptimized
           />
         </div>
+        <JoinNowButton />
       </Section>
 
       <Section id="spielen-am-handy" title="Spielen am Handy" className="image-copy-section image-copy-section--wide-title">
