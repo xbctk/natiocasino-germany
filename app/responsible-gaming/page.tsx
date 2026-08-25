@@ -7,11 +7,11 @@ const description = "Hinweise zu verantwortungsvollem Spielen, Kontolimits, Selb
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/responsible-gaming" },
+  alternates: { canonical: "/responsible-gaming.html" },
   openGraph: {
     title,
     description,
-    url: "/responsible-gaming",
+    url: "/responsible-gaming.html",
     siteName: "National Casino Deutschland",
     locale: "de_DE",
     type: "website",
@@ -49,5 +49,5 @@ const sections = [
 ] as const;
 
 export default function ResponsibleGamingPage() {
-  return <TechnicalPage intro="Informationen zum sicheren und kontrollierten Umgang mit Glücksspiel." label="Verantwortungsvolles Spielen" path="/responsible-gaming" sections={sections} />;
+  return <TechnicalPage intro="Informationen zum sicheren und kontrollierten Umgang mit Glücksspiel." label="Verantwortungsvolles Spielen" path="/responsible-gaming.html" sections={sections} />;
 }

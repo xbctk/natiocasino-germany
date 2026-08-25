@@ -7,8 +7,8 @@ const description = "Antworten auf häufige Fragen zu Boni, Verifizierung, Zahlu
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/faq" },
-  openGraph: { title, description, url: "/faq", siteName: "National Casino Deutschland", locale: "de_DE", type: "website" },
+  alternates: { canonical: "/faq.html" },
+  openGraph: { title, description, url: "/faq.html", siteName: "National Casino Deutschland", locale: "de_DE", type: "website" },
 };
 
 const sections = [
@@ -59,5 +59,5 @@ const sections = [
 ] as const;
 
 export default function FaqPage() {
-  return <TechnicalPage intro="Häufige Fragen zur Nutzung von National Casino und zu den wichtigsten Kontofunktionen." label="FAQ" path="/faq" sections={sections} />;
+  return <TechnicalPage intro="Häufige Fragen zur Nutzung von National Casino und zu den wichtigsten Kontofunktionen." label="FAQ" path="/faq.html" sections={sections} />;
 }

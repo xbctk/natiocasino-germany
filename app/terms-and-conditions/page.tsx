@@ -7,8 +7,8 @@ const description = "Allgemeine Bedingungen für die Nutzung von National Casino
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/terms-and-conditions" },
-  openGraph: { title, description, url: "/terms-and-conditions", siteName: "National Casino Deutschland", locale: "de_DE", type: "website" },
+  alternates: { canonical: "/terms-and-conditions.html" },
+  openGraph: { title, description, url: "/terms-and-conditions.html", siteName: "National Casino Deutschland", locale: "de_DE", type: "website" },
 };
 
 const sections = [
@@ -59,5 +59,5 @@ const sections = [
 ] as const;
 
 export default function TermsAndConditionsPage() {
-  return <TechnicalPage intro="Zusammenfassung der grundlegenden Regeln für die Nutzung der Plattform." label="Allgemeine Geschäftsbedingungen" path="/terms-and-conditions" sections={sections} />;
+  return <TechnicalPage intro="Zusammenfassung der grundlegenden Regeln für die Nutzung der Plattform." label="Allgemeine Geschäftsbedingungen" path="/terms-and-conditions.html" sections={sections} />;
 }

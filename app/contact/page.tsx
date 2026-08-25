@@ -7,8 +7,8 @@ const description = "Hinweise zur Kontaktaufnahme mit dem Kundendienst von Natio
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/contact" },
-  openGraph: { title, description, url: "/contact", siteName: "National Casino Deutschland", locale: "de_DE", type: "website" },
+  alternates: { canonical: "/contact.html" },
+  openGraph: { title, description, url: "/contact.html", siteName: "National Casino Deutschland", locale: "de_DE", type: "website" },
 };
 
 const sections = [
@@ -37,5 +37,5 @@ const sections = [
 ] as const;
 
 export default function ContactPage() {
-  return <TechnicalPage intro="Technische Hinweise für eine vollständige und sichere Kontaktanfrage." label="Kontakt" path="/contact" sections={sections} />;
+  return <TechnicalPage intro="Technische Hinweise für eine vollständige und sichere Kontaktanfrage." label="Kontakt" path="/contact.html" sections={sections} />;
 }

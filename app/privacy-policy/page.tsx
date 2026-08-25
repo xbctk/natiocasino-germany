@@ -7,8 +7,8 @@ const description = "Informationen zur Erhebung, Nutzung, Speicherung und Sicher
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/privacy-policy" },
-  openGraph: { title, description, url: "/privacy-policy", siteName: "National Casino Deutschland", locale: "de_DE", type: "website" },
+  alternates: { canonical: "/privacy-policy.html" },
+  openGraph: { title, description, url: "/privacy-policy.html", siteName: "National Casino Deutschland", locale: "de_DE", type: "website" },
 };
 
 const sections = [
@@ -56,5 +56,5 @@ const sections = [
 ] as const;
 
 export default function PrivacyPolicyPage() {
-  return <TechnicalPage intro="Diese Seite beschreibt, welche personenbezogenen Daten verarbeitet werden und zu welchen Zwecken dies geschieht." label="Datenschutzrichtlinie" path="/privacy-policy" sections={sections} />;
+  return <TechnicalPage intro="Diese Seite beschreibt, welche personenbezogenen Daten verarbeitet werden und zu welchen Zwecken dies geschieht." label="Datenschutzrichtlinie" path="/privacy-policy.html" sections={sections} />;
 }

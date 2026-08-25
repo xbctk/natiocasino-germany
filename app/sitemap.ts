@@ -7,14 +7,14 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${siteUrl}/` },
-    { url: `${siteUrl}/bonuses` },
-    { url: `${siteUrl}/app` },
-    { url: `${siteUrl}/responsible-gaming` },
-    { url: `${siteUrl}/terms-and-conditions` },
-    { url: `${siteUrl}/privacy-policy` },
-    { url: `${siteUrl}/bonus-terms` },
-    { url: `${siteUrl}/faq` },
-    { url: `${siteUrl}/about-us` },
-    { url: `${siteUrl}/contact` },
+    { url: `${siteUrl}/bonuses.html` },
+    { url: `${siteUrl}/app.html` },
+    { url: `${siteUrl}/responsible-gaming.html` },
+    { url: `${siteUrl}/terms-and-conditions.html` },
+    { url: `${siteUrl}/privacy-policy.html` },
+    { url: `${siteUrl}/bonus-terms.html` },
+    { url: `${siteUrl}/faq.html` },
+    { url: `${siteUrl}/about-us.html` },
+    { url: `${siteUrl}/contact.html` },
   ];
 }

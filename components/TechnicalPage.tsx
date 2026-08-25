@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
@@ -39,7 +38,8 @@ export function TechnicalPage({
         <article className="technical-page">
           <nav className="technical-page__breadcrumbs" aria-label="Breadcrumb">
             <ol>
-              <li><Link href="/">Startseite</Link></li>
+              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+              <li><a href="/index.html">Startseite</a></li>
               <li><span aria-current="page">{label}</span></li>
             </ol>
           </nav>

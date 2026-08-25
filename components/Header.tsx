@@ -1,39 +1,41 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment, useState } from "react";
 import { GENERAL_AFFILIATE_URL } from "./affiliateLinks";
 import { Brand } from "./Brand";
 
 const pages = [
-  { href: "/", label: "Startseite" },
-  { href: "/bonuses", label: "Boni" },
-  { href: "/app", label: "App" },
+  { href: "/index.html", label: "Startseite" },
+  { href: "/bonuses.html", label: "Boni" },
+  { href: "/app.html", label: "App" },
 ];
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const activePath = pathname === "/" ? "/index.html" : pathname.endsWith(".html") ? pathname : `${pathname}.html`;
 
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <Link className="site-header__brand-link" href="/" aria-label="National casino main page">
+        {/* A plain anchor is required because deployment uses standalone HTML files. */}
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+        <a className="site-header__brand-link" href="/index.html" aria-label="National casino main page">
           <Brand />
-        </Link>
+        </a>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
           {pages.map((page, index) => (
             <Fragment key={page.href}>
-              <Link
-                aria-current={pathname === page.href ? "page" : undefined}
-                className={pathname === page.href ? "desktop-nav__link is-active" : "desktop-nav__link"}
+              <a
+                aria-current={activePath === page.href ? "page" : undefined}
+                className={activePath === page.href ? "desktop-nav__link is-active" : "desktop-nav__link"}
                 href={page.href}
               >
                 {page.label}
-              </Link>
+              </a>
               {index < pages.length - 1 ? (
                 <span className="desktop-nav__separator" aria-hidden="true">
                   <span />
@@ -75,15 +77,15 @@ export function Header() {
       {open ? (
         <nav className="mobile-primary-nav" id="mobile-primary-nav" aria-label="Mobile primary navigation">
           {pages.map((page) => (
-            <Link
-              aria-current={pathname === page.href ? "page" : undefined}
-              className={pathname === page.href ? "is-active" : undefined}
+            <a
+              aria-current={activePath === page.href ? "page" : undefined}
+              className={activePath === page.href ? "is-active" : undefined}
               href={page.href}
               key={page.href}
               onClick={() => setOpen(false)}
             >
               {page.label}
-            </Link>
+            </a>
           ))}
           <div className="mobile-primary-nav__actions">
             <a className="button button--secondary" href={GENERAL_AFFILIATE_URL} rel="sponsored">Anmelden</a>

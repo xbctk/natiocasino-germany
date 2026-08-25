@@ -11,11 +11,11 @@ const description = "Jeder Bonus im National Casino auf einen Blick — 200 % Kr
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/bonuses" },
+  alternates: { canonical: "/bonuses.html" },
   openGraph: {
     title,
     description,
-    url: "/bonuses",
+    url: "/bonuses.html",
     siteName: "National Casino Deutschland",
     locale: "de_DE",
     type: "website",
@@ -36,7 +36,7 @@ export default function BonusesPage() {
       <div className="page-layout">
         <Sidebar label="Abschnitte der Boni-Seite" sections={bonusesSections} />
         <main className="page-main">
-          <Hero breadcrumbLabel="Boni" breadcrumbPath="/bonuses" className="boni-hero" descriptionLines={descriptionLines} imageSrc="/content/bonuses/hero-characters-v2.webp" titleLines={titleLines} />
+          <Hero breadcrumbLabel="Boni" breadcrumbPath="/bonuses.html" className="boni-hero" descriptionLines={descriptionLines} imageSrc="/content/bonuses/hero-characters-v2.webp" titleLines={titleLines} />
           <BonusesContent />
           <Footer />
         </main>

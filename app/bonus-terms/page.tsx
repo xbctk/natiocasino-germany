@@ -7,8 +7,8 @@ const description = "Allgemeine Bedingungen für Boni, Freispiele, Umsatzanforde
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/bonus-terms" },
-  openGraph: { title, description, url: "/bonus-terms", siteName: "National Casino Deutschland", locale: "de_DE", type: "website" },
+  alternates: { canonical: "/bonus-terms.html" },
+  openGraph: { title, description, url: "/bonus-terms.html", siteName: "National Casino Deutschland", locale: "de_DE", type: "website" },
 };
 
 const sections = [
@@ -50,5 +50,5 @@ const sections = [
 ] as const;
 
 export default function BonusTermsPage() {
-  return <TechnicalPage intro="Allgemeine Regeln für die Aktivierung und Nutzung von Bonusangeboten." label="Bonusbedingungen" path="/bonus-terms" sections={sections} />;
+  return <TechnicalPage intro="Allgemeine Regeln für die Aktivierung und Nutzung von Bonusangeboten." label="Bonusbedingungen" path="/bonus-terms.html" sections={sections} />;
 }

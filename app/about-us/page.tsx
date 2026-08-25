@@ -7,8 +7,8 @@ const description = "Informationen über das Angebot, die mobile Nutzung, Aktion
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/about-us" },
-  openGraph: { title, description, url: "/about-us", siteName: "National Casino Deutschland", locale: "de_DE", type: "website" },
+  alternates: { canonical: "/about-us.html" },
+  openGraph: { title, description, url: "/about-us.html", siteName: "National Casino Deutschland", locale: "de_DE", type: "website" },
 };
 
 const sections = [
@@ -45,5 +45,5 @@ const sections = [
 ] as const;
 
 export default function AboutUsPage() {
-  return <TechnicalPage intro="Die wichtigsten Informationen über National Casino und das Angebot der Plattform." label="Über uns" path="/about-us" sections={sections} />;
+  return <TechnicalPage intro="Die wichtigsten Informationen über National Casino und das Angebot der Plattform." label="Über uns" path="/about-us.html" sections={sections} />;
 }

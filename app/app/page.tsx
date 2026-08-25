@@ -11,11 +11,11 @@ const description = "Installiere die National Casino App direkt von der Seite â€
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/app" },
+  alternates: { canonical: "/app.html" },
   openGraph: {
     title,
     description,
-    url: "/app",
+    url: "/app.html",
     siteName: "National Casino Deutschland",
     locale: "de_DE",
     type: "website",
@@ -36,7 +36,7 @@ export default function AppPage() {
       <div className="page-layout">
         <Sidebar label="Bereiche der App-Seite" sections={appSections} />
         <main className="page-main">
-          <Hero breadcrumbLabel="App" breadcrumbPath="/app" className="app-hero" descriptionLines={descriptionLines} imageSrc="/content/app/hero-v2.webp" mobileImageSrc="/content/app/hero-mobile-v2.webp" titleLines={titleLines} />
+          <Hero breadcrumbLabel="App" breadcrumbPath="/app.html" className="app-hero" descriptionLines={descriptionLines} imageSrc="/content/app/hero-v2.webp" mobileImageSrc="/content/app/hero-mobile-v2.webp" titleLines={titleLines} />
           <AppContent />
           <Footer />
         </main>

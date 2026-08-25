@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { GENERAL_AFFILIATE_URL } from "./affiliateLinks";
 import { JsonLd } from "./JsonLd";
 
@@ -50,7 +49,8 @@ export function Hero({
         {breadcrumbLabel ? (
           <nav className="hero__breadcrumbs" aria-label="Breadcrumb">
             <ol>
-              <li><Link href="/">Startseite</Link></li>
+              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+              <li><a href="/index.html">Startseite</a></li>
               <li><span aria-current="page">{breadcrumbLabel}</span></li>
             </ol>
           </nav>

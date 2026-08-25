@@ -1,14 +1,13 @@
 import Image from "next/image";
-import Link from "next/link";
 
 const footerLinks = [
-  ["VERANTWORTUNGSVOLLES SPIELEN", "/responsible-gaming"],
-  ["ALLGEMEINE GESCHÄFTSBEDINGUNGEN", "/terms-and-conditions"],
-  ["DATENSCHUTRICHTLINIE", "/privacy-policy"],
-  ["BONUSBEDINGUNGEN", "/bonus-terms"],
-  ["FAQ", "/faq"],
-  ["ÜBER UNS", "/about-us"],
-  ["KONTAKT", "/contact"],
+  ["VERANTWORTUNGSVOLLES SPIELEN", "/responsible-gaming.html"],
+  ["ALLGEMEINE GESCHÄFTSBEDINGUNGEN", "/terms-and-conditions.html"],
+  ["DATENSCHUTRICHTLINIE", "/privacy-policy.html"],
+  ["BONUSBEDINGUNGEN", "/bonus-terms.html"],
+  ["FAQ", "/faq.html"],
+  ["ÜBER UNS", "/about-us.html"],
+  ["KONTAKT", "/contact.html"],
 ] as const;
 
 export function Footer() {
@@ -24,7 +23,7 @@ export function Footer() {
         <ul>
           {footerLinks.map(([label, href]) => (
             <li key={label}>
-              <Link href={href}>{label}</Link>
+              <a href={href}>{label}</a>
             </li>
           ))}
         </ul>
